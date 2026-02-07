@@ -30,18 +30,18 @@ layout: default
       </li>
     </ol>
   </nav>
+  <nav class="post-pagination-top" aria-label="Post navigation top">
+    <a class="post-nav-icon-link post-nav-prev-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.previous %}Previous: {{ page.previous.title | escape }}{% else %}No previous post{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
+      <span class="post-nav-icon" aria-hidden="true">←</span>
+    </a>
+    <a id="post-nav-up" class="post-nav-icon-link post-nav-up-link" href="{{ '/blog/' | relative_url }}" aria-label="Back to Blog">
+      <span class="post-nav-icon" aria-hidden="true">↑</span>
+    </a>
+    <a class="post-nav-icon-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.next %}Next: {{ page.next.title | escape }}{% else %}No next post{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
+      <span class="post-nav-icon" aria-hidden="true">→</span>
+    </a>
+  </nav>
   <header class="page-header">
-    <nav class="post-pagination-top" aria-label="Post navigation top">
-      <a class="post-nav-icon-link post-nav-prev-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.previous %}Previous: {{ page.previous.title | escape }}{% else %}No previous post{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
-        <span class="post-nav-icon" aria-hidden="true">←</span>
-      </a>
-      <a id="post-nav-up" class="post-nav-icon-link post-nav-up-link" href="{{ '/blog/' | relative_url }}" aria-label="Back to Blog">
-        <span class="post-nav-icon" aria-hidden="true">↑</span>
-      </a>
-      <a class="post-nav-icon-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.next %}Next: {{ page.next.title | escape }}{% else %}No next post{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
-        <span class="post-nav-icon" aria-hidden="true">→</span>
-      </a>
-    </nav>
     <h1>{{ page.title }}</h1>
     <p class="lead">
       {{ page.date | date: "%Y-%m-%d" }}

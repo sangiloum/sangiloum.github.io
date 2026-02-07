@@ -22,6 +22,3 @@ featured_image_source: og_image
 {% for yearly in yearly_groups %}
 - [{{ yearly.name }}]({{ '/' | append: yearly.name | append: '/' | relative_url }}) ({{ yearly.items | size }})
 {% endfor %}
-
-### Legacy
-- [Legacy blog page](https://dimag.ibs.re.kr/home/sangil/blog/)
