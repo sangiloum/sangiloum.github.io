@@ -1,7 +1,10 @@
 ---
 layout: page
 ---
-{% assign archive_year_value = page.archive_year | default: page.title %}
+{% assign archive_year_value = page.archive_year | default: page.title | strip %}
+{% if archive_year_value == "" and page.date %}
+  {% assign archive_year_value = page.date | date: "%Y" %}
+{% endif %}
 <div class="blog-layout">
   {% include blog-categories.html active_category="" %}
 
