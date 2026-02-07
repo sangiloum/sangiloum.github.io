@@ -1,0 +1,37 @@
+{% assign segments = page.url | split: '/' %}
+{% assign segment_count = 0 %}
+{% for segment in segments %}
+  {% if segment != '' %}
+    {% assign segment_count = segment_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      {% if page.url == '/' %}
+      <span aria-current="page">Home</span>
+      {% else %}
+      <a href="{{ '/' | relative_url }}">Home</a>
+      {% endif %}
+    </li>
+    {% if page.url != '/' %}
+      {% assign current_path = '' %}
+      {% assign seen_count = 0 %}
+      {% for segment in segments %}
+        {% if segment != '' %}
+          {% assign current_path = current_path | append: '/' | append: segment %}
+          {% assign seen_count = seen_count | plus: 1 %}
+          <li class="breadcrumb-item">
+            {% if seen_count == segment_count %}
+              <span aria-current="page">{{ page.title }}</span>
+            {% else %}
+              {% assign label = segment | replace: '-', ' ' | capitalize %}
+              <a href="{{ current_path | append: '/' | relative_url }}">{{ label }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </ol>
+</nav>

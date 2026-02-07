@@ -1,0 +1,27 @@
+title: Sang-il Oum
+description: Mathematics researcher homepage of Sang-il Oum.
+url: "https://sangiloum.github.io"
+baseurl: ""
+timezone: "America/New_York"
+theme: minima
+permalink: pretty
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - migration

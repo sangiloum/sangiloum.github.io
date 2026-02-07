@@ -1,0 +1,48 @@
+{% assign visible_count = 0 %}
+<div class="post-cards">
+{% for post in include.posts %}
+  {% assign post_categories = post.categories | default: empty %}
+  {% assign show_post = true %}
+  {% if include.category_filter != "" and post_categories contains include.category_filter %}
+    {% assign show_post = true %}
+  {% elsif include.category_filter != "" %}
+    {% assign show_post = false %}
+  {% endif %}
+  {% if show_post %}
+    {% assign visible_count = visible_count | plus: 1 %}
+    {% assign post_link = post.url | relative_url %}
+    {% if include.category_filter != "" %}
+      {% assign encoded_filter = include.category_filter | uri_escape %}
+      {% assign post_link = post_link | append: '?category=' | append: encoded_filter %}
+    {% endif %}
+    <article class="post-card{% unless post.featured_image %} post-card--no-image{% endunless %}">
+      {% if post.featured_image %}
+      <a class="post-card-image-link" href="{{ post_link }}" aria-label="{{ post.title | escape }}">
+        <img class="post-card-image" src="{{ post.featured_image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
+      </a>
+      {% endif %}
+      <div class="post-card-body">
+        <h3 class="post-card-title"><a href="{{ post_link }}">{{ post.title }}</a></h3>
+        {% assign post_year = post.date | date: "%Y" %}
+        <p class="post-card-date">
+          {{ post.date | date: "%Y-%m-%d" }}
+          ·
+          <a href="{{ '/' | append: post_year | append: '/' | relative_url }}">{{ post_year }}</a>
+        </p>
+        {% if post_categories.size > 0 %}
+        <p class="post-card-categories">
+          {% for category in post_categories %}
+            {% assign category_slug = category | slugify %}
+            <a class="category-chip" href="{{ '/blog/category/' | append: category_slug | append: '/' | relative_url }}">{{ category }}</a>
+          {% endfor %}
+        </p>
+        {% endif %}
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      </div>
+    </article>
+  {% endif %}
+{% endfor %}
+</div>
+{% if visible_count == 0 %}
+<div class="blog-empty-message">No posts found for this category.</div>
+{% endif %}

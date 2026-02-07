@@ -1,0 +1,21 @@
+---
+layout: page
+---
+{% assign archive_year_value = page.archive_year | default: page.title %}
+<div class="blog-layout">
+  {% include blog-categories.html active_category="" %}
+
+  <section class="blog-main">
+    <h2>Posts in {{ archive_year_value }}</h2>
+    {% if page.posts %}
+      {% include post-cards.html posts=page.posts category_filter="" %}
+    {% else %}
+      {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+      {% for year_group in posts_by_year %}
+        {% if year_group.name == archive_year_value %}
+          {% include post-cards.html posts=year_group.items category_filter="" %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </section>
+</div>

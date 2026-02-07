@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="page">
+  {% include breadcrumb.html %}
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.lead %}
+    <p class="lead">{{ page.lead }}</p>
+    {% endif %}
+  </header>
+  {% if page.featured_image %}
+  <figure class="post-featured">
+    <img
+      src="{{ page.featured_image | relative_url }}"
+      alt="{{ page.title | escape }}"
+      loading="lazy"
+      decoding="async"
+    >
+  </figure>
+  {% endif %}
+  <section class="page-body">
+    {{ content }}
+  </section>
+</article>

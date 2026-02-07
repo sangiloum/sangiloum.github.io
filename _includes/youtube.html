@@ -1,0 +1,21 @@
+<figure class="youtube-embed{% if include.class %} {{ include.class }}{% endif %}">
+  <div class="youtube-embed-frame">
+    <iframe
+      src="https://www.youtube.com/embed/{{ include.video_id }}"
+      title="{{ include.title | default: 'YouTube video player' | escape }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {% if include.caption %}
+  <figcaption class="youtube-embed-caption">
+    {% if include.link %}
+    <a href="{{ include.link }}">{{ include.caption }}</a>
+    {% else %}
+    {{ include.caption }}
+    {% endif %}
+  </figcaption>
+  {% endif %}
+</figure>

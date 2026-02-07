@@ -1,0 +1,20 @@
+<div class="three-figures">
+  <figure>
+    <img src="{{ include.src1 | relative_url }}" alt="{{ include.alt1 | default: '' | escape }}" loading="lazy" decoding="async">
+    {% if include.caption1 %}
+    <figcaption>{{ include.caption1 }}</figcaption>
+    {% endif %}
+  </figure>
+  <figure>
+    <img src="{{ include.src2 | relative_url }}" alt="{{ include.alt2 | default: '' | escape }}" loading="lazy" decoding="async">
+    {% if include.caption2 %}
+    <figcaption>{{ include.caption2 }}</figcaption>
+    {% endif %}
+  </figure>
+  <figure>
+    <img src="{{ include.src3 | relative_url }}" alt="{{ include.alt3 | default: '' | escape }}" loading="lazy" decoding="async">
+    {% if include.caption3 %}
+    <figcaption>{{ include.caption3 }}</figcaption>
+    {% endif %}
+  </figure>
+</div>

@@ -1,0 +1,221 @@
+---
+layout: default
+---
+<article class="page">
+  {% assign page_year = page.date | date: "%Y" %}
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list post-breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="{{ '/' | relative_url }}">Home</a>
+      </li>
+      <li class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li class="breadcrumb-item">
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      </li>
+      <li class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li id="breadcrumb-year-item" class="breadcrumb-item">
+        <a href="{{ '/' | append: page_year | append: '/' | relative_url }}">{{ page_year }}</a>
+      </li>
+      <li id="breadcrumb-year-sep" class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li id="breadcrumb-category-label-item" class="breadcrumb-item" style="display: none;">
+        <span>Category</span>
+      </li>
+      <li id="breadcrumb-category-label-sep" class="breadcrumb-sep" style="display: none;" aria-hidden="true">/</li>
+      <li id="breadcrumb-category-item" class="breadcrumb-item" style="display: none;">
+        <a id="breadcrumb-category-link" href="#"></a>
+      </li>
+      <li id="breadcrumb-category-item-sep" class="breadcrumb-sep" style="display: none;" aria-hidden="true">/</li>
+      <li class="breadcrumb-item">
+        <span aria-current="page">{{ page.title }}</span>
+      </li>
+    </ol>
+  </nav>
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">
+      {{ page.date | date: "%Y-%m-%d" }}
+      ·
+      <a href="{{ '/' | append: page_year | append: '/' | relative_url }}">{{ page_year }}</a>
+    </p>
+    {% if page.categories and page.categories.size > 0 %}
+    <p class="post-meta-categories">
+      {% for category in page.categories %}
+      {% assign category_slug = category | slugify %}
+      <a class="category-chip" href="{{ '/blog/category/' | append: category_slug | append: '/' | relative_url }}">{{ category }}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+  </header>
+  {% if page.featured_image %}
+  <figure class="post-featured">
+    <img
+      src="{{ page.featured_image | relative_url }}"
+      alt="{{ page.title | escape }}"
+      loading="lazy"
+      decoding="async"
+    >
+  </figure>
+  {% endif %}
+  <section class="page-body">
+    {{ content }}
+  </section>
+  <nav class="post-pagination" aria-label="Post navigation">
+    <a id="post-nav-prev" class="post-nav-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
+      <span class="post-nav-label">{% if page.previous %}Previous{% endif %}</span>
+      <span class="post-nav-title">{% if page.previous %}{{ page.previous.title }}{% endif %}</span>
+    </a>
+    <a id="post-nav-back" class="post-nav-back" href="{{ '/blog/' | relative_url }}">Back to Blog</a>
+    <a id="post-nav-next" class="post-nav-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
+      <span class="post-nav-label">{% if page.next %}Next{% endif %}</span>
+      <span class="post-nav-title">{% if page.next %}{{ page.next.title }}{% endif %}</span>
+    </a>
+  </nav>
+</article>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var breadcrumbYearItem = document.getElementById("breadcrumb-year-item");
+  var breadcrumbYearSep = document.getElementById("breadcrumb-year-sep");
+  var breadcrumbCategoryLabelItem = document.getElementById("breadcrumb-category-label-item");
+  var breadcrumbCategoryLabelSep = document.getElementById("breadcrumb-category-label-sep");
+  var breadcrumbCategoryItem = document.getElementById("breadcrumb-category-item");
+  var breadcrumbCategoryItemSep = document.getElementById("breadcrumb-category-item-sep");
+  var breadcrumbCategoryLink = document.getElementById("breadcrumb-category-link");
+
+  function showYearBreadcrumb() {
+    if (breadcrumbYearItem) breadcrumbYearItem.style.display = "";
+    if (breadcrumbYearSep) breadcrumbYearSep.style.display = "";
+    if (breadcrumbCategoryLabelItem) breadcrumbCategoryLabelItem.style.display = "none";
+    if (breadcrumbCategoryLabelSep) breadcrumbCategoryLabelSep.style.display = "none";
+    if (breadcrumbCategoryItem) breadcrumbCategoryItem.style.display = "none";
+    if (breadcrumbCategoryItemSep) breadcrumbCategoryItemSep.style.display = "none";
+  }
+
+  function showCategoryBreadcrumb(categoryValue, categoryHref) {
+    if (breadcrumbYearItem) breadcrumbYearItem.style.display = "none";
+    if (breadcrumbYearSep) breadcrumbYearSep.style.display = "none";
+    if (breadcrumbCategoryLabelItem) breadcrumbCategoryLabelItem.style.display = "";
+    if (breadcrumbCategoryLabelSep) breadcrumbCategoryLabelSep.style.display = "";
+    if (breadcrumbCategoryItem) breadcrumbCategoryItem.style.display = "";
+    if (breadcrumbCategoryItemSep) breadcrumbCategoryItemSep.style.display = "";
+    if (breadcrumbCategoryLink) {
+      breadcrumbCategoryLink.href = categoryHref;
+      breadcrumbCategoryLink.textContent = categoryValue;
+    }
+  }
+
+  showYearBreadcrumb();
+
+  var params = new URLSearchParams(window.location.search);
+  var activeCategory = (params.get("category") || "").trim().toLowerCase();
+  if (!activeCategory) return;
+  var currentPostPath = {{ page.url | relative_url | jsonify }};
+  var prevLink = document.getElementById("post-nav-prev");
+  var nextLink = document.getElementById("post-nav-next");
+  var backLink = document.getElementById("post-nav-back");
+
+  var categoryPosts = {
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+    {{ category[0] | downcase | jsonify }}: [
+      {% for post in category[1] %}
+      { url: {{ post.url | relative_url | jsonify }}, title: {{ post.title | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  var categoryPages = {
+    {% for category in sorted_categories %}
+    {% assign category_slug = category[0] | slugify %}
+    {% assign category_url = '/blog/category/' | append: category_slug | append: '/' | relative_url %}
+    {{ category[0] | downcase | jsonify }}: {{ category_url | jsonify }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  function normalizePath(path) {
+    var value = (path || "").replace(/\/+$/, "");
+    return value === "" ? "/" : value;
+  }
+
+  function setLink(link, item, label, categoryValue) {
+    if (!link) return;
+    var titleEl = link.querySelector(".post-nav-title");
+    var labelEl = link.querySelector(".post-nav-label");
+    if (!item) {
+      link.classList.add("is-empty");
+      link.setAttribute("aria-disabled", "true");
+      link.setAttribute("tabindex", "-1");
+      link.href = "#";
+      if (titleEl) titleEl.textContent = "";
+      if (labelEl) labelEl.textContent = "";
+      return;
+    }
+    var href = item.url + "?category=" + encodeURIComponent(categoryValue);
+    link.href = href;
+    link.classList.remove("is-empty");
+    link.removeAttribute("aria-disabled");
+    link.removeAttribute("tabindex");
+    if (titleEl) titleEl.textContent = item.title;
+    if (labelEl) labelEl.textContent = label;
+  }
+
+  // In category context, clear default global links first.
+  if (prevLink) {
+    prevLink.classList.add("is-empty");
+    prevLink.setAttribute("aria-disabled", "true");
+    prevLink.setAttribute("tabindex", "-1");
+    prevLink.href = "#";
+    var prevTitle = prevLink.querySelector(".post-nav-title");
+    var prevLabel = prevLink.querySelector(".post-nav-label");
+    if (prevTitle) prevTitle.textContent = "";
+    if (prevLabel) prevLabel.textContent = "";
+  }
+  if (nextLink) {
+    nextLink.classList.add("is-empty");
+    nextLink.setAttribute("aria-disabled", "true");
+    nextLink.setAttribute("tabindex", "-1");
+    nextLink.href = "#";
+    var nextTitle = nextLink.querySelector(".post-nav-title");
+    var nextLabel = nextLink.querySelector(".post-nav-label");
+    if (nextTitle) nextTitle.textContent = "";
+    if (nextLabel) nextLabel.textContent = "";
+  }
+
+  var posts = categoryPosts[activeCategory];
+  if (!posts || !posts.length) {
+    if (backLink && categoryPages[activeCategory]) {
+      backLink.href = categoryPages[activeCategory];
+      backLink.textContent = '"' + activeCategory + '" category';
+      showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
+    }
+    return;
+  }
+
+  var currentPath = normalizePath(currentPostPath);
+  var currentIndex = posts.findIndex(function (post) {
+    return normalizePath(post.url) === currentPath;
+  });
+  if (currentIndex < 0) {
+    if (backLink && categoryPages[activeCategory]) {
+      backLink.href = categoryPages[activeCategory];
+      backLink.textContent = '"' + activeCategory + '" category';
+      showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
+    }
+    return;
+  }
+
+  // Match Jekyll's default post navigation semantics:
+  // Previous -> older post, Next -> newer post.
+  var prev = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
+  var next = currentIndex > 0 ? posts[currentIndex - 1] : null;
+  setLink(prevLink, prev, "Previous", activeCategory);
+  setLink(nextLink, next, "Next", activeCategory);
+
+  if (backLink && categoryPages[activeCategory]) {
+    backLink.href = categoryPages[activeCategory];
+    backLink.textContent = '"' + activeCategory + '" category';
+    showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
+  }
+});
+</script>
