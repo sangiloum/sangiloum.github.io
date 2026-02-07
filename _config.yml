@@ -2,7 +2,7 @@ title: Sang-il Oum (엄상일)
 description: A mathematician at the IBS Discrete Mathematics Group.
 url: "https://sangiloum.github.io"
 baseurl: ""
-timezone: "Asis/Seoul"
+timezone: "Asia/Seoul"
 theme: minima
 permalink: pretty
 markdown: kramdown
