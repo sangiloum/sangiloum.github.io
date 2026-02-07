@@ -672,3 +672,28 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Keep ordered-list numbering continuous across sections on /papers/. */
+.page.page-papers .page-body {
+  counter-reset: papers-item;
+}
+
+.page.page-papers .page-body > ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 2.4rem;
+}
+
+.page.page-papers .page-body > ol > li {
+  counter-increment: papers-item;
+  position: relative;
+}
+
+.page.page-papers .page-body > ol > li::before {
+  content: counter(papers-item) ". ";
+  position: absolute;
+  left: -2.4rem;
+  width: 2rem;
+  text-align: right;
+  color: var(--muted);
+}

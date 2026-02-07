@@ -8,10 +8,10 @@ layout: page
   <section class="blog-main">
     <h2>Posts in "{{ archive_category_value }}"</h2>
     {% if page.posts %}
-      {% include post-cards.html posts=page.posts category_filter="" %}
+      {% include post-cards.html posts=page.posts category_filter=archive_category_value %}
     {% else %}
       {% assign matched_category = site.categories[archive_category_value] %}
-      {% include post-cards.html posts=matched_category category_filter="" %}
+      {% include post-cards.html posts=matched_category category_filter=archive_category_value %}
     {% endif %}
   </section>
 </div>

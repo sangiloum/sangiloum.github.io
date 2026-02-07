@@ -14,6 +14,9 @@
     {% if include.category_filter != "" %}
       {% assign encoded_filter = include.category_filter | uri_escape %}
       {% assign post_link = post_link | append: '?category=' | append: encoded_filter %}
+    {% elsif include.year_filter != "" %}
+      {% assign encoded_year = include.year_filter | uri_escape %}
+      {% assign post_link = post_link | append: '?year=' | append: encoded_year %}
     {% endif %}
     <article class="post-card{% unless post.featured_image %} post-card--no-image{% endunless %}">
       {% if post.featured_image %}
