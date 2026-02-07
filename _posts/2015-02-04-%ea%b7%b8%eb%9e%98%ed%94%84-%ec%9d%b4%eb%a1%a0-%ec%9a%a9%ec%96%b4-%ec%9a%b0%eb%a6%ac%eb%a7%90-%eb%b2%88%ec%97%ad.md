@@ -3,8 +3,6 @@ title: "그래프 이론 용어 우리말 번역"
 permalink: /2015/%ea%b7%b8%eb%9e%98%ed%94%84-%ec%9d%b4%eb%a1%a0-%ec%9a%a9%ec%96%b4-%ec%9a%b0%eb%a6%ac%eb%a7%90-%eb%b2%88%ec%97%ad/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2015/%ea%b7%b8%eb%9e%98%ed%94%84-%ec%9d%b4%eb%a1%a0-%ec%9a%a9%ec%96%b4-%ec%9a%b0%eb%a6%ac%eb%a7%90-%eb%b2%88%ec%97%ad/
-featured_image: /assets/legacy/2015/02/content.jpeg
-featured_image_source: og_image
 categories:
   - essays
   - math

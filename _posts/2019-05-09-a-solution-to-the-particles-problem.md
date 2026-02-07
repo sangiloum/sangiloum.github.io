@@ -7,6 +7,7 @@ featured_image: /assets/legacy/2019/05/points2.png
 featured_image_source: featured_media
 categories:
   - math
+mathjax: true
 ---
 [Prof. Yuval Peres](https://yuvalperes.com/) posted the [following very interesting problem on his blog](https://yuvalperes.com/Math-Expo/2019/05/09/hello-world/).  
 

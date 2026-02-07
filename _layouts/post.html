@@ -35,6 +35,9 @@ layout: default
       <a class="post-nav-icon-link post-nav-prev-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.previous %}Previous: {{ page.previous.title | escape }}{% else %}No previous post{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
         <span class="post-nav-icon" aria-hidden="true">←</span>
       </a>
+      <a id="post-nav-up" class="post-nav-icon-link post-nav-up-link" href="{{ '/blog/' | relative_url }}" aria-label="Back to Blog">
+        <span class="post-nav-icon" aria-hidden="true">↑</span>
+      </a>
       <a class="post-nav-icon-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.next %}Next: {{ page.next.title | escape }}{% else %}No next post{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
         <span class="post-nav-icon" aria-hidden="true">→</span>
       </a>
@@ -72,7 +75,7 @@ layout: default
       <span class="post-nav-label">{% if page.previous %}Previous{% endif %}</span>
       <span class="post-nav-title">{% if page.previous %}{{ page.previous.title }}{% endif %}</span>
     </a>
-    <a id="post-nav-back" class="post-nav-back" href="{{ '/blog/' | relative_url }}">Back to Blog</a>
+    <a id="post-nav-back" class="post-nav-back post-nav-back-link" href="{{ '/blog/' | relative_url }}">Back to Blog</a>
     <a id="post-nav-next" class="post-nav-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
       <span class="post-nav-label">{% if page.next %}Next{% endif %}</span>
       <span class="post-nav-title">{% if page.next %}{{ page.next.title }}{% endif %}</span>
@@ -121,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var prevLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-prev-link"));
   var nextLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-next-link"));
   var backLink = document.getElementById("post-nav-back");
+  var upLink = document.getElementById("post-nav-up");
 
   var categoryPosts = {
     {% assign sorted_categories = site.categories | sort %}
@@ -170,6 +174,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!titleEl && !labelEl) link.setAttribute("aria-label", label + ": " + item.title);
   }
 
+  function setBackNavigation(href, text, ariaLabel) {
+    if (backLink) {
+      backLink.href = href;
+      backLink.textContent = text;
+    }
+    if (upLink) {
+      upLink.href = href;
+      upLink.setAttribute("aria-label", ariaLabel);
+    }
+  }
+
   // In category context, clear default global links first.
   prevLinks.forEach(function (link) { setLink(link, null, "Previous", activeCategory); });
   nextLinks.forEach(function (link) { setLink(link, null, "Next", activeCategory); });
@@ -177,8 +192,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var posts = categoryPosts[activeCategory];
   if (!posts || !posts.length) {
     if (backLink && categoryPages[activeCategory]) {
-      backLink.href = categoryPages[activeCategory];
-      backLink.textContent = '"' + activeCategory + '" category';
+      setBackNavigation(
+        categoryPages[activeCategory],
+        '"' + activeCategory + '" category',
+        'Back to "' + activeCategory + '" category'
+      );
       showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
     }
     return;
@@ -190,8 +208,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   if (currentIndex < 0) {
     if (backLink && categoryPages[activeCategory]) {
-      backLink.href = categoryPages[activeCategory];
-      backLink.textContent = '"' + activeCategory + '" category';
+      setBackNavigation(
+        categoryPages[activeCategory],
+        '"' + activeCategory + '" category',
+        'Back to "' + activeCategory + '" category'
+      );
       showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
     }
     return;
@@ -205,8 +226,11 @@ document.addEventListener("DOMContentLoaded", function () {
   nextLinks.forEach(function (link) { setLink(link, next, "Next", activeCategory); });
 
   if (backLink && categoryPages[activeCategory]) {
-    backLink.href = categoryPages[activeCategory];
-    backLink.textContent = '"' + activeCategory + '" category';
+    setBackNavigation(
+      categoryPages[activeCategory],
+      '"' + activeCategory + '" category',
+      'Back to "' + activeCategory + '" category'
+    );
     showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
   }
 });
