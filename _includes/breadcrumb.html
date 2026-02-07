@@ -27,7 +27,12 @@
               <span aria-current="page">{{ page.title }}</span>
             {% else %}
               {% assign label = segment | replace: '-', ' ' | capitalize %}
-              <a href="{{ current_path | append: '/' | relative_url }}">{{ label }}</a>
+              {% assign segment_href = current_path | append: '/' %}
+              {% if segment_href == '/blog/category/' %}
+                <span>{{ label }}</span>
+              {% else %}
+                <a href="{{ segment_href | relative_url }}">{{ label }}</a>
+              {% endif %}
             {% endif %}
           </li>
         {% endif %}
