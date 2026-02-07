@@ -84,225 +84,82 @@ layout: default
 </article>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var breadcrumbYearItem = document.getElementById("breadcrumb-year-item");
-  var breadcrumbYearSep = document.getElementById("breadcrumb-year-sep");
-  var breadcrumbCategoryLabelItem = document.getElementById("breadcrumb-category-label-item");
-  var breadcrumbCategoryLabelSep = document.getElementById("breadcrumb-category-label-sep");
-  var breadcrumbCategoryItem = document.getElementById("breadcrumb-category-item");
-  var breadcrumbCategoryItemSep = document.getElementById("breadcrumb-category-item-sep");
-  var breadcrumbCategoryLink = document.getElementById("breadcrumb-category-link");
-
-  function showYearBreadcrumb() {
-    if (breadcrumbYearItem) breadcrumbYearItem.style.display = "";
-    if (breadcrumbYearSep) breadcrumbYearSep.style.display = "";
-    if (breadcrumbCategoryLabelItem) breadcrumbCategoryLabelItem.style.display = "none";
-    if (breadcrumbCategoryLabelSep) breadcrumbCategoryLabelSep.style.display = "none";
-    if (breadcrumbCategoryItem) breadcrumbCategoryItem.style.display = "none";
-    if (breadcrumbCategoryItemSep) breadcrumbCategoryItemSep.style.display = "none";
+window.__POST_NAV_DATA__ = {
+  currentPostPath: {{ page.url | relative_url | jsonify }},
+  categoryPosts: {
+    {%- assign page_categories_sorted = page.categories | sort -%}
+    {%- for category_name in page_categories_sorted -%}
+    {%- assign category_posts = site.categories[category_name] -%}
+    {%- assign category_current_index = -1 -%}
+    {%- for post in category_posts -%}
+    {%- if post.url == page.url -%}
+    {%- assign category_current_index = forloop.index0 -%}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- assign category_start_index = category_current_index | minus: 1 -%}
+    {%- if category_start_index < 0 -%}
+    {%- assign category_start_index = 0 -%}
+    {%- endif -%}
+    {%- assign category_end_index = category_current_index | plus: 1 -%}
+    {%- assign category_last_index = category_posts.size | minus: 1 -%}
+    {%- if category_end_index > category_last_index -%}
+    {%- assign category_end_index = category_last_index -%}
+    {%- endif -%}
+    {{ category_name | downcase | jsonify }}: [
+      {%- assign first_category_item = true -%}
+      {%- for post in category_posts -%}
+      {%- if forloop.index0 >= category_start_index and forloop.index0 <= category_end_index -%}
+      {%- unless first_category_item -%},{%- endunless -%}{ url: {{ post.url | relative_url | jsonify }}, title: {{ post.title | jsonify }} }{%- assign first_category_item = false -%}
+      {%- endif -%}
+      {%- endfor -%}
+    ]{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  },
+  categoryPages: {
+    {%- for category_name in page_categories_sorted -%}
+    {%- assign category_slug = category_name | slugify -%}
+    {%- assign category_url = '/blog/category/' | append: category_slug | append: '/' | relative_url -%}
+    {{ category_name | downcase | jsonify }}: {{ category_url | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  },
+  yearPosts: {
+    {{ page_year | jsonify }}: [
+      {%- assign year_current_index = -1 -%}
+      {%- assign year_running_index = 0 -%}
+      {%- for post in site.posts -%}
+      {%- assign post_year = post.date | date: "%Y" -%}
+      {%- if post_year == page_year -%}
+      {%- if post.url == page.url -%}
+      {%- assign year_current_index = year_running_index -%}
+      {%- endif -%}
+      {%- assign year_running_index = year_running_index | plus: 1 -%}
+      {%- endif -%}
+      {%- endfor -%}
+      {%- assign year_start_index = year_current_index | minus: 1 -%}
+      {%- if year_start_index < 0 -%}
+      {%- assign year_start_index = 0 -%}
+      {%- endif -%}
+      {%- assign year_end_index = year_current_index | plus: 1 -%}
+      {%- assign year_last_index = year_running_index | minus: 1 -%}
+      {%- if year_end_index > year_last_index -%}
+      {%- assign year_end_index = year_last_index -%}
+      {%- endif -%}
+      {%- assign first_year_item = true -%}
+      {%- assign year_running_index = 0 -%}
+      {%- for post in site.posts -%}
+      {%- assign post_year = post.date | date: "%Y" -%}
+      {%- if post_year == page_year -%}
+      {%- if year_running_index >= year_start_index and year_running_index <= year_end_index -%}
+      {%- unless first_year_item -%},{%- endunless -%}{ url: {{ post.url | relative_url | jsonify }}, title: {{ post.title | jsonify }} }{%- assign first_year_item = false -%}
+      {%- endif -%}
+      {%- assign year_running_index = year_running_index | plus: 1 -%}
+      {%- endif -%}
+      {%- endfor -%}
+    ]
+  },
+  yearPages: {
+    {{ page_year | jsonify }}: {{ '/' | append: page_year | append: '/' | relative_url | jsonify }}
   }
-
-  function showCategoryBreadcrumb(categoryValue, categoryHref) {
-    if (breadcrumbYearItem) breadcrumbYearItem.style.display = "none";
-    if (breadcrumbYearSep) breadcrumbYearSep.style.display = "none";
-    if (breadcrumbCategoryLabelItem) breadcrumbCategoryLabelItem.style.display = "";
-    if (breadcrumbCategoryLabelSep) breadcrumbCategoryLabelSep.style.display = "";
-    if (breadcrumbCategoryItem) breadcrumbCategoryItem.style.display = "";
-    if (breadcrumbCategoryItemSep) breadcrumbCategoryItemSep.style.display = "";
-    if (breadcrumbCategoryLink) {
-      breadcrumbCategoryLink.href = categoryHref;
-      breadcrumbCategoryLink.textContent = categoryValue;
-    }
-  }
-
-  showYearBreadcrumb();
-
-  var params = new URLSearchParams(window.location.search);
-  var activeCategory = (params.get("category") || "").trim().toLowerCase();
-  var activeYear = (params.get("year") || "").trim();
-  if (!activeCategory && !activeYear) return;
-  var currentPostPath = {{ page.url | relative_url | jsonify }};
-  var prevLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-prev-link"));
-  var nextLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-next-link"));
-  var backLink = document.getElementById("post-nav-back");
-  var upLink = document.getElementById("post-nav-up");
-
-  var categoryPosts = {
-    {% assign sorted_categories = site.categories | sort %}
-    {% for category in sorted_categories %}
-    {{ category[0] | downcase | jsonify }}: [
-      {% for post in category[1] %}
-      { url: {{ post.url | relative_url | jsonify }}, title: {{ post.title | jsonify }} }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-
-  var categoryPages = {
-    {% for category in sorted_categories %}
-    {% assign category_slug = category[0] | slugify %}
-    {% assign category_url = '/blog/category/' | append: category_slug | append: '/' | relative_url %}
-    {{ category[0] | downcase | jsonify }}: {{ category_url | jsonify }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-
-  var yearPosts = {
-    {% assign yearly_groups = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-    {% for yearly in yearly_groups %}
-    {{ yearly.name | jsonify }}: [
-      {% for post in yearly.items %}
-      { url: {{ post.url | relative_url | jsonify }}, title: {{ post.title | jsonify }} }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-
-  var yearPages = {
-    {% for yearly in yearly_groups %}
-    {{ yearly.name | jsonify }}: {{ '/' | append: yearly.name | append: '/' | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-
-  function normalizePath(path) {
-    var value = (path || "");
-    value = value.split("?")[0].split("#")[0];
-    try {
-      value = decodeURIComponent(value);
-    } catch (e) {}
-    value = value.replace(/\/+$/, "");
-    return value === "" ? "/" : value;
-  }
-
-  function setLink(link, item, label, queryKey, queryValue) {
-    if (!link) return;
-    var titleEl = link.querySelector(".post-nav-title");
-    var labelEl = link.querySelector(".post-nav-label");
-    if (!item) {
-      link.classList.add("is-empty");
-      link.setAttribute("aria-disabled", "true");
-      link.setAttribute("tabindex", "-1");
-      link.href = "#";
-      if (titleEl) titleEl.textContent = "";
-      if (labelEl) labelEl.textContent = "";
-      if (!titleEl && !labelEl) link.setAttribute("aria-label", "No " + label.toLowerCase() + " post");
-      return;
-    }
-    var href = item.url;
-    if (queryKey && queryValue) {
-      href += "?" + queryKey + "=" + encodeURIComponent(queryValue);
-    }
-    link.href = href;
-    link.classList.remove("is-empty");
-    link.removeAttribute("aria-disabled");
-    link.removeAttribute("tabindex");
-    if (titleEl) titleEl.textContent = item.title;
-    if (labelEl) labelEl.textContent = label;
-    if (!titleEl && !labelEl) link.setAttribute("aria-label", label + ": " + item.title);
-  }
-
-  function setBackNavigation(href, text, ariaLabel) {
-    if (backLink) {
-      backLink.href = href;
-      backLink.textContent = text;
-    }
-    if (upLink) {
-      upLink.href = href;
-      upLink.setAttribute("aria-label", ariaLabel);
-    }
-  }
-
-  // In context mode, clear default global links first.
-  prevLinks.forEach(function (link) { setLink(link, null, "Previous", "", ""); });
-  nextLinks.forEach(function (link) { setLink(link, null, "Next", "", ""); });
-
-  var currentPath = normalizePath(currentPostPath);
-  var runtimePath = normalizePath(window.location.pathname);
-
-  if (activeCategory) {
-    var categoryItems = categoryPosts[activeCategory];
-    if (!categoryItems || !categoryItems.length) {
-      if (categoryPages[activeCategory]) {
-        setBackNavigation(
-          categoryPages[activeCategory],
-          '"' + activeCategory + '" category',
-          'Back to "' + activeCategory + '" category'
-        );
-        showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
-      }
-      return;
-    }
-
-    var categoryIndex = categoryItems.findIndex(function (post) {
-      var postPath = normalizePath(post.url);
-      return postPath === currentPath || postPath === runtimePath;
-    });
-    if (categoryIndex < 0) {
-      if (categoryPages[activeCategory]) {
-        setBackNavigation(
-          categoryPages[activeCategory],
-          '"' + activeCategory + '" category',
-          'Back to "' + activeCategory + '" category'
-        );
-        showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
-      }
-      return;
-    }
-
-    // Previous -> older post, Next -> newer post.
-    var categoryPrev = categoryIndex < categoryItems.length - 1 ? categoryItems[categoryIndex + 1] : null;
-    var categoryNext = categoryIndex > 0 ? categoryItems[categoryIndex - 1] : null;
-    prevLinks.forEach(function (link) { setLink(link, categoryPrev, "Previous", "category", activeCategory); });
-    nextLinks.forEach(function (link) { setLink(link, categoryNext, "Next", "category", activeCategory); });
-
-    if (categoryPages[activeCategory]) {
-      setBackNavigation(
-        categoryPages[activeCategory],
-        '"' + activeCategory + '" category',
-        'Back to "' + activeCategory + '" category'
-      );
-      showCategoryBreadcrumb(activeCategory, categoryPages[activeCategory]);
-    }
-    return;
-  }
-
-  var yearItems = yearPosts[activeYear];
-  if (!yearItems || !yearItems.length) {
-    if (yearPages[activeYear]) {
-      setBackNavigation(
-        yearPages[activeYear],
-        activeYear + " archive",
-        "Back to " + activeYear + " archive"
-      );
-    }
-    return;
-  }
-
-  var yearIndex = yearItems.findIndex(function (post) {
-    var postPath = normalizePath(post.url);
-    return postPath === currentPath || postPath === runtimePath;
-  });
-  if (yearIndex < 0) {
-    if (yearPages[activeYear]) {
-      setBackNavigation(
-        yearPages[activeYear],
-        activeYear + " archive",
-        "Back to " + activeYear + " archive"
-      );
-    }
-    return;
-  }
-
-  var yearPrev = yearIndex < yearItems.length - 1 ? yearItems[yearIndex + 1] : null;
-  var yearNext = yearIndex > 0 ? yearItems[yearIndex - 1] : null;
-  prevLinks.forEach(function (link) { setLink(link, yearPrev, "Previous", "year", activeYear); });
-  nextLinks.forEach(function (link) { setLink(link, yearNext, "Next", "year", activeYear); });
-  if (yearPages[activeYear]) {
-    setBackNavigation(
-      yearPages[activeYear],
-      activeYear + " archive",
-      "Back to " + activeYear + " archive"
-    );
-    showYearBreadcrumb();
-  }
-});
+};
 </script>
+<script src="{{ '/assets/js/post-navigation.js' | relative_url }}" defer></script>

@@ -11,11 +11,13 @@
   {% if show_post %}
     {% assign visible_count = visible_count | plus: 1 %}
     {% assign post_link = post.url | relative_url %}
-    {% if include.category_filter != "" %}
-      {% assign encoded_filter = include.category_filter | uri_escape %}
+    {% assign category_filter_value = include.category_filter | default: "" | strip %}
+    {% assign year_filter_value = include.year_filter | default: "" | strip %}
+    {% if category_filter_value != "" %}
+      {% assign encoded_filter = category_filter_value | uri_escape %}
       {% assign post_link = post_link | append: '?category=' | append: encoded_filter %}
-    {% elsif include.year_filter != "" %}
-      {% assign encoded_year = include.year_filter | uri_escape %}
+    {% elsif year_filter_value != "" %}
+      {% assign encoded_year = year_filter_value | uri_escape %}
       {% assign post_link = post_link | append: '?year=' | append: encoded_year %}
     {% endif %}
     <article class="post-card{% unless post.featured_image %} post-card--no-image{% endunless %}">
