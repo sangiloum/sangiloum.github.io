@@ -3,8 +3,7 @@ title: "Postdoc positions available at the IBS Discrete Mathematics Group, South
 permalink: /2021/postdoc-positions-ibs-dimag-2021/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/postdoc-positions-ibs-dimag-2021/
-featured_image: /assets/legacy/uploads/sites/2/2021/09/poster.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2021/09/poster.png
+featured_image: /assets/legacy/2021/09/poster.png
 featured_image_source: featured_media
 categories:
   - hiring

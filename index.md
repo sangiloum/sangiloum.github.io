@@ -3,15 +3,14 @@ title: "Sang-il Oum (엄상일)"
 permalink: /
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/
-featured_image: /assets/legacy/uploads/sites/2/2021/05/sangil-2021-crop.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2021/05/sangil-2021-crop.jpg
+featured_image: /assets/legacy/2021/05/sangil-2021-crop.jpg
 featured_image_source: og_image
 ---
 
 {% include home-logo.html
   variant="home-logo-wide"
   href="https://dimag.ibs.re.kr/"
-  src="/assets/legacy/uploads/sites/2/2019/07/dimag-lg-1024x243.png"
+  src="/assets/legacy/2019/07/dimag-lg-1024x243.png"
   alt="IBS DIMAG"
 %}
 
@@ -48,7 +47,7 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
 
 {% include home-logo.html
   variant="home-logo-compact"
-  src="/assets/legacy/uploads/sites/2/2011/12/princeton.png"
+  src="/assets/legacy/2011/12/princeton.png"
   alt="Princeton University"
 %}
 
@@ -61,7 +60,7 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
 
 {% include home-logo.html
   variant="home-logo-compact"
-  src="/assets/legacy/uploads/sites/2/2014/12/kaistmath264.png"
+  src="/assets/legacy/2014/12/kaistmath264.png"
   alt="Department of Mathematical Sciences, KAIST"
 %}
 
@@ -114,4 +113,4 @@ I am organizing the [Discrete Math Seminar](https://dimag.ibs.re.kr/events/categ
 
 [Mastodon](https://mathstodon.xyz/@sioum)
 
-[Curriculum Vitae](/assets/legacy/uploads/sites/2/2024/08/cv.pdf)
+[Curriculum Vitae](/assets/legacy/2024/08/cv.pdf)

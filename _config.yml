@@ -1,8 +1,8 @@
-title: Sang-il Oum
-description: Mathematics researcher homepage of Sang-il Oum.
+title: Sang-il Oum (엄상일)
+description: A mathematician at the IBS Discrete Mathematics Group.
 url: "https://sangiloum.github.io"
 baseurl: ""
-timezone: "America/New_York"
+timezone: "Asis/Seoul"
 theme: minima
 permalink: pretty
 markdown: kramdown
@@ -11,6 +11,18 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - year
+    - categories
+  layouts:
+    year: year-archive
+    category: category-archive
+  permalinks:
+    year: "/:year/"
+    category: "/blog/category/:name/"
 
 defaults:
   - scope:

@@ -3,8 +3,7 @@ title: "A solution to the Particles Problem"
 permalink: /2019/a-solution-to-the-particles-problem/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/a-solution-to-the-particles-problem/
-featured_image: /assets/legacy/uploads/sites/2/2019/05/points2.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2019/05/points2.png
+featured_image: /assets/legacy/2019/05/points2.png
 featured_image_source: featured_media
 categories:
   - math
@@ -12,7 +11,7 @@ categories:
 [Prof. Yuval Peres](https://yuvalperes.com/) posted the [following very interesting problem on his blog](https://yuvalperes.com/Math-Expo/2019/05/09/hello-world/).  
 
 
-![](/assets/legacy/uploads/sites/2/2019/05/points2.png)
+![](/assets/legacy/2019/05/points2.png)
 
 
 Suppose there are n particles in the unit square. Initially one particle is awake and all others are sleeping. Each awake particle moves in the unit square at speed 1 in a direction you prescribe and wakes up any sleeping particle it encounters. The particles that are awake move simultaneously.

@@ -4,7 +4,7 @@ permalink: /2024/canadam-2025-conference-announcement/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2024/canadam-2025-conference-announcement/
 categories:
-  - uncategorized
+  - events
 ---
 Move the Date: May 20-23, 2025, Ottawa, Ontario, Canada
 

@@ -3,8 +3,7 @@ title: "Big Congratulations to Bruno Courcelle for the first S. Barry Cooper Pri
 permalink: /2020/bruno-courcelle-for-the-first-s-barry-cooper-prize/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2020/bruno-courcelle-for-the-first-s-barry-cooper-prize/
-featured_image: /assets/legacy/uploads/sites/2/2020/06/day1-6.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2020/06/day1-6.jpg
+featured_image: /assets/legacy/2020/06/day1-6.jpg
 featured_image_source: featured_media
 categories:
   - essays

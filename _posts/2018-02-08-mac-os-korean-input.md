@@ -24,11 +24,130 @@ Mac OS X 10.13의 기본 한글입력기를 더 편리하게 사용하려고 [Ka
 
 수정 (2024년 3월 9일): **macOS Sonoma 14.4로 업그레이드 한 후 한글 전환기가 기존 Shift-Ctrl-Space에서 Ctrl-Option-Space로 변경되었습니다. 그에 따라 본문 내용과 설정 내용을 수정하였습니다.**
 
-``` wp-block-preformatted
-{ "title": "For Korean PC Keyboard (Sang-il)", "rules": [ { "description": "Change shift space to shift+control+space", "manipulators": [ { "from": { "key_code": "spacebar", "modifiers": { "mandatory": [ "shift" ] } }, "conditions": [ { "type": "frontmost_application_unless", "bundle_identifiers": [ "^org\\.gnu\\.Aquamacs$", "^com\\.vmware\\.fusion$" ] } ], "to": [ { "key_code": "spacebar", "modifiers": [ "right_control", "right_option" ] } ], "type": "basic" } ] },
-{ "description": "Make shift-space to make English mode in Aquamacs or VMWare", "manipulators": [ { "from": { "key_code": "spacebar", "modifiers": { "mandatory": [ "shift" ] } }, "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^org\\.gnu\\.Aquamacs$", "^com\\.vmware\\.fusion$" ] }, { "type": "input_source_if", "input_sources": [ { "language": "^ko$", "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$" } ] } ],
- "to": [ { "select_input_source": { "language": "^en$" } } ], "type": "basic" } ]
+```
+{
+    "title": "For Korean PC Keyboard (Sang-il)",
+    "rules": [
+	{
+            "description": "Change shift space to shift+control+space",
+            "manipulators": [
+		{
+		    "from": {
+			"key_code": "spacebar",
+			"modifiers": {
+			    "mandatory": [
+				"shift"
+			    ]
+			}
+		    },
+		    "conditions": [
+			{
+			    "type": "frontmost_application_unless",
+			    "bundle_identifiers": [
+				"^org\\.gnu\\.Aquamacs$",
+				"^com\\.vmware\\.fusion$"
+			    ]
+			}
+		    ],
+		    "to": [
+			{
+			    "key_code": "spacebar",
+			    "modifiers": [
+				"right_control", "right_option"
+			    ]
+			}
+		    ],
+		    "type": "basic"
+		}
+	    ]
+	},
+{
+        "description": "Make shift-space to make English mode in Aquamacs or VMWare",
+        "manipulators": [
+    {
+        "from": {
+        "key_code": "spacebar",
+        "modifiers": {
+            "mandatory": [
+            "shift"
+            ]
+        }
+        },
+        "conditions": [
+        {
+            "type": "frontmost_application_if",
+            "bundle_identifiers": [
+            "^org\\.gnu\\.Aquamacs$",
+            "^com\\.vmware\\.fusion$"
+            ]
+        },
+        {
+            "type": "input_source_if",
+            "input_sources": [
+            {
+                "language": "^ko$",
+                "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+            }
+            ]
+        }
+        ],
+        "to": [
+        {
+            "select_input_source":
+            {
+            "language": "^en$"
+            }
+        }
+        ],
+        "type": "basic"
+    }
+    ]
 },
- { "description": "Make control key work in Korean mode", "manipulators": [ { "from": { "key_code": "left_control", "modifiers": { "optional": ["any"] } }, "conditions": [ { "type": "input_source_if", "input_sources": [ { "language": "^ko$", "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$" } ] } ], "to": [ { "select_input_source": { "language": "^en$" } }, { "key_code":"left_control" } ], "to_after_key_up": [ { "select_input_source": { "language": "^ko$", "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$" } } ], "type": "basic" } ] } ]
+	{
+            "description": "Make control key work in Korean mode",
+            "manipulators": [
+		{
+		    "from": {
+			"key_code": "left_control",
+			"modifiers": {
+			    "optional": ["any"]
+			}
+		    },
+		    "conditions": [
+			{
+			    "type": "input_source_if",
+			    "input_sources": [
+				{
+				    "language": "^ko$",
+				    "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+				}
+			    ]
+			}
+		    ],
+		    "to": [
+			{
+			    "select_input_source":
+			    {
+				"language": "^en$"
+			    }
+			},
+			{
+			    "key_code":"left_control"
+			}
+		    ],
+		    "to_after_key_up": [
+			{
+			    "select_input_source":
+			    {
+				"language": "^ko$",
+				"input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+			    }
+			}
+		    ],
+		    "type": "basic"
+		}
+	    ]
+	}
+    ]
 }
 ```

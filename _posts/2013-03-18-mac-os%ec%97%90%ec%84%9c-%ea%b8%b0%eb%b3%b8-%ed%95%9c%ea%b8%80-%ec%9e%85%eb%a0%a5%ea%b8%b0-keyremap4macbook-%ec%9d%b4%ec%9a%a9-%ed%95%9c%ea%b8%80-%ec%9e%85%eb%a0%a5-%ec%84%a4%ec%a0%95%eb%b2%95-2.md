@@ -13,7 +13,25 @@ Mac OS X의 기본 한글입력기를 더욱 편리하게 사용하기 위해 [K
   - 한글 모드에서 ctrl 키를 누르면 일시로 영문으로 전환되도록 해두어서 한글 모드에서도 ctrl-a 같은 단축키를 편리하게 사용할 수 있다.
 
 <!-- end list -->
-
-    <?xml version="1.0"?>
-    <root> <item> <name>Shift-Space to Shift-Cmd-Space, not on Aquamacs or Virtualbox</name> <identifier>private.shift_space_toggle</identifier> <not>EMACS</not> <not>VIRTUALMACHINE</not> <autogen>--KeyToKey-- KeyCode::SPACE, VK_SHIFT, KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L</autogen> </item> <item> <name>Allow modifier keys in korean mode</name> <identifier>private.allow_modifier_key_in_korean</identifier> <inputmode_only>KOREAN</inputmode_only> <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode:: CONTROL_L, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L </autogen> </item>
-    </root>
+```
+<?xml version="1.0"?>
+<root>
+ <item>
+ <name>Shift-Space to Shift-Cmd-Space, not on Aquamacs or Virtualbox</name>
+ <identifier>private.shift_space_toggle</identifier>
+ <not>EMACS</not>
+ <not>VIRTUALMACHINE</not>
+ <autogen>--KeyToKey-- KeyCode::SPACE, VK_SHIFT,
+ KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L</autogen>
+ </item>
+ <item>
+ <name>Allow modifier keys in korean mode</name>
+ <identifier>private.allow_modifier_key_in_korean</identifier>
+ <inputmode_only>KOREAN</inputmode_only>
+ <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode:: CONTROL_L,
+ Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L,
+ Option::KEYTOKEY_AFTER_KEYUP, KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+ </autogen>
+ </item>
+</root>
+```

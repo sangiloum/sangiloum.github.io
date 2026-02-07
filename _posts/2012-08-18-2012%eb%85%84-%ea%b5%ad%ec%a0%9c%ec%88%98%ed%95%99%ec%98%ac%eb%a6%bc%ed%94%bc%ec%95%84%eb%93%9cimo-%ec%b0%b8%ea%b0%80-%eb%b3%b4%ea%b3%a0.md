@@ -3,8 +3,7 @@ title: "2012년 국제수학올림피아드(IMO) 참가 보고"
 permalink: /2012/2012%eb%85%84-%ea%b5%ad%ec%a0%9c%ec%88%98%ed%95%99%ec%98%ac%eb%a6%bc%ed%94%bc%ec%95%84%eb%93%9cimo-%ec%b0%b8%ea%b0%80-%eb%b3%b4%ea%b3%a0/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2012/2012%eb%85%84-%ea%b5%ad%ec%a0%9c%ec%88%98%ed%95%99%ec%98%ac%eb%a6%bc%ed%94%bc%ec%95%84%eb%93%9cimo-%ec%b0%b8%ea%b0%80-%eb%b3%b4%ea%b3%a0/
-featured_image: /assets/legacy/uploads/sites/2/2015/05/2012imo.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2015/05/2012imo.jpg
+featured_image: /assets/legacy/2015/05/2012imo.jpg
 featured_image_source: featured_media
 categories:
   - essays
@@ -87,14 +86,14 @@ IMO가 열린 마르델플라타는 부에노스아이레스에서 400km가량 �
 개회식은 월요일인 7월 9일 오전에 있었는데, 호텔에서 9시 반에 출발한다고 하였다. 개회식은 radio city라는 시내에 있는 극장이었는데 도로를 모두 통제하고 악대를 앞세워서 극장까지 걸어서 이동하였다. 나라이름의 알파벳순으로 좌석이 배정되어 있어서, 우리는 Republic of Korea라서 R쪽 자리를 배정받아 매우 뒤쪽에 앉게 되었다.  
 시간이 좀 지나 단장팀이 도착하였는데 단장팀은 시험문제를 알고 있기에 격리되어야 하므로 2층 관람석으로 입장하였다. 우리보다 먼저 출국하셨던 송용진 단장님과 부에노스아이레스에서 먼저 가셨던 김명환 교수님을 멀리서 뵙고 인사를 나눌 수 있었다.
 
-![IMO2012 개회식 무대 위의 사진](/assets/legacy/uploads/sites/2/2012/11/DSC01032-1024x680.jpg)
+![IMO2012 개회식 무대 위의 사진](/assets/legacy/2012/11/DSC01032-1024x680.jpg)
 
 
   
 예상보다 늦게 개회식이 끝난 후 점심을 먹고 학생들과 잠깐 해변을 산책하였다. 그 후 학생들끼리 방에서 공부하라고 하였는데, 4시 반쯤에 학생들 방에 가보니 시차 적응 문제인지 김동효 학생은 컴컴하게 커튼을 치고 자고 있었다. 슬리퍼가 없어서 불편하다는 학생들이 많아서 사러 다녀봤지만 없었고, 대신 시험 치러 갈 때 간식이 필요할지 몰라 초콜릿 같은 것을 사서 호텔로 왔다. 그리고 학생들을 데리고 조명이 밝은 식당으로 옮겨 다른 나라의 최근 올림피아드 시험문제들을 풀어보며 시간을 보냈다.  
 7시 반에 우리 팀 가이드가 북한 팀을 데리고 왔다. 시험 주의사항을 가이드가 전달하는데 북한 팀 가이드는 우리말을 하지 못하고 영어도 잘 하지 못하여 우리 팀 가이드가 한꺼번에 설명을 해주기로 했다는 것이었다. 남북한 학생들 모두 설명을 열심히 들었다. 우리 교수들도 나서서 학생들에게 영어판, 한국어판 문제를 꼭 다 읽어서 문제를 잘못 읽고 풀지 않도록 주의를 주고, 어떤 계산을 하든지 연습지도 꼭 답안지 넣는 폴더에 첨부하라고 당부했다. 이후 남북한 팀 모두 선전을 다짐하며 단체사진을 찍었다.
 
-![IMO2012 시험 전날 북한 팀과 함께 찍은 사진](/assets/legacy/uploads/sites/2/2012/11/DSC01143-1024x680.jpg)
+![IMO2012 시험 전날 북한 팀과 함께 찍은 사진](/assets/legacy/2012/11/DSC01143-1024x680.jpg)
 
 
 ## ○ 첫날 시험 (7월 10일 화요일)

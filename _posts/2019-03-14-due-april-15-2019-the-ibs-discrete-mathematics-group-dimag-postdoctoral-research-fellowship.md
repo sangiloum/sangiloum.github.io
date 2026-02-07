@@ -3,8 +3,7 @@ title: "(Due: April 15, 2019) THE IBS DISCRETE MATHEMATICS GROUP (DIMAG) POSTDOC
 permalink: /2019/due-april-15-2019-the-ibs-discrete-mathematics-group-dimag-postdoctoral-research-fellowship/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/due-april-15-2019-the-ibs-discrete-mathematics-group-dimag-postdoctoral-research-fellowship/
-featured_image: /assets/legacy/uploads/sites/2/2019/03/ibs-logo-small-2.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2019/03/ibs-logo-small-2.png
+featured_image: /assets/legacy/2019/03/ibs-logo-small-2.png
 featured_image_source: featured_media
 categories:
   - hiring

@@ -3,8 +3,7 @@ title: "기초과학연구원(IBS) 이산수학그룹 소개"
 permalink: /2019/ibs-discrete-mathematics-group/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/ibs-discrete-mathematics-group/
-featured_image: /assets/legacy/uploads/sites/2/2019/05/ibs-night-2000.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2019/05/ibs-night-2000.jpg
+featured_image: /assets/legacy/2019/05/ibs-night-2000.jpg
 featured_image_source: featured_media
 categories:
   - essays
@@ -57,7 +56,7 @@ PRC 형태의 연구단에서는 내부에 Chief Investigator, 약자로 CI로 �
 ### 연구환경
 
 ![신세계 사이언스 콤플렉스 조감도.  
-[출처: https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog\_0001\&menuSeq=1479\&ntatcSeq=1098919117](https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog_0001&menuSeq=1479&ntatcSeq=1098919117)](/assets/legacy/uploads/sites/2/2019/03/20171214sciencecomplex-1024x719.jpg)
+[출처: https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog\_0001\&menuSeq=1479\&ntatcSeq=1098919117](https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog_0001&menuSeq=1479&ntatcSeq=1098919117)](/assets/legacy/2019/03/20171214sciencecomplex-1024x719.jpg)
 
 기초과학연구원 본원은 대전의 옛 엑스포과학공원 부지에 지어졌습니다. 바로 동쪽에 한빛탑이 있으며 한빛탑을 지나서 걸어가면 롯데시티호텔, ICC 호텔, 대덕특구게스트하우스 등 방문자들을 위한 숙박시설이 충분히 있습니다. 바로 서쪽에는 현재 신세계 백화점 및 특급 호텔이 포함된 지상 43층의 신세계 사이언스 콤플렉스가 2021년 준공 예정으로 공사중입니다. 본원 건물에서 북쪽 방향에는 기초과학연구원의 게스트하우스 및 기숙사 형태의 숙소가 있어서 연구원들이 편하게 생활할 수 있습니다.
 
@@ -65,7 +64,7 @@ PRC 형태의 연구단에서는 내부에 Chief Investigator, 약자로 CI로 �
 
 이론동 2층에 위치한 커다란 칠판을 설치한 두 강의실에는 각각 동영상 촬영 장비를 설치하였습니다. 연사가 동의하는 경우 세미나 영상을 촬영하여 이산수학그룹 홈페이지 및 유투브에서 볼 수 있도록 올리고 있습니다.
 
-![토론실](/assets/legacy/uploads/sites/2/2019/03/IMG_8044-1024x768.jpg)
+![토론실](/assets/legacy/2019/03/IMG_8044-1024x768.jpg)
 
 수학 연구자들이 작은 그룹이나 큰 그룹으로 모여서 연구 토의를 할 수 있는 토론실이 작은 것 2개 큰 것 1개가 구축되어 있습니다. 그 중 큰 것에는 3면 벽이 모두 유리보드로 되어 있어서 넓은 보드 공간을 사용하며 연구에 집중할 수 있습니다. 한편 연구원들과 방문자들이 사용할 수 있는 연구실을 여럿 구축하였습니다.
 

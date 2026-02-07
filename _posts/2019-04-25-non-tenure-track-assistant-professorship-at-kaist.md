@@ -3,8 +3,7 @@ title: "Non-Tenure Track Assistant Professorship at KAIST (Due: May 17) (KAIST ì
 permalink: /2019/non-tenure-track-assistant-professorship-at-kaist/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/non-tenure-track-assistant-professorship-at-kaist/
-featured_image: /assets/legacy/uploads/sites/2/2019/03/KAIST_logo_white.gif
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2019/03/KAIST_logo_white.gif
+featured_image: /assets/legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media
 categories:
   - hiring

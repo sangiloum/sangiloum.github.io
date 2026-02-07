@@ -3,8 +3,7 @@ title: "소소한 정보: BibTeX으로 참고 문헌 모으기"
 permalink: /2020/tip-latex-bib/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2020/tip-latex-bib/
-featured_image: /assets/legacy/uploads/sites/2/2020/06/bibdesk.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2020/06/bibdesk.png
+featured_image: /assets/legacy/2020/06/bibdesk.png
 featured_image_source: og_image
 categories:
   - academia
@@ -42,7 +41,7 @@ MRREVIEWER = {Dillon Mayhew},
 
 키는 항상 일정한 규칙으로 정하고 한 번 정하면 바꾸지 않는 것이 좋습니다. 예를 들어 박사과정 중에 논문을 4편을 썼는데 모아서 박사논문 하나로 정리한다고 생각해봅시다. 논문마다 키가 달랐다면 나중에 통합할 때 키를 다시 합쳐야 해서 대폭 수정을 해야 합니다.
 
-![BibDesk](/assets/legacy/uploads/sites/2/2020/06/bibdesk.png)
+![BibDesk](/assets/legacy/2020/06/bibdesk.png)
 
 
 예전에는 일일이 논문 키를 저자의 성 알파벳 첫 글자를 모은 것 + 연도로 손으로 설정하곤 하였는데, 지금은 bib파일을 [BibDesk](https://bibdesk.sourceforge.io)라는 프로그램으로 관리하고 있어서, BibDesk 설정으로 제가 원하는 방식으로 생성하게 해둡니다. BibDesk는 Mac OS에서 mactex으로 TeX을 설치하면 /Applications/TeX 안에 설치가 되어 있습니다.

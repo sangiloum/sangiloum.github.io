@@ -3,8 +3,7 @@ title: "Students & Postdocs"
 permalink: /students/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/students/
-featured_image: /assets/legacy/uploads/sites/2/2022/10/dimag2022-2L4.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2022/10/dimag2022-2L4.jpg
+featured_image: /assets/legacy/2022/10/dimag2022-2L4.jpg
 featured_image_source: og_image
 ---
 

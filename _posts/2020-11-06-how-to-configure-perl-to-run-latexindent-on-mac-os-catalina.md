@@ -3,8 +3,7 @@ title: "How to configure Perl to run latexindent on Mac OS Catalina"
 permalink: /2020/how-to-configure-perl-to-run-latexindent-on-mac-os-catalina/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2020/how-to-configure-perl-to-run-latexindent-on-mac-os-catalina/
-featured_image: /assets/legacy/uploads/sites/2/2020/11/ctan_lion_350x350.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2020/11/ctan_lion_350x350.png
+featured_image: /assets/legacy/2020/11/ctan_lion_350x350.png
 featured_image_source: featured_media
 categories:
   - it

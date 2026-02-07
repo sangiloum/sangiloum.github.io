@@ -3,8 +3,7 @@ title: "Archived webpages of seminars, workshops, and schools"
 permalink: /2024/archived-webpages/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2024/archived-webpages/
-featured_image: /assets/legacy/uploads/sites/2/2024/08/create-a-highly-detailed-high-resolution-image-showcasing-a-vintage-looking-archive.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2024/08/create-a-highly-detailed-high-resolution-image-showcasing-a-vintage-looking-archive.png
+featured_image: /assets/legacy/2024/08/create-a-highly-detailed-high-resolution-image-showcasing-a-vintage-looking-archive.png
 featured_image_source: featured_media
 categories:
   - news

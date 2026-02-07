@@ -31,6 +31,14 @@ layout: default
     </ol>
   </nav>
   <header class="page-header">
+    <nav class="post-pagination-top" aria-label="Post navigation top">
+      <a class="post-nav-icon-link post-nav-prev-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.previous %}Previous: {{ page.previous.title | escape }}{% else %}No previous post{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
+        <span class="post-nav-icon" aria-hidden="true">←</span>
+      </a>
+      <a class="post-nav-icon-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}" aria-label="{% if page.next %}Next: {{ page.next.title | escape }}{% else %}No next post{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
+        <span class="post-nav-icon" aria-hidden="true">→</span>
+      </a>
+    </nav>
     <h1>{{ page.title }}</h1>
     <p class="lead">
       {{ page.date | date: "%Y-%m-%d" }}
@@ -47,7 +55,7 @@ layout: default
     {% endif %}
   </header>
   {% if page.featured_image %}
-  <figure class="post-featured">
+  <figure class="post-featured post-featured-post">
     <img
       src="{{ page.featured_image | relative_url }}"
       alt="{{ page.title | escape }}"
@@ -60,12 +68,12 @@ layout: default
     {{ content }}
   </section>
   <nav class="post-pagination" aria-label="Post navigation">
-    <a id="post-nav-prev" class="post-nav-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
+    <a id="post-nav-prev" class="post-nav-link post-nav-prev-link{% unless page.previous %} is-empty{% endunless %}" href="{% if page.previous %}{{ page.previous.url | relative_url }}{% else %}#{% endif %}"{% unless page.previous %} aria-disabled="true" tabindex="-1"{% endunless %}>
       <span class="post-nav-label">{% if page.previous %}Previous{% endif %}</span>
       <span class="post-nav-title">{% if page.previous %}{{ page.previous.title }}{% endif %}</span>
     </a>
     <a id="post-nav-back" class="post-nav-back" href="{{ '/blog/' | relative_url }}">Back to Blog</a>
-    <a id="post-nav-next" class="post-nav-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
+    <a id="post-nav-next" class="post-nav-link post-nav-next-link{% unless page.next %} is-empty{% endunless %}" href="{% if page.next %}{{ page.next.url | relative_url }}{% else %}#{% endif %}"{% unless page.next %} aria-disabled="true" tabindex="-1"{% endunless %}>
       <span class="post-nav-label">{% if page.next %}Next{% endif %}</span>
       <span class="post-nav-title">{% if page.next %}{{ page.next.title }}{% endif %}</span>
     </a>
@@ -110,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var activeCategory = (params.get("category") || "").trim().toLowerCase();
   if (!activeCategory) return;
   var currentPostPath = {{ page.url | relative_url | jsonify }};
-  var prevLink = document.getElementById("post-nav-prev");
-  var nextLink = document.getElementById("post-nav-next");
+  var prevLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-prev-link"));
+  var nextLinks = Array.prototype.slice.call(document.querySelectorAll(".post-nav-next-link"));
   var backLink = document.getElementById("post-nav-back");
 
   var categoryPosts = {
@@ -149,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.href = "#";
       if (titleEl) titleEl.textContent = "";
       if (labelEl) labelEl.textContent = "";
+      if (!titleEl && !labelEl) link.setAttribute("aria-label", "No " + label.toLowerCase() + " post");
       return;
     }
     var href = item.url + "?category=" + encodeURIComponent(categoryValue);
@@ -158,29 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
     link.removeAttribute("tabindex");
     if (titleEl) titleEl.textContent = item.title;
     if (labelEl) labelEl.textContent = label;
+    if (!titleEl && !labelEl) link.setAttribute("aria-label", label + ": " + item.title);
   }
 
   // In category context, clear default global links first.
-  if (prevLink) {
-    prevLink.classList.add("is-empty");
-    prevLink.setAttribute("aria-disabled", "true");
-    prevLink.setAttribute("tabindex", "-1");
-    prevLink.href = "#";
-    var prevTitle = prevLink.querySelector(".post-nav-title");
-    var prevLabel = prevLink.querySelector(".post-nav-label");
-    if (prevTitle) prevTitle.textContent = "";
-    if (prevLabel) prevLabel.textContent = "";
-  }
-  if (nextLink) {
-    nextLink.classList.add("is-empty");
-    nextLink.setAttribute("aria-disabled", "true");
-    nextLink.setAttribute("tabindex", "-1");
-    nextLink.href = "#";
-    var nextTitle = nextLink.querySelector(".post-nav-title");
-    var nextLabel = nextLink.querySelector(".post-nav-label");
-    if (nextTitle) nextTitle.textContent = "";
-    if (nextLabel) nextLabel.textContent = "";
-  }
+  prevLinks.forEach(function (link) { setLink(link, null, "Previous", activeCategory); });
+  nextLinks.forEach(function (link) { setLink(link, null, "Next", activeCategory); });
 
   var posts = categoryPosts[activeCategory];
   if (!posts || !posts.length) {
@@ -209,8 +201,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Previous -> older post, Next -> newer post.
   var prev = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
   var next = currentIndex > 0 ? posts[currentIndex - 1] : null;
-  setLink(prevLink, prev, "Previous", activeCategory);
-  setLink(nextLink, next, "Next", activeCategory);
+  prevLinks.forEach(function (link) { setLink(link, prev, "Previous", activeCategory); });
+  nextLinks.forEach(function (link) { setLink(link, next, "Next", activeCategory); });
 
   if (backLink && categoryPages[activeCategory]) {
     backLink.href = categoryPages[activeCategory];

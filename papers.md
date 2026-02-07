@@ -3,8 +3,7 @@ title: "Papers"
 permalink: /papers/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/papers/
-featured_image: /assets/legacy/uploads/sites/2/2019/05/kang-oum-2.jpg
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2019/05/kang-oum-2.jpg
+featured_image: /assets/legacy/2019/05/kang-oum-2.jpg
 featured_image_source: og_image
 ---
 
@@ -40,7 +39,7 @@ featured_image_source: og_image
 ### 2024
 
 1.  [*Twin-width of random graphs*](https://arxiv.org/abs/2212.07880) (with [Jungho Ahn](https://dimag.ibs.re.kr/home/jungho/), [Debsoumya Chakraborti](https://dimag.ibs.re.kr/home/debsoumya/), [Kevin Hendrey](https://sites.google.com/view/kevinhendrey), and [Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)), Random Structures Algorithms, **65**(4):794-831, December 2024. <https://doi.org/10.1002/rsa.21247> [arXiv:2212.07880](https://arxiv.org/abs/2212.07880)
-2.  *[Vertex-minors of graphs: A survey](/assets/legacy/uploads/sites/2/2024/03/2023vertexminors-survey-revised.pdf)* (with [Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)), Discrete Appl. Math., **351**:54-73, July 2024. <https://doi.org/10.1016/j.dam.2024.03.011>
+2.  *[Vertex-minors of graphs: A survey](/assets/legacy/2024/03/2023vertexminors-survey-revised.pdf)* (with [Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)), Discrete Appl. Math., **351**:54-73, July 2024. <https://doi.org/10.1016/j.dam.2024.03.011>
 3.  [*A unified half-integral Erdős-Pósa theorem for cycles in graphs labelled by multiple abelian groups*](https://doi.org/10.1112/jlms.12858) (with [J. Pascal Gollin](https://pascal-gollin.github.io), [Kevin Hendrey](https://sites.google.com/view/kevinhendrey), [Ken-ichi Kawarabayashi](http://research.nii.ac.jp/~k_keniti/), and [O-joung Kwon](http://ojkwon.com/)), J. Lon. Math. Soc., **109**(1):e12858, January 2024. <https://doi.org/10.1112/jlms.12858> [arXiv:2102.01986](https://arxiv.org/abs/2102.01986) \[open access\]
 4.  *[Prime vertex-minors of a prime graph](https://arxiv.org/abs/2202.07877)* (with [Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)), European J. Combin., **118**:103871, May 2024. <https://doi.org/10.1016/j.ejc.2023.103871> [arXiv:2202.07877](https://arxiv.org/abs/2202.07877)
 

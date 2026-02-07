@@ -3,8 +3,7 @@ title: "Hiring: IBS Young Scientist Fellowship (Due: May 31, 2020)"
 permalink: /2020/ibs-young-scientist-fellowship-2020/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2020/ibs-young-scientist-fellowship-2020/
-featured_image: /assets/legacy/uploads/sites/2/2020/04/ysf-2020-banner.png
-featured_image_original_url: https://dimag.ibs.re.kr/home/sangil/wp-content/uploads/sites/2/2020/04/ysf-2020-banner.png
+featured_image: /assets/legacy/2020/04/ysf-2020-banner.png
 featured_image_source: featured_media
 categories:
   - hiring

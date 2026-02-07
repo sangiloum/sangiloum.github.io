@@ -1,0 +1,17 @@
+---
+layout: page
+---
+{% assign archive_category_value = page.archive_category | default: page.title %}
+<div class="blog-layout">
+  {% include blog-categories.html active_category=archive_category_value %}
+
+  <section class="blog-main">
+    <h2>Posts in "{{ archive_category_value }}"</h2>
+    {% if page.posts %}
+      {% include post-cards.html posts=page.posts category_filter="" %}
+    {% else %}
+      {% assign matched_category = site.categories[archive_category_value] %}
+      {% include post-cards.html posts=matched_category category_filter="" %}
+    {% endif %}
+  </section>
+</div>
