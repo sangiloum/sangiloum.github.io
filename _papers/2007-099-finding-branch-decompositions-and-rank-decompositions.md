@@ -4,7 +4,7 @@ category: conference
 year: 2007
 month: 10
 doi: "10.1007/978-3-642-31585-5_24"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2007partition-esa.pdf"
+url: "/assets/pdf/2007partition-esa.pdf"
 coauthors:
   - hlineny
 sort_key: 200710

@@ -3,7 +3,7 @@ title: "Approximating Clique-width and Branch-width"
 category: journal
 year: 2006
 doi: "10.1016/j.jctb.2005.10.006"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/rwdfpt.pdf"
+url: "/assets/pdf/rwdfpt.pdf"
 coauthors:
   - seymour
 sort_key: 200600

@@ -426,7 +426,7 @@ featured_image_source: og_image
   - June 4, 2009: 2009 ASARC Workshop, Muju resort, South Korea.
       - A survey on vertex-minors and pivot-minors
   - May 9, 2009: [DIMACS Workshop on Graph Colouring and Structure](http://archive.dimacs.rutgers.edu/Workshops/GraphColouring/), Princeton University, Princeton, New Jersey, USA.
-      - [A survey on vertex-minors and pivot-minors](https://mathsci.kaist.ac.kr/~sangil/pdf/2009princeton.pdf)
+      - [A survey on vertex-minors and pivot-minors](/assets/pdf/2009princeton.pdf)
   - April 25, 2009: [2009 KMS Spring Meeting](https://web.archive.org/web/20080404151004/http://www.kms.or.kr/home/kor/symposium/symposium_02.asp?symUID=%7B65D2DF18-083B-4B5A-8D26-F24B342B002B%7D&globalmenu=2&localmenu=1&alertMessage=), [Department of Mathematis, Ajou University](https://math.ajou.ac.kr), Suwon, South Korea.
       - Maximum number of complete subgraphs in a certain graph
   - February 4, 2009: [KAIST Combinatorics Seminar](http://mathsci.kaist.ac.kr/ko/xe/index.php?mid=event&page=2&document_srl=1644), [Department of Mathematical Sciences, KAIST](http://mathsci.kaist.ac.kr/), Daejeon, South Korea.
@@ -459,9 +459,9 @@ featured_image_source: og_image
   - June 16, 2008: [SIAM Conference on Discrete Mathematics](https://archive.siam.org/meetings/dm08/), University of Vermont, Burlington, Vermont, USA.
       - Chain theorems for 4-prime graphs
   - June 12, 2008: [Kyoto RIMS Workshop on Combinatorial Optimization and Discrete Algorithms](https://web.archive.org/web/20090420031302/http://www.kurims.kyoto-u.ac.jp:80/~kijima/proj08/CODA08/index.html), [Research Institute for Mathematical Sciences (RIMS)](http://www.kurims.kyoto-u.ac.jp/en/index.html), Kyoto University, Kyoto, Japan.
-      - [Graphic delta-matroids](https://mathsci.kaist.ac.kr/~sangil/pdf/2008kyoto.pdf)
+      - [Graphic delta-matroids](/assets/pdf/2008kyoto.pdf)
   - April 7, 2008: [Workshop on Graph Decomposition: Theoretical, Algorithmic and Logical Aspects](http://www.lirmm.fr/~paul/ANR/cirm.html), [CIRM](https://www.cirm-math.fr), Luminy, France.
-      - [Finding branch-decompositions and rank-decompositions](https://mathsci.kaist.ac.kr/~sangil/pdf/2008luminy.pdf)
+      - [Finding branch-decompositions and rank-decompositions](/assets/pdf/2008luminy.pdf)
   - April 3, 2008: [Combinatorics Seminar](https://www.labri.fr/public/actu/infos_evt.php?id_agenda=520&id=369&cat=groupe_details&id_gp=25&rp_id=0), [LaBRI](https://www.labri.fr/), Bordeaux, France.
       - Line graphs of large rank-width
   - March 28, 2008: [Special session on Structural graph theory](http://www.ams.org/meetings/sectional/2146_program_ss2.html#title), [AMS sectional meeting](http://www.ams.org/meetings/sectional/2146_program.html), Baton Rouge, Lousiana, USA.
@@ -480,13 +480,13 @@ featured_image_source: og_image
   - November 16, 2007: Joint Combinatorics – Theory Seminar, University of Toronto, Toronto, Canada.
       - Introduction to Rank-width
   - October 19, 2007: The Third Workshop on Graph Classes, Optimization, and Width Parameters, Eugene, Oregon, USA.
-      - [Introduction to Rank-width](https://mathsci.kaist.ac.kr/~sangil/pdf/2007eugene.pdf)
+      - [Introduction to Rank-width](/assets/pdf/2007eugene.pdf)
   - August 6-8, 2007: [2007 Combinatorics Workshop](https://mathsci.kaist.ac.kr/workshop/combinatorics2007/), KAIST, Daejeon, Korea.
       - Circle graphs obstructions under pivoting (August 6)
       - Excluding a bipartite circle graph from line graphs (August 7)
       - Rank-width and well-quasi-ordering (August 8 )
   - July 25, 2007: [Structure Theory and FPT Algorithms for Graphs, Digraphs and Hypergraphs](https://www.dagstuhl.de/de/programm/kalender/semhp/?semnr=07281), Dagstuhl workshop 07281, Germany.
-      - [Finding Branch-decompositions and Rank-decompositions](https://mathsci.kaist.ac.kr/~sangil/pdf/2007dagstuhl.pdf)
+      - [Finding Branch-decompositions and Rank-decompositions](/assets/pdf/2007dagstuhl.pdf)
   - May 28, 2007: [1st Canadian Discrete and Algorithmic Mathematics Conference (CanaDAM 2007)](https://webdocs.cs.ualberta.ca/~mreza/CANADAM/), Banff, Alberta, Canada.
       - Circle graph obstructions under pivoting
   - May 10, 2007: Colloquium, [Department of Mathematics, Yonsei University](https://math.yonsei.ac.kr/math/index.do), Seoul, Korea.
@@ -519,16 +519,16 @@ featured_image_source: og_image
   - February 9, 2006: Graph Theory Seminar, Georgia Institute of Technology, USA.
       - Testing Branch-width
   - January 23, 2006: [ACM/SIAM Conference on Discrete Algorithms (SODA)](https://archive.siam.org/meetings/da06/), Miami, FL, USA.
-      - [Testing Branch-width](https://mathsci.kaist.ac.kr/~sangil/pdf/2006sodaslide.pdf)
+      - [Testing Branch-width](/assets/pdf/2006sodaslide.pdf)
 
 ### 2005
 
   - December 27, 2005: Combinatorics Seminar, [Department of Mathematics](https://mathsci.kaist.ac.kr/), [KAIST](https://www.kaist.ac.kr/en/), Daejeon, Korea.
-      - [Testing Branch-width](https://mathsci.kaist.ac.kr/~sangil/pdf/2005kaist.pdf)
+      - [Testing Branch-width](/assets/pdf/2005kaist.pdf)
   - November 24, 2005: [Combinatorics and Optimization Seminar](https://www.math.uwaterloo.ca/~wnotice/notice_prgms/wreg/list_full.pl?20051024-1000.24934), University of Waterloo, Waterloo, Canada.
       - Testing Branch-width
   - October 18, 2005: [Workshop on Graph Classes, Width Parameters and Optimization](https://kam.mff.cuni.cz/conferences/Wlab05/), Prague, Czech.
-      - [Recognizing Rank-width Quickly](https://mathsci.kaist.ac.kr/~sangil/pdf/2005prague.pdf)
+      - [Recognizing Rank-width Quickly](/assets/pdf/2005prague.pdf)
   - October 13, 2005: Graph Theory Seminar, Georgia Institute of Technology, USA.
       - Graphs of Bounded Rank-width II
   - October 12, 2005: [Combinatorics Seminar](https://www.math.gatech.edu/~tetali/SEMINAR/seminar.html), Georgia Institute of Technology, USA.
@@ -540,31 +540,31 @@ featured_image_source: og_image
   - September 13, 2005: [7th International Colloquium on Graph Theory (ICGT ’05)](http://www-sop.inria.fr/mascotte/ICGT05/index.htm), Hyères, France.
       - Rank-width and well-quasi-ordering of skew-symmetric matrices
   - July 26, 2005: [Exact Algorithms and Fixed-Parameter Tractability](https://www.dagstuhl.de/de/programm/kalender/semhp/?semnr=05301), Dagstuhl workshop, Germany.
-      - [Graphs of Bounded Rank-width](https://mathsci.kaist.ac.kr/~sangil/pdf/2005dagstuhl.pdf)
+      - [Graphs of Bounded Rank-width](/assets/pdf/2005dagstuhl.pdf)
   - July 3, 2005: Princeton-Oxford Workshop, Oxford, UK.
-      - [Rank-width and Well-quasi-ordering of Skew-symmetric Matrices](https://mathsci.kaist.ac.kr/~sangil/pdf/2005oxford.pdf)
+      - [Rank-width and Well-quasi-ordering of Skew-symmetric Matrices](/assets/pdf/2005oxford.pdf)
   - June 23, 2005: [31st International Workshop on Graph-Theoretic Concepts in Computer Science](http://www.lita.univ-lorraine.fr/~wg2005/), Metz, France.
-      - [Approximating Rank-width and Clique-width Quickly](https://mathsci.kaist.ac.kr/~sangil/pdf/wg2005slide.pdf)
+      - [Approximating Rank-width and Clique-width Quickly](/assets/pdf/wg2005slide.pdf)
   - June 20, 2005: Seminar on graphs and logic, University of Bordeaux 1, Bordeaux, France.
       - Graphs of Bounded Rank-width
   - June 16, 2005: [Séminaire de Combinatoire Algébrique et Géométrique](https://web.archive.org/web/20070902204433/http://www.ecp6.jussieu.fr:80/seminaire/), [Combinatoire et Optimisation](http://www.ecp6.jussieu.fr/), Université Pierre et Marie Curie (Paris 6), Paris, France
-      - [Well-quasi-ordering of skew-symmetric matrices of bounded rank-width by using isotropic systems on arbitrary fields](https://mathsci.kaist.ac.kr/~sangil/pdf/2005paris.pdf) [(abstract)](https://web.archive.org/web/20051013091507/http://ecp6.jussieu.fr/seminaire/resumes/0405/050616.html)
+      - [Well-quasi-ordering of skew-symmetric matrices of bounded rank-width by using isotropic systems on arbitrary fields](/assets/pdf/2005paris.pdf) [(abstract)](https://web.archive.org/web/20051013091507/http://ecp6.jussieu.fr/seminaire/resumes/0405/050616.html)
   - January 19, 2005: [Oberwolfach Workshop “*Graph Theory*“](https://www.mfo.de/occasion/0503/www_view), [Oberwolfach](https://www.mfo.de/), Germany
-      - [Recognizing Rank-width](https://mathsci.kaist.ac.kr/~sangil/pdf/oberwolfach2005.pdf)
+      - [Recognizing Rank-width](/assets/pdf/oberwolfach2005.pdf)
 
 ### 2004
 
   - December 17, 2004: Workshop “*[Graph and Hypergraph Decompositions – Methods and Applications in Computer Science](https://www.dbai.tuwien.ac.at/event/graphdecomp-2004/)*“, Vienna, Austria
-      - [Recognizing graphs of rank-width at most *k*](https://mathsci.kaist.ac.kr/~sangil/pdf/vienna2004.pdf)
+      - [Recognizing graphs of rank-width at most *k*](/assets/pdf/vienna2004.pdf)
   - November 19, 2004: [PACM Graduate Student Seminar](https://web.archive.org/web/20100623224853/http://www.math.princeton.edu/~skryazhi/StudentSeminar/archive/Fall2004.html), Princeton University
       - Rank-width and Well-quasi-ordering
   - November 15, 2004: [Discrete Mathematics and Optimization Seminar](http://www.math.mcgill.ca/~vetta/Seminar.dir/seminar.html), [McGill University](https://www.mcgill.ca/), Montreal, Quebec, Canada
-      - [Rank-width and Well-quasi-ordering](https://mathsci.kaist.ac.kr/~sangil/pdf/mcgill2004.pdf)
+      - [Rank-width and Well-quasi-ordering](/assets/pdf/mcgill2004.pdf)
   - October 29, 2004: Graph Theory Seminar, Georgia Institute of Technology
-      - [Rank-width and Well-quasi-ordering](https://mathsci.kaist.ac.kr/~sangil/pdf/git2004.pdf)
+      - [Rank-width and Well-quasi-ordering](/assets/pdf/git2004.pdf)
   - October 1-2, 2004: two talks were given at the Satellite Workshop *[Logic, Graph Transformations, Finite and Infinite Structures](https://www.labri.fr/perso/courcell/LogicIcgt.html)* of the [2nd International Conference on Graph Transformations (IGCT)](https://web.archive.org/web/20060508160751/http://icgt2004.dsi.uniroma1.it/) in Rome, Italy. Titles are
-      - [Rank-width, Clique-width and Vertex-minors.](https://mathsci.kaist.ac.kr/~sangil/pdf/rome2004.pdf)
-      - [An algorithm for recognizing rank-width at most k and the well-quasi-ordering of the vertex-minor relation.](https://mathsci.kaist.ac.kr/~sangil/pdf/rome2004-2.pdf)
+      - [Rank-width, Clique-width and Vertex-minors.](/assets/pdf/rome2004.pdf)
+      - [An algorithm for recognizing rank-width at most k and the well-quasi-ordering of the vertex-minor relation.](/assets/pdf/rome2004-2.pdf)
   - May 25, 2004: *[Robust and Approximative Algorithms on Particular Graph Classes](https://www.dagstuhl.de/de/programm/kalender/semhp/?semnr=04221)*, a Dagstuhl seminar
       - [Replace Clique-width With Rank-width](ftp://ftp.dagstuhl.de/pub/Proceedings/04/04221/04221.OumSangil.Slides.pdf)
   - March 10, 2004: *[Princeton Discrete Mathematics Seminar](https://web.archive.org/web/20080224081807/http://www.math.princeton.edu:80/~bsudakov/seminar.html)*
@@ -575,7 +575,7 @@ featured_image_source: og_image
 ### 2003
 
   - December 13, 2003: *[Advances in Graph and Matroid Theory](https://web.archive.org/web/20140214063554/https://people.math.osu.edu/events/Neil65/)*, A conference in honour of Neil Robertson’s 65<sup>th</sup> birthday
-      - [Approximating Clique-width in O(n<sup>9</sup> log(n)) Time](https://mathsci.kaist.ac.kr/~sangil/pdf/rwdslide.pdf)
+      - [Approximating Clique-width in O(n<sup>9</sup> log(n)) Time](/assets/pdf/rwdslide.pdf)
   - June 25-28, 2003: *Oxford/Princeton Workshop*
       - Approximating Clique-width
   - March 28, 2003: *[PACM Graduate Student Seminar](https://web.archive.org/web/20100623224036/http://www.math.princeton.edu/~skryazhi/StudentSeminar/archive/Spring2003.htm)*

@@ -4,7 +4,7 @@ category: journal
 year: 2012
 month: 4
 doi: "10.1007/s00493-012-2891-9"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2009clique.pdf"
+url: "/assets/pdf/2009clique.pdf"
 coauthors:
   - chudnovsky
   - seymour

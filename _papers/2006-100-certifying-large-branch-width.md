@@ -3,7 +3,7 @@ title: "Certifying Large Branch-width"
 category: conference
 year: 2006
 doi: "10.1145/1109557.1109646"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2006soda.pdf"
+url: "/assets/pdf/2006soda.pdf"
 coauthors:
   - seymour
 sort_key: 200600

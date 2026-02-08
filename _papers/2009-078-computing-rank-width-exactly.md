@@ -3,7 +3,7 @@ title: "Computing rank-width exactly"
 category: journal
 year: 2009
 doi: "10.1016/j.ipl.2009.03.018"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2008exp.pdf"
+url: "/assets/pdf/2008exp.pdf"
 sort_key: 200900
 journal: "Information Proc. Letters"
 text: |

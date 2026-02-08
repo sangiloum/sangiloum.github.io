@@ -3,7 +3,7 @@ title: "Rank-width and Well-quasi-ordering"
 category: journal
 year: 2008
 doi: "10.1137/050629616"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/wqo-revision.pdf"
+url: "/assets/pdf/wqo-revision.pdf"
 sort_key: 200800
 journal: "SIAM J. Discrete Math."
 text: |

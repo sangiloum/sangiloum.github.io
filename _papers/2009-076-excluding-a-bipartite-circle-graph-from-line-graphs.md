@@ -3,7 +3,7 @@ title: "Excluding a Bipartite Circle Graph from Line Graphs"
 category: journal
 year: 2009
 doi: "10.1002/jgt.20353"
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2006line.pdf"
+url: "/assets/pdf/2006line.pdf"
 sort_key: 200900
 journal: "J. Graph Theory"
 text: |
