@@ -3,7 +3,7 @@ title: "Department of Mathematical Sciences at KAIST invites applications for a 
 url: /2021/professorship-kaist/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/professorship-kaist/
-featured_image: /assets/legacy/2019/03/KAIST_logo_white.gif
+featured_image: /legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media
 categories:
   - kaist

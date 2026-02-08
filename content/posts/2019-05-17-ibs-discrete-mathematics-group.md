@@ -3,7 +3,7 @@ title: "기초과학연구원(IBS) 이산수학그룹 소개"
 url: /2019/ibs-discrete-mathematics-group/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/ibs-discrete-mathematics-group/
-featured_image: /assets/legacy/2019/05/ibs-night-2000.jpg
+featured_image: /legacy/2019/05/ibs-night-2000.jpg
 featured_image_source: featured_media
 categories:
   - essays
@@ -55,7 +55,7 @@ PRC 형태의 연구단에서는 내부에 Chief Investigator, 약자로 CI로 �
 
 ### 연구환경
 
-{{< picture src="assets/legacy/2019/03/20171214sciencecomplex-1024x719.jpg" alt="신세계 사이언스 콤플렉스 조감도" >}}
+{{< picture src="legacy/2019/03/20171214sciencecomplex-1024x719.jpg" alt="신세계 사이언스 콤플렉스 조감도" >}}
 
 [출처: https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog_0001&menuSeq=1479&ntatcSeq=1098919117](https://www.daejeon.go.kr/drh/drhStoryDaejeonView.do?boardId=blog_0001&menuSeq=1479&ntatcSeq=1098919117)
 
@@ -65,7 +65,7 @@ PRC 형태의 연구단에서는 내부에 Chief Investigator, 약자로 CI로 �
 
 이론동 2층에 위치한 커다란 칠판을 설치한 두 강의실에는 각각 동영상 촬영 장비를 설치하였습니다. 연사가 동의하는 경우 세미나 영상을 촬영하여 이산수학그룹 홈페이지 및 유투브에서 볼 수 있도록 올리고 있습니다.
 
-{{< picture src="assets/legacy/2019/03/IMG_8044-1024x768.jpg" alt="토론실" >}}
+{{< picture src="legacy/2019/03/IMG_8044-1024x768.jpg" alt="토론실" >}}
 
 수학 연구자들이 작은 그룹이나 큰 그룹으로 모여서 연구 토의를 할 수 있는 토론실이 작은 것 2개 큰 것 1개가 구축되어 있습니다. 그 중 큰 것에는 3면 벽이 모두 유리보드로 되어 있어서 넓은 보드 공간을 사용하며 연구에 집중할 수 있습니다. 한편 연구원들과 방문자들이 사용할 수 있는 연구실을 여럿 구축하였습니다.
 

@@ -2,6 +2,14 @@
   {{ with .Get "href" }}<a href="{{ . }}">{{ end }}
   {{ $src := .Get "src" }}
   {{ $alt := .Get "alt" | default "" }}
-  <img src="/{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{ partial "responsive-image.html" (dict
+    "src" $src
+    "alt" $alt
+    "class" "home-logo-image"
+    "page" .Page
+    "sizes" "(min-width: 860px) 420px, 80vw"
+    "loading" "lazy"
+    "decoding" "async"
+  ) }}
   {{ with .Get "href" }}</a>{{ end }}
 </figure>

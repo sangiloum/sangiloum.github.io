@@ -1,12 +1,28 @@
 <div class="two-figures">
   <figure>
     {{ $src1 := .Get "src1" }}{{ $alt1 := .Get "alt1" | default "" }}{{ $class1 := .Get "class1" | default "" }}
-    <img src="/{{ strings.TrimPrefix "/" $src1 }}" alt="{{ $alt1 }}"{{ with $class1 }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    {{ partial "responsive-image.html" (dict
+      "src" $src1
+      "alt" $alt1
+      "class" $class1
+      "page" .Page
+      "sizes" "(min-width: 860px) 420px, 50vw"
+      "loading" "lazy"
+      "decoding" "async"
+    ) }}
     {{ with .Get "caption1" }}<figcaption>{{ . }}</figcaption>{{ end }}
   </figure>
   <figure>
     {{ $src2 := .Get "src2" }}{{ $alt2 := .Get "alt2" | default "" }}{{ $class2 := .Get "class2" | default "" }}
-    <img src="/{{ strings.TrimPrefix "/" $src2 }}" alt="{{ $alt2 }}"{{ with $class2 }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    {{ partial "responsive-image.html" (dict
+      "src" $src2
+      "alt" $alt2
+      "class" $class2
+      "page" .Page
+      "sizes" "(min-width: 860px) 420px, 50vw"
+      "loading" "lazy"
+      "decoding" "async"
+    ) }}
     {{ with .Get "caption2" }}<figcaption>{{ . }}</figcaption>{{ end }}
   </figure>
 </div>

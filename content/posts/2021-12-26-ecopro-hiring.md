@@ -3,7 +3,7 @@ title: "Hong Liu is moving to IBS as a Chief Investigator to start the IBS Extre
 url: /2021/ecopro-hiring/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/ecopro-hiring/
-featured_image: /assets/legacy/2021/12/ibs-ecopro-logo.png
+featured_image: /legacy/2021/12/ibs-ecopro-logo.png
 featured_image_source: featured_media
 categories:
   - hiring

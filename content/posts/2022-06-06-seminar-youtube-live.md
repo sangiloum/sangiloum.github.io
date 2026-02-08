@@ -3,7 +3,7 @@ title: "칠판 강연을 위한 연사 추적 카메라 설치 및 유튜브 생
 url: /2022/seminar-youtube-live/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2022/seminar-youtube-live/
-featured_image: /assets/legacy/2022/06/classroom.jpg
+featured_image: /legacy/2022/06/classroom.jpg
 featured_image_source: featured_media
 categories:
   - essays
@@ -41,7 +41,7 @@ KAIST 수리과학과에 수리과학정보센터가 있던 시절에는 수리�
 
 
 
-{{< picture src="assets/legacy/2022/06/desk.jpg" alt="" >}}
+{{< picture src="legacy/2022/06/desk.jpg" alt="" >}}
 
 # 사용한 제품
 
@@ -66,7 +66,7 @@ KAIST 수리과학과에 수리과학정보센터가 있던 시절에는 수리�
 
 ## 카메라 설치
 
-{{< picture src="assets/legacy/2022/06/ptc310u.jpg" alt="Aver PTC310U" >}}
+{{< picture src="legacy/2022/06/ptc310u.jpg" alt="Aver PTC310U" >}}
 
 연사 추적 카메라는 인터넷에서 구매하는 것보다 한국 총판([한성smb](https://hansungsmb.co.kr/aver/))에 연락하셔서 상담을 하시는 것을 권해드립니다. 설치비까지 포함하여 견적을 받을 수 있었습니다. 해당 제품은 천장에 거꾸로 설치할 수도 있었지만 그 경우 천장에 이미 설치된 프로젝터와 시야가 가리거나 조명에 의한 간섭이 염려되어 뒷쪽 벽에 브라켓을 달고 설치를 하였습니다.
 
@@ -86,7 +86,7 @@ KAIST 수리과학과에 수리과학정보센터가 있던 시절에는 수리�
 
 ## 음질
 
-{{< picture src="assets/legacy/2022/06/mic-300x300.jpg" alt="Blue Yeti Pro 마이크" >}}
+{{< picture src="legacy/2022/06/mic-300x300.jpg" alt="Blue Yeti Pro 마이크" >}}
 
 동영상 촬영에서 가장 중요한 것이 음질입니다. 원래는 Rode Wireless GO 마이크를 사용하였으나 연사의 소리만 녹음되고 청중의 질문은 전혀 녹음되지 않기 때문에 지금은 전에 온라인 강의용으로 사두었던 Blue Yeti Pro 마이크를 강의실 앞 중간에 두고 쓰고 있습니다. 나중에 천장에 고정해둘만한 적절한 마이크가 있을지 고민해봐야 할 것 같습니다.
 
@@ -100,7 +100,7 @@ M1 Mac Mini의 경우 아래 동영상 도움을 참고하면 됩니다. 꼭 “
 
 
 
-{{< picture src="assets/legacy/2022/06/streamdeck.jpg" alt="Stream Deck" >}}
+{{< picture src="legacy/2022/06/streamdeck.jpg" alt="Stream Deck" >}}
 
 OBS에서는 여러 “장면”을 미리 만들어둘텐데, 스트림덱을 사두면 마우스 클릭 대신 버튼을 눌러 편리하게 화면 전환을 할 수 있습니다. 세미나 시작할 때 장면 전환이 있고, 끝날 때 장면 전환이 있으며, 프로젝터를 활용한 발표 도중 발표자가 칠판을 사용하면 장면 전환을 합니다. 이러한 것을 지금은 스트림덱의 버튼을 눌러 처리하고 있습니다.
 

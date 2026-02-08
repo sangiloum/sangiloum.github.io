@@ -6,7 +6,7 @@ description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/awards/
 ---
 
-{{< three-figures src1="/assets/legacy/2012/11/young.jpg" alt1="Young Scientist Award (2012)" src2="/assets/legacy/2022/12/choi.jpg" alt2="Choi Seok-Jeong Award (2022)" src3="/assets/legacy/2012/11/ewon.jpg" alt3="Ewon Assistant Professorship (2010)" >}}
+{{< three-figures src1="/legacy/2012/11/young.jpg" alt1="Young Scientist Award (2012)" src2="/legacy/2022/12/choi.jpg" alt2="Choi Seok-Jeong Award (2022)" src3="/legacy/2012/11/ewon.jpg" alt3="Ewon Assistant Professorship (2010)" >}}
 
 ### 2023
 

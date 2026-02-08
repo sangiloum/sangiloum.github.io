@@ -4,11 +4,11 @@ url: /
 layout: page
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/
-featured_image: /assets/legacy/2021/05/sangil-2021-crop.jpg
+featured_image: /legacy/2021/05/sangil-2021-crop.jpg
 featured_image_source: og_image
 ---
 
-{{< home-logo variant="home-logo-wide" href="https://dimag.ibs.re.kr/" src="/assets/legacy/2019/07/dimag-lg-1024x243.png" alt="IBS DIMAG" >}}
+{{< home-logo variant="home-logo-wide" href="https://dimag.ibs.re.kr/" src="/legacy/2019/07/dimag-lg-1024x243.png" alt="IBS DIMAG" >}}
 
 I am a **Distinguished Research Fellow<sup>수석연구위원</sup>** of the Institute for Basic Science (IBS) and have been the **CI** (Chief Investigator) of the [Discrete Mathematics Group<sup>이산수학그룹</sup>](https://dimag.ibs.re.kr/) at the [Institute for Basic Science<sup>기초과학연구원</sup>](https://www.ibs.re.kr/) since December 2018. The group was established in December 2018 and is based in [Daejeon](https://en.wikipedia.org/wiki/Daejeon), South Korea. I am also an Adjunct Professor<sup>겸직교수</sup> of the [Department of Mathematical Sciences, KAIST](https://mathsci.kaist.ac.kr/).
 
@@ -26,7 +26,7 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
 
 ## Educations
 
-{{< home-logo variant="home-logo-compact" src="/assets/legacy/2011/12/princeton.png" alt="Princeton University" >}}
+{{< home-logo variant="home-logo-compact" src="/legacy/2011/12/princeton.png" alt="Princeton University" >}}
 
   - May 2005, Ph.D. in [Applied and Computational Mathematics, *Princeton University*](https://www.pacm.princeton.edu).
       - Advisor: [Paul Seymour](https://web.math.princeton.edu/~pds/). Thesis: [Graphs of Bounded Rank-width](https://www.proquest.com/docview/305424265/abstract)
@@ -38,7 +38,7 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
   - Aug 2024 – : [Discrete Mathematics Group, *Institute for Basic Science (IBS)*](https://dimag.ibs.re.kr/), Daejeon, Korea.
       - Distinguished Research Fellow<sup>수석연구위원</sup>
 
-{{< home-logo variant="home-logo-compact" src="/assets/legacy/2014/12/kaistmath264.png" alt="Department of Mathematical Sciences, KAIST" >}}
+{{< home-logo variant="home-logo-compact" src="/legacy/2014/12/kaistmath264.png" alt="Department of Mathematical Sciences, KAIST" >}}
 
   - Sep 2025 – : Adjunct Professor (겸직교수), [Department of Mathematical Sciences, *KAIST*](https://mathsci.kaist.ac.kr/).
   - Jan 2008 – July 2024: [Department of Mathematical Sciences, *KAIST*](https://mathsci.kaist.ac.kr/), Daejeon, Korea.
@@ -87,4 +87,4 @@ I am organizing the [Discrete Math Seminar](https://dimag.ibs.re.kr/events/categ
 
 [Mastodon](https://mathstodon.xyz/@sioum)
 
-[Curriculum Vitae](/assets/legacy/2024/08/cv.pdf)
+[Curriculum Vitae](/legacy/2024/08/cv.pdf)

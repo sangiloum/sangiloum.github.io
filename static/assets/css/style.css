@@ -206,21 +206,26 @@ img.markdown-image {
 
 .two-figures > figure {
   margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #eef3fb;
 }
 
 .two-figures > figure picture {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .two-figures > figure picture > img,
 .two-figures > figure img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #eef3fb;
 }
 
 .three-figures {

@@ -4,7 +4,7 @@ url: /talks/
 layout: page
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/talks/
-featured_image: /assets/legacy/2022/09/i-PPqmJwt.jpg
+featured_image: /legacy/2022/09/i-PPqmJwt.jpg
 featured_image_source: og_image
 ---
 
@@ -301,7 +301,7 @@ featured_image_source: og_image
   - July 1, 2013: [Special Session on Combinatorics and Graph Theory, the Asian Mathematical Conference AMC2013 (June 30-July 4)](http://www.kms.or.kr/amc2013/), Busan, Korea.
       - Excluded vertex-minors for graphs of linear rank-width at most k
   - June 24, 2013: [Special Session on Combinatorics and Discrete Mathematics](http://www.math.sjtu.edu.cn/Conference/prima/Combinatorics.htm), [2nd Pacific Rim Mathematical Association Congress (June 24-28)](https://primamath.org/congress/2013), Shanghai, China.
-      - [Unavoidable vertex-minors in large prime graphs](/assets/legacy/2011/12/unavoidable.pdf)
+      - [Unavoidable vertex-minors in large prime graphs](/legacy/2011/12/unavoidable.pdf)
   - June 5, 2013: [Working Group Seminar](https://www.math.uni-hamburg.de/spag/dm/AG.html), University of Hamburg, Hamburg, Germany (with [O-joung Kwon](http://ojkwon.com)).
       - Unavoidable vertex-minors for large prime graphs
   - April 19, 2013: [Research Seminar](https://www.math.uni-hamburg.de/spag/dm/AG.html), University of Hamburg, Hamburg, Germany.
@@ -330,7 +330,7 @@ featured_image_source: og_image
   - October 5, 2012: [Invited talk, 2012 KMS Fall Meeting (October 5-6)](http://www.kms.or.kr/meetings/fall2012/InvitedSpeakers.htm), Daejeon.
       - Even cycle decomposition of graphs with no odd K<sub>4</sub> minor
   - August 20, 2012: [Invited session on structural graph theory and methods](http://ismp2012.zib.de/show-session?sess=249), 21st International Symposium on Mathematical Programming (August 19-24), Berlin, Germany.
-      - [Vertex-minors and pivot-minors of graphs](/assets/legacy/2011/12/ismp2012.pdf)
+      - [Vertex-minors and pivot-minors of graphs](/legacy/2011/12/ismp2012.pdf)
   - July 24, 2012: 젊은 지성과의 만남, 영스타클럽(Korean Science and Technology Young Stars Club) 포럼 (July 24-25, 2012), KAIST
   - August 3, 2012: [Third workshop on graphs and matroids](http://matroidunion.org/meetings/2012/) (July 29-August 4), Maastricht, The Netherlands
       - Even cycle decomposition of graphs with no odd K<sub>4</sub> minor

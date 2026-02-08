@@ -3,7 +3,7 @@ title: "수학동아xIBS, 나의 삶 나의 수학 시리즈 인터뷰+기고"
 url: /2021/my-life-my-math/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/my-life-my-math/
-featured_image: /assets/legacy/2021/05/2004.jpg
+featured_image: /legacy/2021/05/2004.jpg
 featured_image_source: featured_media
 categories:
   - essays

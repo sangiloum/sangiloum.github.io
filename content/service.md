@@ -4,7 +4,7 @@ url: /service/
 layout: page
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/service/
-featured_image: /assets/legacy/2012/11/DSC010321.jpg
+featured_image: /legacy/2012/11/DSC010321.jpg
 featured_image_source: og_image
 ---
 
@@ -16,7 +16,7 @@ featured_image_source: og_image
   - [*Graphs and Combinatorics*](https://link.springer.com/journal/373/editorial-board), January 2025-. (Principal Editor)
   - [Electronic Journal of Combinatorics](https://www.combinatorics.org), November 2025-.
   - [*Journal of the Korean Mathematical Society*](http://jkms.kms.or.kr/). 2011-.
-  - [Special issue on “the Seventh Workshop on Graph Classes, Optimization, and Width Parameters, Aussois, France (GROW2015)”](https://www.sciencedirect.com/journal/discrete-applied-mathematics/vol/248/suppl/C), *Discrete Applied Mathematics*. 2016-2017. [Call for Papers for GROW 2015](/assets/legacy/2012/11/CfP-GROW-2015.pdf).
+  - [Special issue on “the Seventh Workshop on Graph Classes, Optimization, and Width Parameters, Aussois, France (GROW2015)”](https://www.sciencedirect.com/journal/discrete-applied-mathematics/vol/248/suppl/C), *Discrete Applied Mathematics*. 2016-2017. [Call for Papers for GROW 2015](/legacy/2012/11/CfP-GROW-2015.pdf).
   - [Special issue on “the Fifth Workshop on Graph Classes, Optimization, and Width Parameters, Daejeon, Korea, October 2011 (GROW2011)”](https://www.sciencedirect.com/journal/discrete-applied-mathematics/vol/168), *Discrete Applied Mathematics*. 2012-2013.
 
 ### Steering Committee
@@ -54,7 +54,7 @@ featured_image_source: og_image
 
 ### Organizing Committee or Local Organizing Committee
 
-{{< two-figures src1="/assets/legacy/2012/11/P1012099.jpg" alt1="ICM2014 Satellite Conference on Extremal and Structural Graph Theory" caption1="ICM2014 Satellite Conference on Extremal and Structural Graph Theory" src2="/assets/legacy/2011/12/grow2011.jpg" alt2="GROW2011" caption2="GROW2011" >}}
+{{< two-figures src1="/legacy/2012/11/P1012099.jpg" alt1="ICM2014 Satellite Conference on Extremal and Structural Graph Theory" caption1="ICM2014 Satellite Conference on Extremal and Structural Graph Theory" src2="/legacy/2011/12/grow2011.jpg" alt2="GROW2011" caption2="GROW2011" >}}
 
   - [2024 Combinatorics Workshop](https://cw2024.combinatorics.kr/), Chungbuk National University, Cheongju, Korea, August 28-30, 2024.
   - I co-organized the [2024 Summer School on Combinatorics and Algorithms](https://combialgo.dimag.kr/), KAIST, Daejeon, Korea, July 22-26, 2024.
@@ -74,7 +74,7 @@ featured_image_source: og_image
   - [27th International Conference on Formal Power Series and Algebraic Combinatorics (FPSAC2015)](https://fpsac.combinatorics.kr), July 6-10, 2015 at KAIST.
   - [ICM2014 Satellite Conference on Extremal and Structural Graph Theory](https://web.archive.org/web/20161005202759/http://icm2014.combinatorics.kr/), Gyeongju, August 5-9, 2014.
 
-{{< home-logo variant="home-logo-compact" href="http://www.icm2014.org/index.html" src="/assets/legacy/2011/12/icm.png" alt="ICM 2014" >}}
+{{< home-logo variant="home-logo-compact" href="http://www.icm2014.org/index.html" src="/legacy/2011/12/icm.png" alt="ICM 2014" >}}
 
   - Member of [ICM2014 Local Organizing Committee](http://www.icm2014.org/en/about/committee.html) for ICM (International Congress of Mathematicians) 2014 at Seoul.
   - [12th Annual Korea-Japan workshop on algebra and combinatorics](http://mathsci.kaist.ac.kr/~andreash/kj2014/kj2014.html), January 23-25, 2014, KAIST.
@@ -95,9 +95,9 @@ featured_image_source: og_image
 
 ### Mathematical Olympiads
 
-{{< two-figures src1="/assets/legacy/2012/11/DSC010321.jpg" alt1="IMO2012" caption1="IMO2012" src2="/assets/legacy/2017/08/DSC_5430.jpg" alt2="IMO2017" caption2="IMO2017" >}}
+{{< two-figures src1="/legacy/2012/11/DSC010321.jpg" alt1="IMO2012" caption1="IMO2012" src2="/legacy/2017/08/DSC_5430.jpg" alt2="IMO2017" caption2="IMO2017" >}}
 
-{{< home-logo variant="home-logo-compact" href="https://www.kmo.or.kr" src="/assets/legacy/2011/12/kmo-logo-pink.gif" alt="Korean Mathematical Olympiad" >}}
+{{< home-logo variant="home-logo-compact" href="https://www.kmo.or.kr" src="/legacy/2011/12/kmo-logo-pink.gif" alt="Korean Mathematical Olympiad" >}}
 
 I was involved in selecting and educating highly gifted students in Korea to compete in [International Mathematical Olympiad (IMO)](http://www.imo-official.org). For 2011-2012 and 2017-2018, I was an executive member of the Board of Trustees, Korean Mathematical Society in charge of the Korean Mathematical Olympiad (KMO).
 
@@ -112,7 +112,7 @@ I managed the [KAIST Math Problem of the Week](https://mathsci.kaist.ac.kr/pow/)
 
 ### Horizon
 
-<a href="https://horizon.kias.re.kr/">{{< picture src="assets/legacy/2018/01/logo-300x52.png" alt="" preserve_original="true" >}}</a>
+<a href="https://horizon.kias.re.kr/">{{< picture src="legacy/2018/01/logo-300x52.png" alt="" preserve_original="true" >}}</a>
 
 Until the end of November 2018, I had been one of the founding editors of the [Horizon](https://horizon.kias.re.kr/), a math and science blog run by [KIAS](http://www.kias.re.kr/).
 
@@ -127,7 +127,7 @@ Until the end of November 2018, I had been one of the founding editors of the [H
 
 ### Public talks
 
-{{< two-figures src1="/assets/legacy/2012/11/2015seoul.jpg" alt1="KAIST 명강" caption1="KAIST 명강" src2="/assets/legacy/2018/01/kaos2017.jpg" alt2="2017 KAOS Lecture" caption2="2017 KAOS Lecture" >}}
+{{< two-figures src1="/legacy/2012/11/2015seoul.jpg" alt1="KAIST 명강" caption1="KAIST 명강" src2="/legacy/2018/01/kaos2017.jpg" alt2="2017 KAOS Lecture" caption2="2017 KAOS Lecture" >}}
 
   - [2017 Fall KAOS Lecture](http://www.ikaos.org/ko/class/class01.html?kc_idx=31), KAOS Foundation, 2017.
   - [KAIST 명강 4기 대중강연](https://sciencebooks.tistory.com/625), 2015.

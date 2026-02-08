@@ -3,7 +3,7 @@ title: "Hiring: THE IBS Discrete Mathematics Group (DIMAG) Postdoctoral Research
 url: /2020/ibs-dimag-postdoctoral-research-fellowship/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2020/ibs-dimag-postdoctoral-research-fellowship/
-featured_image: /assets/legacy/2020/04/poster-banner.png
+featured_image: /legacy/2020/04/poster-banner.png
 featured_image_source: featured_media
 categories:
   - hiring

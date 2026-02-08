@@ -6,6 +6,7 @@
 {{- $loading := .loading | default "lazy" -}}
 {{- $decoding := .decoding | default "async" -}}
 {{- $page := .page -}}
+{{- $preserve := .preserve | default false -}}
 
 {{- $u := urls.Parse $src -}}
 {{- $isRemote := or $u.IsAbs (strings.HasPrefix $src "//") -}}
@@ -25,7 +26,7 @@
 
 {{- $canResize := false -}}
 {{- if $img -}}
-  {{- if and (ne $img.MediaType.SubType "svg") (ne $img.MediaType.SubType "gif") -}}
+  {{- if and (not $preserve) (ne $img.MediaType.SubType "svg") (ne $img.MediaType.SubType "gif") -}}
     {{- $canResize = true -}}
   {{- end -}}
 {{- end -}}

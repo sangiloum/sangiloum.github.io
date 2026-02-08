@@ -1,4 +1,14 @@
 {{- $src := .Get "src" -}}
 {{- $alt := .Get "alt" | default "" -}}
 {{- $class := .Get "class" | default "" -}}
-<img src="/{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- $preserve := eq (lower (printf "%v" (.Get "preserve_original"))) "true" -}}
+{{ partial "responsive-image.html" (dict
+  "src" $src
+  "alt" $alt
+  "class" $class
+  "page" .Page
+  "sizes" "100vw"
+  "loading" "lazy"
+  "decoding" "async"
+  "preserve" $preserve
+) }}
