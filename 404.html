@@ -7,7 +7,5 @@ description: Route fallback and redirect helper.
 <article class="page">
   {% include breadcrumb.html %}
   <h1>Page not found</h1>
-  <p>We could not find this page directly. We will try a legacy URL mapping.</p>
-  <p>If redirection does not happen automatically, go to the <a href="{{ '/' | relative_url }}">homepage</a>.</p>
+  <p>We could not find this page directly.</p>
 </article>
-<script src="{{ '/assets/js/legacy-redirects.js' | relative_url }}"></script>
