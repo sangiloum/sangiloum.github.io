@@ -1,10 +1,12 @@
 {%- assign paper = include.paper -%}
 {%- assign title_href = nil -%}
-{%- if paper.doi -%}
+{%- if paper.link -%}
+  {%- assign title_href = paper.link -%}
+{%- elsif paper.doi -%}
   {%- assign title_href = 'https://doi.org/' | append: paper.doi -%}
 {%- elsif paper.arxiv -%}
   {%- assign title_href = 'https://arxiv.org/abs/' | append: paper.arxiv -%}
-{%- elsif paper.url -%}
+{%- elsif paper.url and paper.url contains '://' -%}
   {%- assign title_href = paper.url -%}
 {%- endif -%}
 
@@ -27,7 +29,7 @@
 
 {%- capture coauthor_text -%}
   {%- if paper.coauthors and paper.coauthors.size > 0 -%}
-with {% assign co_count = paper.coauthors.size %}{% for cid in paper.coauthors %}{% assign co = site.data.coauthors | where: "id", cid | first %}{% if co %}{% capture co_name %}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{% if co.korname %}<sup>{{ co.korname }}</sup>{% endif %}{% endcapture %}{% if co.url %}<a href="{{ co.url }}">{{ co_name | strip }}</a>{% else %}{{ co_name | strip }}{% endif %}{% else %}{{ cid }}{% endif %}{% unless forloop.last %}{% if co_count == 2 %} and {% elsif forloop.rindex == 2 %}, and {% else %}, {% endif %}{% endunless %}{% endfor %}
+with {% assign co_count = paper.coauthors.size %}{% for cid in paper.coauthors %}{% assign co = site.data.people | where: "id", cid | first %}{% if co %}{% capture co_name %}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{% if co.korname %}<sup>{{ co.korname }}</sup>{% endif %}{% endcapture %}{% if co.url %}<a href="{{ co.url }}">{{ co_name | strip }}</a>{% else %}{{ co_name | strip }}{% endif %}{% else %}{{ cid }}{% endif %}{% unless forloop.last %}{% if co_count == 2 %} and {% elsif forloop.rindex == 2 %}, and {% else %}, {% endif %}{% endunless %}{% endfor %}
   {%- endif -%}
 {%- endcapture -%}
 
@@ -38,15 +40,14 @@ with {% assign co_count = paper.coauthors.size %}{% for cid in paper.coauthors %
 
 {%- capture text_html -%}{{ paper.text | markdownify }}{%- endcapture -%}
 {%- assign text_html = text_html | strip | remove: '<p>' | remove: '</p>' -%}
-{%- capture journal_html -%}{%- if paper.journal -%}{{ paper.journal | markdownify }}{%- endif -%}{%- endcapture -%}
-{%- assign journal_html = journal_html | strip | remove: '<p>' | remove: '</p>' -%}
+{%- assign journal_text = paper.journal | default: '' | strip -%}
 
 {%- capture note_html -%}{%- if paper.note -%}{{ paper.note | markdownify }}{%- endif -%}{%- endcapture -%}
 {%- assign note_html = note_html | strip | remove: '<p>' | remove: '</p>' -%}
 
 <li class="paper-item" data-year="{{ paper.year }}" data-coauthors="{{ coauthor_ids }}">
   <div class="paper-item-main">
-    {%- if title_href -%}<a href="{{ title_href }}"><strong>{{ paper.title }}</strong></a>{%- else -%}<strong>{{ paper.title }}</strong>{%- endif -%}{% if coauthor_text != '' %} ({{ coauthor_text | strip }}){% endif %}{% if journal_html != '' %}, {{ journal_html }}{% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
+    {%- if title_href -%}<a href="{{ title_href }}"><strong>{{ paper.title }}</strong></a>{%- else -%}<strong>{{ paper.title }}</strong>{%- endif -%}{% if coauthor_text != '' %} ({{ coauthor_text | strip }}){% endif %}{% if journal_text != '' %}, <em>{{ journal_text }}</em>{% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
   </div>
   {% if paper.doi or paper.arxiv %}
   <div class="paper-item-links">

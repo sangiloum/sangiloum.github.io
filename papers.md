@@ -65,7 +65,7 @@ featured_image_source: og_image
     if (!input || !coauthorBox) return;
 
     var coauthorMap = {
-      {% for co in site.data.coauthors %}
+      {% for co in site.data.people %}
       {% capture co_full_name %}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{% endcapture %}
       {{ co.id | jsonify }}: {{ co_full_name | strip | jsonify }}{% unless forloop.last %},{% endunless %}
       {% endfor %}

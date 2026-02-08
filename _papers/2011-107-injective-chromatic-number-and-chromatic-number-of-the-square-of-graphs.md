@@ -2,7 +2,7 @@
 title: "Injective Chromatic Number and Chromatic Number of the Square of Graphs"
 category: manuscript
 year: 2011
-url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2009injective.pdf"
+link: "https://mathsci.kaist.ac.kr/~sangil/pdf/2009injective.pdf"
 coauthors:
   - seogjin
 sort_key: 201100

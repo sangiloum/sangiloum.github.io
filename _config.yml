@@ -25,6 +25,9 @@ collections:
   papers:
     output: false
     sort_by: sort_key
+  student_papers:
+    output: false
+    sort_by: sort_key
 
 pagination:
   enabled: true

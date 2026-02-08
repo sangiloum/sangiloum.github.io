@@ -84,98 +84,22 @@ featured_image_source: og_image
 
 # Papers written by my students *NOT* coauthored with me
 
-I am not a co-author of some of the papers of my students. Below, I try to list such papers.
+I am not a co-author of some of the papers of my students. Below, I try to list such papers.
+
+{% assign all_student_papers = site.student_papers | sort: "sort_key" | reverse %}
+{% assign journal_papers = all_student_papers | where: "category", "journal" %}
+{% assign journal_submitted = journal_papers | where: "subcategory", "submitted" %}
+{% assign journal_published = journal_papers | where_exp: "paper", "paper.subcategory != 'submitted'" %}
+{% assign conference_papers = all_student_papers | where: "category", "conference" %}
 
 ## Journal papers
 
 ### Submitted
 
-  - **[Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)** and [Hyunwoo Lee](https://sites.google.com/view/hyunwoo-lee), *Reconstructing hypergraph matching polynomials*, [arXiv:2501.19081](https://arxiv.org/abs/2501.19081), 2025.
-  - [Matthew Baker](https://sites.google.com/view/mattbakermath/home), [Changxin Ding](https://sites.google.com/brandeis.edu/dingchangxin/home), and **[Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)**,  [*The Jacobian of a regular orthogonal matroid and torsor structures on spanning quasi-trees of ribbon graphs*](https://arxiv.org/abs/2501.08796), [arXiv:2501.08796](https://arxiv.org/abs/2501.08796), 2025.
-  - **Duksang Lee**, Nam Ho-Nguyen, and Dabeen Lee, *[Non-smooth and Hölder-smooth submodular maximization](https://arxiv.org/abs/2210.06061)*, [arXiv:2210.06061](https://arxiv.org/abs/2210.06061), 2023.
-  - **[Jungho Ahn](https://dimag.ibs.re.kr/home/jungho/)**, Jinha Kim, and O-joung Kwon, [*Unified almost linear kernels for generalized covering and packing problems on nowhere dense classes*](https://arxiv.org/abs/2207.06660), [arXiv:2207.06660](https://arxiv.org/abs/2207.06660), 2022.
-  - **[Mujin Choi](https://dimag.ibs.re.kr/home/mujin/)**, [Claire Hilaire](https://clairehilaire.github.io/), [Martin Milanič](https://osebje.famnit.upr.si/~martin.milanic/), and [Sebastian Wiederrecht](https://www.wiederrecht.com/), [*Excluding an induced wheel minor in graphs without large induced stars*](https://arxiv.org/abs/2506.08829), [arXiv:2506.08829](https://arxiv.org/abs/2506.08829), 2025. 
-  - **Mujin Choi**, Maximilian Gorsky, Gunwoo Kim, Caleb McFarland, and Sebastian Wiederrecht, *[Odd-Cycle-Packing-treewidth: On the Maximum Independent Set problem in odd-minor-free graph classes](https://arxiv.org/abs/2511.10019)*, [arXiv:2511.10019](https://arxiv.org/abs/2511.10019), 2025.
-  - [**Seokbeom Kim**](https://dimag.ibs.re.kr/home/seokbeom/), [Taite LaGrange](https://www.linkedin.com/in/taite-lagrange-929370220/?originalSubdomain=ca), [Mathieu Rundström](https://uwaterloo.ca/scholar/mrundstr), [Arpan Sadhukhan](https://sites.google.com/view/arpan--sadhukhan/research), and [Sophie Spirkl](https://sites.google.com/site/sophiespirkl/),  [*The structure of Δ(1,2,2)-free tournaments*](https://arxiv.org/abs/2511.03234), [arXiv:2511.03234](https://arxiv.org/abs/2511.03234), 2025.
+{% include student_paper_list.html papers=journal_submitted %}
 
-### 2025
-
-  - **[Donggyu Kim](https://dimag.ibs.re.kr/home/donggyu/)**, *[Baker-Bowler theory for Lagrangian Grassmannians](https://arxiv.org/abs/2403.02356)*, Int. Math. Res. Not. IMRN, **8**:1-41, 2025. [arXiv:2403.02356](https://arxiv.org/abs/2403.02356). <https://doi.org/10.1093/imrn/rnaf094>
-  - [Tong Jin](https://tjin44.math.gatech.edu/) and [**Donggyu Kim**](https://dimag.ibs.re.kr/home/donggyu/), [*Orthogonal matroids over tracts*](https://arxiv.org/abs/2303.05353), Forum Math. Sigma, **13**:e130, August 2025. <https://doi.org/10.1017/fms.2025.10085>
-
-### 2023
-
-  - [**Donggyu Kim**](https://dimag.ibs.re.kr/home/donggyu/) and [Suil O](https://sites.google.com/view/suiloh),  [*Eigenvalues and parity factors in graphs*](https://arxiv.org/abs/2111.12966), Discrete Math., **346**:2021. [arXiv:2111.12966](https://arxiv.org/abs/2111.12966). <https://doi.org/10.1016/j.disc.2022.113290>
-
-### 2022
-
-  - [**Jungho Ahn**](https://dimag.ibs.re.kr/home/jungho/), [Eun Jung Kim](https://ssimplexity.github.io), and [Euiwoong Lee](https://web.eecs.umich.edu/~euiwoong/),  [*Towards constant-factor approximation for chordal / distance-hereditary vertex deletion*](https://doi.org/10.1007/s00453-022-00963-7), Algorithmica, **84**:2106-2133, July 2022. [arXiv:2009.00809](https://arxiv.org/abs/2009.00809). <https://doi.org/10.1007/s00453-022-00963-7>
-  - **[Jungho Ahn](https://dimag.ibs.re.kr/home/jungho/)**, [Lars Jaffke](https://lars-jaffke.github.io), [O-joung Kwon](http://ojkwon.com/), and [Paloma T. Lima](http://www.ii.uib.no/~palomal/), [*Well-partitioned chordal graphs*](https://doi.org/10.1016/j.disc.2022.112985), Discrete Math., **345**(10)(Article 112985), October 2022. [arXiv:2002.10859](https://arxiv.org/abs/2002.10859). <https://doi.org/10.1016/j.disc.2022.112985>
-  - [Martin Balko](https://kam.mff.cuni.cz/~balko/), [Dániel Gerbner](https://www.renyi.hu/~gerbner/), **[Dong Yeap Kang](https://mathsci.kaist.ac.kr/~dykang/)**, [Younjin Kim](https://sites.google.com/site/younjinkimsite/), and [Cory Palmer](https://www.umt.edu/math/people/default.php?ID=2396), [*Hypergraph based Berge hypergraphs*](https://doi.org/10.1007/s00373-021-02419-1), Graphs and Combinatorics, **38**:11, 1-13, February 2022. <https://doi.org/10.1007/s00373-021-02419-1> [arXiv:1908.00092](https://arxiv.org/abs/1908.00092)
-
-### 2021
-
-  - **Dong Yeap Kang**, Jaehoon Kim, and Hong Liu, [*On the rational Turán exponents conjecture*](https://arxiv.org/abs/1811.06916), J. Combin. Theory Ser. B, **148**(May 2021), 149-172. <https://doi.org/10.1016/j.jctb.2020.12.003>
-
-### 2020
-
-  - **Dong Yeap Kang** and Jaehoon Kim, [*On 1-factors with prescribed lengths in tournaments*](https://arxiv.org/abs/1802.09049), J. Combin. Theory Ser. B, **141**(March 2020), 31-71. <https://doi.org/10.1016/j.jctb.2019.06.003>
-
-### 2019
-
-  - **Dong Yeap Kang**, [*Sparse highly connected spanning subgraphs in dense directed graphs*](https://arxiv.org/abs/1801.01795), Combin. Probab. Comput.,**28**(3)(May 2019), 423-464. <https://doi.org/10.1017/S0963548318000469>
-
-### 2018
-
-  - **Jisu Jeong**, Sigve Hortemo Sæther, and Jan Arne Telle, [*Maximum matching width: new characterizations and a fast algorithm for dominating set*,](https://doi.org/10.1016/j.dam.2017.09.019) Discrete Appl. Math., **248**(October 2018), 114-24. <https://doi.org/10.1016/j.dam.2017.09.019>.  
-  - **Jisu Jeong**, Seongmin Ok, and **Geewon Suh**, [*Characterizing graphs of maximum matching width at most 2*](https://doi.org/10.1016/j.dam.2017.07.028), Discrete Appl. Math., **248**(October 2018), 102-113. <https://doi.org/10.1016/j.dam.2017.07.028>
-
-### 2017
-
-  - **Dong Yeap Kang**, O-joung Kwon, Torstein J. F. Strømme, and Jan Arne Telle, [*A width parameter useful for chordal and co-comparability graphs*,](https://doi.org/10.1016/j.tcs.2017.09.006) Theoretical Computer Sci., **704**(December 2017), pp. 1-17. <https://doi.org/10.1016/j.tcs.2017.09.006>
-  - **Dong Yeap Kang**, Jaehoon Kim, Younjin Kim, and **Geewon Suh**, [*Sparse spanning k-connected subgraphs in tournaments*](https://doi.org/10.1137/16M1064805), SIAM J. Discrete Math, **31**(3)(2017), pp. 2206-2227. <https://doi.org/10.1137/16M1064805>
-  - **Hojin Choi** and Young Soo Kwon, [*On t-common list-colorings*](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v24i3p32), Electronic J. Combin., **24**(2017), \#P3.32
-  - Isolde Adler, Mamadou Moustapha Kanté, and **O-joung Kwon**, [*Linear rank-width of distance-hereditary graphs I. A polynomial-time algorithm*](https://doi.org/10.1007/s00453-016-0164-5), Algorithmica, **78**(May 2017), pp. 342-377. <https://doi.org/10.1007/s00453-016-0164-5>
-  - Mamadou Moustapha Kanté, Eun Jung Kim, **O-Joung Kwon**, and Christophe Paul, [*An FPT algorithm and a polynomial kernel for linear rankwidth-1 vertex deletion*](https://doi.org/10.1007/s00453-016-0230-z), Algorithmica, **79**(1)(September 2017), pp. 66–95. <https://doi.org/10.1007/s00453-016-0230-z>
-  - **Dong Yeap Kang**, Jaehoon Kim, Younjin Kim, and [Hiu-Fai Law](https://www.math.cuhk.edu.hk/people/academic-staff/dr-hiu-fai-law), [*On the number of r-matchings in a tree*](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v24i1p24), Electronic J. of Combin., **24**(2017), \#P1.24 (pp. 16)
-  - **Hojin Choi**, Ilkyoo Choi, **Jisu Jeong**, and **Geewon Suh**, [*(1,k)-coloring of graphs with girth at least 5 on a surface*](https://arxiv.org/abs/1412.0344), J. Graph Theory, **84**(April 2017), pp. 521-535. <https://doi.org/10.1002/jgt.22039>
-  - [Hans L. Bodlaender](https://webspace.science.uu.nl/~bodla101/), [Stefan Kratsch](https://www.i1.cs.uni-bonn.de/doku.php?id=en:staff:stefankratsch), Vincent Kreuzen, **[O-joung Kwon](http://ojkwon.com)**, and Seongmin Ok, [*Characterizing width two for variants of treewidth*](https://doi.org/10.1016/j.dam.2015.01.015), Discrete Appl. Math., **216**(January 2017), pp. 29-46. <https://doi.org/10.1016/j.dam.2015.01.015>
-
-### 2016
-
-  - Petr Hliněný, **O-joung Kwon**, Jan Obdržálek, and Sebastian Ordyniak, [*Tree-depth and vertex-minors*](https://doi.org/10.1016/j.ejc.2016.03.001), European J. Combin.  56:46-56, 2016. <https://doi.org/10.1016/j.ejc.2016.03.001>
-
-### 2015
-
-  - **Dong Yeap Kang**, Jaehoon Kim, and Younjin Kim, [*On the Erdős-Ko-Rado theorem and the Bollobás theorem for t-intersecting families*](https://doi.org/10.1016/j.ejc.2015.01.009), European J. Combin. 47: 68-74, 2015. <https://doi.org/10.1016/j.ejc.2015.01.009>
+{% include student_paper_list.html papers=journal_published group_by_year=true %}
 
 ## Refereed Conference Papers
 
-### 2025
-
-  - **[Mujin Choi](https://dimag.ibs.re.kr/home/mujin/)**, [Claire Hilare](https://clairehilaire.github.io/), [Martin Milanič](https://osebje.famnit.upr.si/~martin.milanic/), and [Sebastian Wiederrecht](https://www.wiederrecht.com/), *Excluding an induced wheel minor in graphs without large induced stars*, In the Proceedings of the 51st International Workshop on Graph-Theoretic Concepts in Computer Science (WG2025, Otzenhausen, Germany, June 11-13), accepted, 2025. 
-
-### 2023
-
-  - [**Jungho Ahn**](https://dimag.ibs.re.kr/home/jungho/), [Jinha Kim](https://sites.google.com/view/jinhakim), and [O-joung Kwon](http://ojkwon.com/), *[Unified almost linear kernels for generalized covering and packing problems on nowhere dense classes](https://doi.org/10.4230/LIPIcs.ISAAC.2023.5)*, In the Proceedings of the [34th International Symposium on Algorithms and Computation (ISAAC 2023, Kyoto, Japan, December 3-6, 2023)](https://www.kurims.kyoto-u.ac.jp/isaac/isaac2023/), **283**:Art. no. 5, December 2023. <https://doi.org/10.4230/LIPIcs.ISAAC.2023.5>
-
-### 2021
-
-  - **[Jungho Ahn](https://dimag.ibs.re.kr/home/jungho/)**, [Lars Jaffke](https://lars-jaffke.github.io), **[O-joung Kwon](http://ojkwon.com/)**, and [Paloma T. Lima](http://www.ii.uib.no/~palomal/), [*Three problems on well-partitioned chordal graphs*](https://doi.org/10.1007/978-3-030-75242-2_2), In the Proceedings of the [12th International Conference on Algorithms and Complexity (CIAC2021, May 10-12, 2021)](http://easyconferences.eu/ciac2021/), *Lecture Notes in Comput. Sci.*, vol. 12701, pp. 23-36, 2021. <https://doi.org/10.1007/978-3-030-75242-2_2>
-
-### 2020
-
-  - [**Jungho Ahn**](https://dimag.ibs.re.kr/home/jungho/), [Eun Jung Kim](https://ssimplexity.github.io), and [Euiwoong Lee](https://web.eecs.umich.edu/~euiwoong/), [*Towards constant-factor approximation for chordal / distance-hereditary vertex deletion*](https://doi.org/10.4230/LIPIcs.ISAAC.2020.62), In the Proceedings of the [31st International Symposium on Algorithms and Computation (ISAAC2020, December 14-18, 2020, Hong Kong)](https://algo2020.comp.polyu.edu.hk/isaac-cfp.html), Article No. 62; pp. 62:1-62:16, 2020. <https://doi.org/10.4230/LIPIcs.ISAAC.2020.62>
-  - **Jungho Ahn**, [Lars Jaffke](https://lars-jaffke.github.io), [O-joung Kwon](http://ojkwon.com/), and [Paloma T. Lima](http://www.ii.uib.no/~palomal/), [*Well-partitioned chordal graphs: obstruction set and disjoint paths*](https://doi.org/10.1007/978-3-030-60440-0_12), In the Proceedings of the [46th International Workshop on Graph-Theoretic Concepts in Computer Science (WG2020, June 24-26, 2020, Leeds, UK)](https://algorithms.leeds.ac.uk/wg2020/), Lecture Notes in Comput. Sci., vol. 12301, pp. 148-160, 2020. <https://doi.org/10.1007/978-3-030-60440-0_12>
-
-### 2017
-
-  - **Dong Yeap Kang**, O-joung Kwon, Torstein J.F. Strømme, and Jan Arne Telle, [*A width parameter useful for chordal and co-comparability graphs*](https://doi.org/10.1007/978-3-319-53925-6_8), In S. H. Poon, M. Rahman, H. C. Yen, editors, WALCOM: Algorithms and Computations (Hsinchu, Taiwan, March 29-31, 2017), volume 10167 of Lecture Notes in Comput. Sci., pages 93-105, Springer, 2017. <https://doi.org/10.1007/978-3-319-53925-6_8>
-
-### 2015
-
-  - **Jisu Jeong**, [Sigve Hortemo Sæther](https://www.linkedin.com/in/sigve-hortemo-s%25C3%25A6ther-92b48928), and [Jan Arne Telle](https://www.uib.no/en/persons/Jan.Arne.Telle). [Maximum matching width: New characterizations and a fast algorithm for dominating set](https://doi.org/10.4230/LIPIcs.IPEC.2015.212). In T. Husfeldt and I. Kanj, editors, 10th International Symposium on Parameterized and Exact Computation (IPEC 2015), volume 43 of *Leibniz International Proceedings in Informatics (LIPIcs)*, pages 212–223, Dagstuhl, Germany, 2015. <https://doi.org/10.4230/LIPIcs.IPEC.2015.212>
-
-### 2014
-
-  - [Isolde Adler](https://eps.leeds.ac.uk/computing/staff/810/dr-isolde-adler), [Mamadou M. Kanté](https://perso.isima.fr/~makante/), and **O-joung Kwon**. [*Linear rank-width of distance-hereditary graphs*](https://doi.org/10.1007/978-3-319-12340-0_4). In D. Kratsch and I. Todinca, editors, Graph-Theoretic Concepts in Computer Science: 40th International Workshop, WG 2014, volume 8747 of Lecture Notes in Comput. Sci., pages 42–55. Springer, 2014. <https://doi.org/10.1007/978-3-319-12340-0_4>
+{% include student_paper_list.html papers=conference_papers group_by_year=true %}

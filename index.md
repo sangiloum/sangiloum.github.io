@@ -123,7 +123,19 @@ I am organizing the [Discrete Math Seminar](https://dimag.ibs.re.kr/events/categ
 
 ## Coauthors
 
-{% assign coauthors_sorted = site.data.coauthors | sort: "firstname" | sort: "lastname" %}
+{% assign coauthor_ids_csv = '' %}
+{% for paper in site.papers %}
+  {% if paper.coauthors and paper.coauthors.size > 0 %}
+    {% assign joined_ids = paper.coauthors | join: ',' %}
+    {% if coauthor_ids_csv == '' %}
+      {% assign coauthor_ids_csv = joined_ids %}
+    {% else %}
+      {% assign coauthor_ids_csv = coauthor_ids_csv | append: ',' | append: joined_ids %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign coauthor_ids = coauthor_ids_csv | split: ',' | uniq %}
+{% assign coauthors_sorted = site.data.people | where_exp: "person", "coauthor_ids contains person.id" | sort: "firstname" | sort: "lastname" %}
 <p class="coauthors-inline">{% for co in coauthors_sorted %}{% capture co_full_name %}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{% if co.korname %}<sup>{{ co.korname }}</sup>{% endif %}{% endcapture %}{% if co.url %}<a href="{{ co.url }}">{{ co_full_name | strip }}</a>{% else %}{{ co_full_name | strip }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
 
 [Mastodon](https://mathstodon.xyz/@sioum)
