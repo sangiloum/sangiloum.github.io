@@ -6,6 +6,12 @@ timezone: "Asia/Seoul"
 theme: minima
 permalink: pretty
 markdown: kramdown
+picture:
+  source: ""
+  output: "assets/generated"
+  suppress_warnings: false
+  relative_url: true
+  ignore_missing_images: false
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -13,6 +19,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-archives
   - jekyll-paginate-v2
+  - jekyll_picture_tag
 
 collections:
   papers:

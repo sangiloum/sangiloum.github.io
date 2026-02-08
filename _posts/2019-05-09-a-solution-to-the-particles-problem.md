@@ -12,7 +12,7 @@ mathjax: true
 [Prof. Yuval Peres](https://yuvalperes.com/) posted the [following very interesting problem on his blog](https://yuvalperes.com/Math-Expo/2019/05/09/hello-world/).  
 
 
-![](/assets/legacy/2019/05/points2.png)
+{% picture preserve-original "assets/legacy/2019/05/points2.png" --alt  %}
 
 
 Suppose there are n particles in the unit square. Initially one particle is awake and all others are sleeping. Each awake particle moves in the unit square at speed 1 in a direction you prescribe and wakes up any sleeping particle it encounters. The particles that are awake move simultaneously.

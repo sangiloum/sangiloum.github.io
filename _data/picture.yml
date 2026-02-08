@@ -1,0 +1,63 @@
+media_queries:
+  mobile: "max-width: 760px"
+
+presets:
+  default:
+    formats: [avif, webp, original]
+    widths: [320, 480, 768, 1024, 1440]
+    sizes:
+      mobile: 100vw
+    size: 760px
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
+
+  featured:
+    formats: [avif, webp, original]
+    widths: [480, 768, 1024, 1440, 1920]
+    sizes:
+      mobile: 100vw
+    size: 960px
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
+
+  card:
+    formats: [avif, webp, original]
+    widths: [173, 260, 346, 520]
+    sizes:
+      mobile: calc(100vw - 3rem)
+    size: 173px
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
+
+  grid-2:
+    formats: [avif, webp, original]
+    widths: [320, 480, 640, 768]
+    sizes:
+      mobile: 100vw
+    size: 50vw
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
+
+  grid-3:
+    formats: [avif, webp, original]
+    widths: [240, 320, 480, 640]
+    sizes:
+      mobile: 100vw
+    size: 33vw
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'
+
+  preserve-original:
+    formats: [original]
+    widths: [320, 480, 768, 1024, 1440]
+    sizes:
+      mobile: 100vw
+    size: 760px
+    dimension_attributes: true
+    attributes:
+      img: 'loading="lazy" decoding="async"'

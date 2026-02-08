@@ -135,7 +135,7 @@ I managed the [KAIST Math Problem of the Week](https://mathsci.kaist.ac.kr/pow/)
 
 ### Horizon
 
-[![](/assets/legacy/2018/01/logo-300x52.png)](https://horizon.kias.re.kr/)
+<a href="https://horizon.kias.re.kr/">{% picture preserve-original "assets/legacy/2018/01/logo-300x52.png" --alt  %}</a>
 
 Until the end of November 2018, I had been one of the founding editors of the [Horizon](https://horizon.kias.re.kr/), a math and science blog run by [KIAS](http://www.kias.re.kr/).
 

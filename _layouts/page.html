@@ -13,12 +13,12 @@ layout: default
   </header>
   {% if page.featured_image %}
   <figure class="post-featured">
-    <img
-      src="{{ page.featured_image | relative_url }}"
-      alt="{{ page.title | escape }}"
-      loading="lazy"
-      decoding="async"
-    >
+    {% include responsive-picture.html
+      src=page.featured_image
+      alt=page.title
+      sizes_profile="featured"
+      class="post-featured-image"
+    %}
   </figure>
   {% endif %}
   <section class="page-body">
