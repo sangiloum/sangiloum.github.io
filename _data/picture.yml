@@ -3,7 +3,7 @@ media_queries:
 
 presets:
   default:
-    formats: [avif, webp, original]
+    formats: [webp, original]
     widths: [320, 480, 768, 1024, 1440]
     sizes:
       mobile: 100vw
@@ -13,7 +13,7 @@ presets:
       img: 'loading="lazy" decoding="async"'
 
   featured:
-    formats: [avif, webp, original]
+    formats: [webp, original]
     widths: [480, 768, 1024, 1440, 1920]
     sizes:
       mobile: 100vw
@@ -23,7 +23,7 @@ presets:
       img: 'loading="lazy" decoding="async"'
 
   card:
-    formats: [avif, webp, original]
+    formats: [webp, original]
     widths: [173, 260, 346, 520]
     sizes:
       mobile: calc(100vw - 3rem)
@@ -33,7 +33,7 @@ presets:
       img: 'loading="lazy" decoding="async"'
 
   grid-2:
-    formats: [avif, webp, original]
+    formats: [webp, original]
     widths: [320, 480, 640, 768]
     sizes:
       mobile: 100vw
@@ -43,7 +43,7 @@ presets:
       img: 'loading="lazy" decoding="async"'
 
   grid-3:
-    formats: [avif, webp, original]
+    formats: [webp, original]
     widths: [240, 320, 480, 640]
     sizes:
       mobile: 100vw
