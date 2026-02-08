@@ -8,7 +8,7 @@ canonical_url: https://sangiloum.github.io/awards/
 {% include three-figures.html
   src1="/assets/legacy/2012/11/young.jpg"
   alt1="Young Scientist Award (2012)"
-  src2="/assets/legacy/2022/12/choi-1024x682.jpg"
+  src2="/assets/legacy/2022/12/choi.jpg"
   alt2="Choi Seok-Jeong Award (2022)"
   src3="/assets/legacy/2012/11/ewon.jpg"
   alt3="Ewon Assistant Professorship (2010)"

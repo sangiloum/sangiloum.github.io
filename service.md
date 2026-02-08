@@ -3,7 +3,7 @@ title: "Service"
 permalink: /service/
 description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/service/
-featured_image: /assets/legacy/2012/11/DSC010321-1024x680.jpg
+featured_image: /assets/legacy/2012/11/DSC010321.jpg
 featured_image_source: og_image
 ---
 
@@ -143,7 +143,7 @@ Until the end of November 2018, I had been one of the founding editors of the [H
 
   - “2012년 아벨상 수상자의 업적 – 헝가리 출신 수학자 세머레디 교수”, The Newsletter of KMS, Korean Mathematical Society, vol. 148, pp. 7-9, March 2013.
   - “2012년 국제수학올림피아드(IMO) 참가 보고”, The Newsletter of KMS, Korean Mathematical Society, vol. 145, pp. 13-22, Sep. 2012.
-  - “[불규칙에서 규칙성 찾은’수학자, 아벨상 수상자로](http://scienceon.hani.co.kr/32752)“, 사이언스 온, 한겨레신문(주), March 23, 2012.  
+  - “[불규칙에서 규칙성 찾은’수학자, 아벨상 수상자로](https://web.archive.org/web/20200918135515/scienceon.hani.co.kr/32752)“, 사이언스 온, 한겨레신문(주), March 23, 2012.  
     (explaining the work of E. Szemerédi after he was announced as the Abel prize winner of 2012.)
   - Hot Math (따끈따끈한 수학), Math Donga, 2016.1-2019.12 (Monthly articles on a mathematics magazine called the Math Donga 수학동아.)
   - “수학자의 시선” (Viewpoint from a mathematician), [서울신문 (Seoul Shinmun)](https://www.seoul.co.kr/), 2019.8-2020.5.
