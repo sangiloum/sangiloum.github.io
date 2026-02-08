@@ -23,6 +23,10 @@ featured_image_source: og_image
     <summary>Filter by Coauthors</summary>
     <div id="papers-coauthor-buttons" class="papers-coauthor-buttons"></div>
   </details>
+  <details class="papers-coauthors">
+    <summary>Filter by Journals</summary>
+    <div id="papers-journal-buttons" class="papers-coauthor-buttons"></div>
+  </details>
   <p id="papers-search-status" class="papers-search-status" aria-live="polite"></p>
 </div>
 
@@ -62,13 +66,21 @@ featured_image_source: og_image
     var input = document.getElementById("papers-search-input");
     var status = document.getElementById("papers-search-status");
     var coauthorBox = document.getElementById("papers-coauthor-buttons");
-    if (!input || !coauthorBox) return;
+    var journalBox = document.getElementById("papers-journal-buttons");
+    if (!input || !coauthorBox || !journalBox) return;
 
+    {% capture used_coauthor_ids -%}{%- for p in all_papers -%}{%- assign p_coauthors = p.coauthors | default: empty -%}{%- for cid in p_coauthors -%}|{{ cid }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
     var coauthorMap = {
-      {% for co in site.data.people %}
-      {% capture co_full_name %}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{% endcapture %}
-      {{ co.id | jsonify }}: {{ co_full_name | strip | jsonify }}{% unless forloop.last %},{% endunless %}
-      {% endfor %}
+      {%- assign first_coauthor_map_item = true -%}
+      {%- for co in site.data.people -%}
+        {%- capture cid_token -%}|{{ co.id }}|{%- endcapture -%}
+        {%- if used_coauthor_ids contains cid_token -%}
+          {%- capture co_full_name -%}{{ co.firstname }}{% if co.lastname != "" %} {{ co.lastname }}{% endif %}{%- endcapture -%}
+          {%- unless first_coauthor_map_item -%},{%- endunless -%}
+          {{ co.id | jsonify }}: {{ co_full_name | strip | jsonify }}
+          {%- assign first_coauthor_map_item = false -%}
+        {%- endif -%}
+      {%- endfor -%}
     };
 
     var items = Array.prototype.slice.call(document.querySelectorAll(".paper-list .paper-item"));
@@ -76,6 +88,7 @@ featured_image_source: og_image
     var total = items.length;
     var NONE_COAUTHOR_KEY = "__none__";
     var activeCoauthor = null;
+    var activeJournal = null;
 
     function normalize(text) {
       return (text || "").toLowerCase().trim();
@@ -86,9 +99,13 @@ featured_image_source: og_image
       return item.dataset.coauthors.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
     }
 
+    function getItemJournal(item) {
+      return (item.dataset.journal || "").trim();
+    }
+
     function updateStatus(shown, query) {
       if (!status) return;
-      if (!query && !activeCoauthor) {
+      if (!query && !activeCoauthor && !activeJournal) {
         status.textContent = "Showing all " + total + " papers.";
         return;
       }
@@ -100,6 +117,9 @@ featured_image_source: og_image
         } else {
           parts.push("coauthor \"" + (coauthorMap[activeCoauthor] || activeCoauthor) + "\"");
         }
+      }
+      if (activeJournal) {
+        parts.push("journal \"" + activeJournal + "\"");
       }
       status.textContent = "Found " + shown + " paper" + (shown === 1 ? "" : "s") + " for " + parts.join(" + ") + ".";
     }
@@ -125,6 +145,18 @@ featured_image_source: og_image
       });
     }
 
+    function updateJournalButtonState() {
+      var resetBtn = journalBox.querySelector("button[data-journal-all]");
+      if (resetBtn) {
+        resetBtn.classList.toggle("is-active", !activeJournal);
+      }
+      var buttons = Array.prototype.slice.call(journalBox.querySelectorAll("button[data-journal]"));
+      buttons.forEach(function (button) {
+        var jid = button.getAttribute("data-journal");
+        button.classList.toggle("is-active", jid === activeJournal);
+      });
+    }
+
     function applyFilter() {
       var query = normalize(input.value);
       var shown = 0;
@@ -132,10 +164,12 @@ featured_image_source: og_image
       items.forEach(function (item) {
         var text = normalize(item.textContent);
         var itemCoauthors = getItemCoauthors(item);
+        var itemJournal = getItemJournal(item);
         var queryOk = !query || text.indexOf(query) !== -1;
         var coauthorOk = !activeCoauthor ||
           (activeCoauthor === NONE_COAUTHOR_KEY ? itemCoauthors.length === 0 : itemCoauthors.indexOf(activeCoauthor) !== -1);
-        var visible = queryOk && coauthorOk;
+        var journalOk = !activeJournal || itemJournal === activeJournal;
+        var visible = queryOk && coauthorOk && journalOk;
         item.hidden = !visible;
         if (visible) shown += 1;
       });
@@ -147,6 +181,7 @@ featured_image_source: og_image
 
       refreshYearHeaders();
       updateCoauthorButtonState();
+      updateJournalButtonState();
       updateStatus(shown, query);
     }
 
@@ -208,8 +243,53 @@ featured_image_source: og_image
       coauthorBox.appendChild(frag);
     }
 
+    function renderJournalButtons() {
+      var counts = {};
+      items.forEach(function (item) {
+        var journal = getItemJournal(item);
+        if (!journal) return;
+        counts[journal] = (counts[journal] || 0) + 1;
+      });
+
+      var rows = Object.keys(counts).map(function (journal) {
+        return { name: journal, count: counts[journal] };
+      }).sort(function (a, b) {
+        if (b.count !== a.count) return b.count - a.count;
+        return a.name.localeCompare(b.name);
+      });
+
+      var frag = document.createDocumentFragment();
+
+      var reset = document.createElement("button");
+      reset.type = "button";
+      reset.className = "papers-coauthor-btn is-active";
+      reset.setAttribute("data-journal-all", "1");
+      reset.textContent = "All (" + total + ")";
+      reset.addEventListener("click", function () {
+        activeJournal = null;
+        applyFilter();
+      });
+      frag.appendChild(reset);
+
+      rows.forEach(function (row) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "papers-coauthor-btn";
+        btn.setAttribute("data-journal", row.name);
+        btn.textContent = row.name + " (" + row.count + ")";
+        btn.addEventListener("click", function () {
+          activeJournal = (activeJournal === row.name) ? null : row.name;
+          applyFilter();
+        });
+        frag.appendChild(btn);
+      });
+
+      journalBox.appendChild(frag);
+    }
+
     input.addEventListener("input", applyFilter);
     renderCoauthorButtons();
+    renderJournalButtons();
     applyFilter();
   })();
 </script>

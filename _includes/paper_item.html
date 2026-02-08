@@ -45,7 +45,7 @@ with {% assign co_count = paper.coauthors.size %}{% for cid in paper.coauthors %
 {%- capture note_html -%}{%- if paper.note -%}{{ paper.note | markdownify }}{%- endif -%}{%- endcapture -%}
 {%- assign note_html = note_html | strip | remove: '<p>' | remove: '</p>' -%}
 
-<li class="paper-item" data-year="{{ paper.year }}" data-coauthors="{{ coauthor_ids }}">
+<li class="paper-item" data-year="{{ paper.year }}" data-coauthors="{{ coauthor_ids }}" data-journal="{{ journal_text | escape }}">
   <div class="paper-item-main">
     {%- if title_href -%}<a href="{{ title_href }}"><strong>{{ paper.title }}</strong></a>{%- else -%}<strong>{{ paper.title }}</strong>{%- endif -%}{% if coauthor_text != '' %} ({{ coauthor_text | strip }}){% endif %}{% if journal_text != '' %}, <em>{{ journal_text }}</em>{% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
   </div>

@@ -892,9 +892,9 @@ sup {
   display: block;
 }
 
-.page.page-papers .paper-item[hidden],
-.page.page-papers .paper-list[hidden],
-.page.page-papers h3[hidden] {
+.page .paper-item[hidden],
+.page .paper-list[hidden],
+.page h3[hidden] {
   display: none !important;
 }
 

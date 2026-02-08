@@ -30,6 +30,7 @@
 {%- assign mystudents = paper.mystudents | default: empty -%}
 {%- assign author_ids = paper.authors | default: empty -%}
 {%- assign author_ids_csv = author_ids | join: ',' -%}
+{%- assign mystudents_csv = mystudents | join: ',' -%}
 
 {%- capture author_text -%}
   {%- if author_ids and author_ids.size > 0 -%}
@@ -54,7 +55,7 @@
 {%- capture note_html -%}{%- if paper.note -%}{{ paper.note | markdownify }}{%- endif -%}{%- endcapture -%}
 {%- assign note_html = note_html | strip | remove: '<p>' | remove: '</p>' -%}
 
-<li class="paper-item student-paper-item" data-year="{{ paper.year }}" data-authors="{{ author_ids_csv }}">
+<li class="paper-item student-paper-item" data-year="{{ paper.year }}" data-authors="{{ author_ids_csv }}" data-mystudents="{{ mystudents_csv }}">
   <div class="paper-item-main">
     {% if author_text != '' %}{{ author_text | strip }}, {% endif %}{%- if title_href -%}<a href="{{ title_href }}"><em>{{ paper.title }}</em></a>{%- else -%}<em>{{ paper.title }}</em>{%- endif -%}{% if journal_html != '' %}, <em>{{ journal_html }}</em>{% endif %}{% if conference_html != '' %}, {{ conference_html }}{% endif %}{% if booktitle_html != '' %}, {{ booktitle_html }}{% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
   </div>
