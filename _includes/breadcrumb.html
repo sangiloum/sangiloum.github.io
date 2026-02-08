@@ -1,7 +1,7 @@
 {% assign segments = page.url | split: '/' %}
 {% assign segment_count = 0 %}
 {% for segment in segments %}
-  {% if segment != '' %}
+  {% if segment != '' and segment != 'index.html' %}
     {% assign segment_count = segment_count | plus: 1 %}
   {% endif %}
 {% endfor %}
@@ -16,17 +16,26 @@
       {% endif %}
     </li>
     {% if page.url != '/' %}
+      {% if page.layout == 'year-archive' %}
+      <li class="breadcrumb-item">
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      </li>
+      {% endif %}
       {% assign current_path = '' %}
       {% assign seen_count = 0 %}
       {% for segment in segments %}
-        {% if segment != '' %}
+        {% if segment != '' and segment != 'index.html' %}
           {% assign current_path = current_path | append: '/' | append: segment %}
           {% assign seen_count = seen_count | plus: 1 %}
+          {% assign label = segment | replace: '-', ' ' | capitalize %}
           <li class="breadcrumb-item">
             {% if seen_count == segment_count %}
-              <span aria-current="page">{{ page.title }}</span>
+              {% assign current_label = page.title | default: '' | strip %}
+              {% if current_label == '' %}
+                {% assign current_label = label %}
+              {% endif %}
+              <span aria-current="page">{{ current_label }}</span>
             {% else %}
-              {% assign label = segment | replace: '-', ' ' | capitalize %}
               {% assign segment_href = current_path | append: '/' %}
               {% if segment_href == '/blog/category/' %}
                 <span>{{ label }}</span>

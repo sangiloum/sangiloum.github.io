@@ -292,6 +292,11 @@ a:hover {
   clear: both;
 }
 
+sup {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
 .home-logo {
   float: right;
   margin: 0 0 1rem 1rem;
@@ -491,6 +496,42 @@ a:hover {
   background: #f8fbff;
 }
 
+.list-pagination {
+  margin: 1rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.list-pagination-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #f8fbff;
+  color: #2a4064;
+}
+
+.list-pagination-link:hover {
+  text-decoration: none;
+  background: #edf4ff;
+}
+
+.list-pagination-link.is-disabled {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.list-pagination-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .post-card-categories,
 .post-meta-categories {
   margin: 0.2rem 0 0.55rem;
@@ -636,7 +677,10 @@ a:hover {
   }
 
   .home-logo-wide {
-    max-width: min(220px, 68vw);
+    float: none;
+    margin: 0 auto 0.9rem;
+    max-width: min(220px, 72vw);
+    clear: both;
   }
 
   .home-logo-compact {

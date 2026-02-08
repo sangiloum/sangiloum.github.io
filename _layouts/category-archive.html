@@ -1,17 +1,32 @@
 ---
 layout: page
 ---
-{% assign archive_category_value = page.archive_category | default: page.title %}
+{% assign archive_category_value = page.autopages.display_name | default: page.archive_category | default: page.title %}
+{% assign archive_posts = paginator.posts %}
+{% if archive_posts == nil %}
+  {% assign archive_posts = page.posts | default: site.categories[archive_category_value] | default: empty %}
+  {% assign archive_posts = archive_posts | sort: "date" | reverse %}
+{% endif %}
 <div class="blog-layout">
   {% include blog-categories.html active_category=archive_category_value %}
 
   <section class="blog-main">
     <h2>Posts in "{{ archive_category_value }}"</h2>
-    {% if page.posts %}
-      {% include post-cards.html posts=page.posts category_filter=archive_category_value %}
-    {% else %}
-      {% assign matched_category = site.categories[archive_category_value] %}
-      {% include post-cards.html posts=matched_category category_filter=archive_category_value %}
+    {% include post-cards.html posts=archive_posts category_filter=archive_category_value %}
+    {% if paginator and paginator.total_pages > 1 %}
+    <nav class="list-pagination" aria-label="Category post pages">
+      {% if paginator.previous_page %}
+      <a class="list-pagination-link" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
+      {% else %}
+      <span class="list-pagination-link is-disabled">← Newer</span>
+      {% endif %}
+      <span class="list-pagination-status">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+      <a class="list-pagination-link" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
+      {% else %}
+      <span class="list-pagination-link is-disabled">Older →</span>
+      {% endif %}
+    </nav>
     {% endif %}
   </section>
 </div>

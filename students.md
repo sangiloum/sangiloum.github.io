@@ -12,7 +12,7 @@ featured_image_source: og_image
   - **[Seokbeom Kim<sup>김석범</sup>](https://dimag.ibs.re.kr/home/seokbeom/)**. Ph.D. Student, 2022.7-current.
   - **[Mujin Choi<sup>최무진</sup>](https://dimag.ibs.re.kr/home/mujin/)**. Ph.D. Student, 2024.1-current.
 
-### Current Post-docs
+### Current Postdocs
 
   - [**Semin Yoo<sup>유세민</sup>**](https://sites.google.com/site/seminmathematics/). 2024.4.1-. Ph.D. at University of Rochester, 2021. Advisor: [Jonathan Pakianathan](https://people.math.rochester.edu/faculty/jonpak/).
   - **[Colin Geniet](https://colingeniet.com)**. 2024.9.1-. Ph.D. at ENS de Lyon, 2024. Advisor: [Stéphan Thomassé](http://perso.ens-lyon.fr/stephan.thomasse/).
@@ -44,7 +44,7 @@ featured_image_source: og_image
       - [Hojin Choi<sup>최호진</sup>](https://kr.linkedin.com/in/hojin-choi-128a7518b). M.S., 2016.2. (Platform Software Engineer at [Moreh](https://moreh.io))
       - Yeong Joon Kang<sup>강영준</sup>. M.S., 2019.2. ([TmaxSoft](https://kr.tmaxsoft.com/))
 
-### Former Post-docs
+### Former Postdocs
 
   - [Tony Huynh](https://sites.google.com/view/ringikim/home) 2011.9-2012.8.  
     Ph.D. at University of Waterloo 2009, Advisor: [Jim Geelen](http://www.math.uwaterloo.ca/~jfgeelen/). (Senior Research Fellow at the IBS Discrete Mathematics Group)

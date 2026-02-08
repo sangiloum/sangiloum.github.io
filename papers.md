@@ -20,7 +20,7 @@ featured_image_source: og_image
   <label for="papers-search-input">Search papers</label>
   <input id="papers-search-input" type="search" placeholder="Title, coauthor, venue, year..." autocomplete="off">
   <details class="papers-coauthors">
-    <summary>Coauthors</summary>
+    <summary>Filter by Coauthors</summary>
     <div id="papers-coauthor-buttons" class="papers-coauthor-buttons"></div>
   </details>
   <p id="papers-search-status" class="papers-search-status" aria-live="polite"></p>
