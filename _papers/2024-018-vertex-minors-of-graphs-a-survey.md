@@ -8,6 +8,7 @@ url: "/assets/legacy/2024/03/2023vertexminors-survey-revised.pdf"
 coauthors:
   - donggyu
 sort_key: 202407
+journal: "Discrete Appl. Math."
 text: |
-  Discrete Appl. Math., **351**:54-73
+  **351**:54-73
 ---

@@ -11,6 +11,7 @@ coauthors:
   - mihyun
   - jaehoon
 sort_key: 202603
+journal: "European J. Combin."
 text: |
-  European J. Combin., **133**:104305
+  **133**:104305
 ---

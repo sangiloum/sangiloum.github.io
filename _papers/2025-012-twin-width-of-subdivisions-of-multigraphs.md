@@ -10,6 +10,7 @@ coauthors:
   - chakraborti
   - hendrey
 sort_key: 202500
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **39**(2):607-862
+  **39**(2):607-862
 ---

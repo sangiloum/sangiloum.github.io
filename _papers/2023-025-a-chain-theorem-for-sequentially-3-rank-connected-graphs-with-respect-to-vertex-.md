@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/2110.10390"
 coauthors:
   - duksang
 sort_key: 202310
+journal: "European J. Combin."
 text: |
-  European J. Combin., **113**:103761
+  **113**:103761
 ---

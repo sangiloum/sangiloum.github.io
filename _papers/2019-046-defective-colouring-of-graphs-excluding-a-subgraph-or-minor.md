@@ -10,6 +10,7 @@ coauthors:
   - ossonademendez
   - wood
 sort_key: 201904
+journal: "Combinatorica"
 text: |
-  Combinatorica, **39**(2), pp. 377-410
+  **39**(2), pp. 377-410
 ---

@@ -11,6 +11,7 @@ coauthors:
   - ojoung
   - sivaraman
 sort_key: 202001
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **140**, pp. 372-386
+  **140**, pp. 372-386
 ---

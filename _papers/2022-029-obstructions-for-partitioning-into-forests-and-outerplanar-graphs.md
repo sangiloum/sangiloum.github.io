@@ -10,7 +10,8 @@ coauthors:
   - ringi
   - norin
 sort_key: 202205
+journal: "Discrete Appl. Math."
 text: |
-  Discrete Appl. Math., **312**:15-28
+  **312**:15-28
 note: "[open access]"
 ---

@@ -10,6 +10,7 @@ coauthors:
   - ilkyoo
   - ojoung
 sort_key: 201703
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **123**, pp. 126-147
+  **123**, pp. 126-147
 ---

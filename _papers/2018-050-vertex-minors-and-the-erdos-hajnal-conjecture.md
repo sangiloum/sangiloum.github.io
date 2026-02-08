@@ -8,6 +8,7 @@ url: "https://arxiv.org/abs/1804.11008"
 coauthors:
   - chudnovsky
 sort_key: 201800
+journal: "Discrete Math."
 text: |
-  Discrete Math., **341**, pp. 3498-3499
+  **341**, pp. 3498-3499
 ---

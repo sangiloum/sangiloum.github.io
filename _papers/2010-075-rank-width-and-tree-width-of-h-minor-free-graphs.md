@@ -9,6 +9,7 @@ coauthors:
   - fomin
   - thilikos
 sort_key: 201000
+journal: "European J. Combin."
 text: |
-  European J. Combin., **31**, no. 7, pp. 1617-1628
+  **31**, no. 7, pp. 1617-1628
 ---

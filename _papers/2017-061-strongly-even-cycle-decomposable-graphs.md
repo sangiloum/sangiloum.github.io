@@ -11,6 +11,7 @@ coauthors:
   - king
   - verdianrizi
 sort_key: 201702
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **84**, no. 2, pp. 158-175
+  **84**, no. 2, pp. 158-175
 ---

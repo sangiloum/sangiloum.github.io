@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1503.08371"
 coauthors:
   - liu
 sort_key: 201801
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **128**, pp. 114-133
+  **128**, pp. 114-133
 ---

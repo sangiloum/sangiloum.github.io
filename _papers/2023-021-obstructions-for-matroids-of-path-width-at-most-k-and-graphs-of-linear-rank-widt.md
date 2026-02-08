@@ -11,6 +11,7 @@ coauthors:
   - eunjung
   - ojoung
 sort_key: 202305
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **160**:15-35
+  **160**:15-35
 ---

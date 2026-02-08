@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1306.3066"
 coauthors:
   - ojoung
 sort_key: 201410
+journal: "European J. Combin."
 text: |
-  European J. Combin., **41**, pp. 100-127
+  **41**, pp. 100-127
 ---

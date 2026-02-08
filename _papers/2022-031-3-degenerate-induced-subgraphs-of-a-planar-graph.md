@@ -12,6 +12,7 @@ coauthors:
   - gu
   - qi
 sort_key: 202202
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **99**(2):251-277
+  **99**(2):251-277
 ---

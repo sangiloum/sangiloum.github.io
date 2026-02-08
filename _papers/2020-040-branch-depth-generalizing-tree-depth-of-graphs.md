@@ -10,7 +10,8 @@ coauthors:
   - devos
   - ojoung
 sort_key: 202012
+journal: "European J. Combin."
 text: |
-  European J. Combin., **90**, 103186
+  **90**, 103186
 note: "[open access]"
 ---

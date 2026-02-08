@@ -11,6 +11,7 @@ coauthors:
   - ilkyoo
   - jisu
 sort_key: 201910
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **92**, no. 2, pp. 152-171
+  **92**, no. 2, pp. 152-171
 ---

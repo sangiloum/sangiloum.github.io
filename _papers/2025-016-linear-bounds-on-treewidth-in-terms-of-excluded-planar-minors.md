@@ -11,6 +11,7 @@ coauthors:
   - hendrey
   - reed
 sort_key: 202512
+journal: "Electron. J. Combin."
 text: |
-  Electron. J. Combin., **32**(4):P4.68
+  **32**(4):P4.68
 ---

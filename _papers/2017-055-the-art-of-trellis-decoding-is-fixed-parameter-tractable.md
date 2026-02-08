@@ -10,6 +10,7 @@ coauthors:
   - jisu
   - eunjung
 sort_key: 201711
+journal: "IEEE Trans. Inform. Theory"
 text: |
-  IEEE Trans. Inform. Theory, **63**, no. 11, pp. 7178-7205. (Previous title: constructive algorithm for path-width of matroids)
+  **63**, no. 11, pp. 7178-7205. (Previous title: constructive algorithm for path-width of matroids)
 ---

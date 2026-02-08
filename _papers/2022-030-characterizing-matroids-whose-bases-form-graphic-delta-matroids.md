@@ -9,6 +9,7 @@ url: "https://arXiv.org/abs/2007.13298"
 coauthors:
   - duksang
 sort_key: 202203
+journal: "European J. Combin."
 text: |
-  European J. Combin., **101**:103476
+  **101**:103476
 ---

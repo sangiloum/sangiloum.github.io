@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/2202.07877"
 coauthors:
   - donggyu
 sort_key: 202405
+journal: "European J. Combin."
 text: |
-  European J. Combin., **118**:103871
+  **118**:103871
 ---

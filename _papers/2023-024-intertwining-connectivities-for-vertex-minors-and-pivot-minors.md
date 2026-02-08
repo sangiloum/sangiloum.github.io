@@ -8,6 +8,7 @@ url: "https://arxiv.org/abs/2106.03414"
 coauthors:
   - duksang
 sort_key: 202300
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **37**(1):304-314
+  **37**(1):304-314
 ---

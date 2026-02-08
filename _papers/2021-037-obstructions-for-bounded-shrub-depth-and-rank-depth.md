@@ -11,6 +11,7 @@ coauthors:
   - mccarty
   - wollan
 sort_key: 202107
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **149**, 76-91
+  **149**, 76-91
 ---

@@ -38,13 +38,15 @@ with {% assign co_count = paper.coauthors.size %}{% for cid in paper.coauthors %
 
 {%- capture text_html -%}{{ paper.text | markdownify }}{%- endcapture -%}
 {%- assign text_html = text_html | strip | remove: '<p>' | remove: '</p>' -%}
+{%- capture journal_html -%}{%- if paper.journal -%}{{ paper.journal | markdownify }}{%- endif -%}{%- endcapture -%}
+{%- assign journal_html = journal_html | strip | remove: '<p>' | remove: '</p>' -%}
 
 {%- capture note_html -%}{%- if paper.note -%}{{ paper.note | markdownify }}{%- endif -%}{%- endcapture -%}
 {%- assign note_html = note_html | strip | remove: '<p>' | remove: '</p>' -%}
 
 <li class="paper-item" data-year="{{ paper.year }}" data-coauthors="{{ coauthor_ids }}">
   <div class="paper-item-main">
-    {%- if title_href -%}<a href="{{ title_href }}"><strong>{{ paper.title }}</strong></a>{%- else -%}<strong>{{ paper.title }}</strong>{%- endif -%}{% if coauthor_text != '' %} ({{ coauthor_text | strip }}){% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
+    {%- if title_href -%}<a href="{{ title_href }}"><strong>{{ paper.title }}</strong></a>{%- else -%}<strong>{{ paper.title }}</strong>{%- endif -%}{% if coauthor_text != '' %} ({{ coauthor_text | strip }}){% endif %}{% if journal_html != '' %}, {{ journal_html }}{% endif %}{% if text_html != '' %}, {{ text_html }}{% endif %}, {% if month_name %}{{ month_name }} {% endif %}{{ paper.year }}.{% if note_html != '' %} {{ note_html }}.{% endif %}
   </div>
   {% if paper.doi or paper.arxiv %}
   <div class="paper-item-links">

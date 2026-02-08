@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1801.06004"
 coauthors:
   - ojoung
 sort_key: 202003
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **34**, no. 1, pp. 972-999
+  **34**, no. 1, pp. 972-999
 ---

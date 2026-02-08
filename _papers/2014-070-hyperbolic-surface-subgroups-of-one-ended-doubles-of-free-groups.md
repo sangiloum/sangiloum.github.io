@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1009.3820"
 coauthors:
   - sanghyun
 sort_key: 201412
+journal: "J. Topology"
 text: |
-  J. Topology, **7**, no. 4, pp. 927-947
+  **7**, no. 4, pp. 927-947
 ---

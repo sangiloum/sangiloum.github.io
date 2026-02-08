@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1203.3606"
 coauthors:
   - ojoung
 sort_key: 201405
+journal: "Discrete Applied Math."
 text: |
-  Discrete Applied Math., **168**, pp. 108-118
+  **168**, pp. 108-118
 ---

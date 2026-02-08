@@ -10,6 +10,7 @@ coauthors:
   - donggyu
   - duksang
 sort_key: 202310
+journal: "Combinatorica"
 text: |
-  Combinatorica, **43**(5):963-983
+  **43**(5):963-983
 ---

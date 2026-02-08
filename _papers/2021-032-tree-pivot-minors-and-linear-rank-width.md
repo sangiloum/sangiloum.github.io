@@ -14,6 +14,7 @@ coauthors:
   - paulusma
   - jisu
 sort_key: 202112
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **35**(4), 2922-2945
+  **35**(4), 2922-2945
 ---

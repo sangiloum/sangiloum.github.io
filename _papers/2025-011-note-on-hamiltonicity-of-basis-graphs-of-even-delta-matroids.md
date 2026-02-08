@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/2308.05772"
 coauthors:
   - donggyu
 sort_key: 202508
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **109**(4):446-453
+  **109**(4):446-453
 ---

@@ -11,8 +11,9 @@ coauthors:
   - jungho
   - eiben
   - ojoung
+journal: "Algorithmica"
 text: |
-  Algorithmica, **85**(10):3058-3087
+  **85**(10):3058-3087
 note: |
   (An [extended abstract](https://drops.dagstuhl.de/opus/volltexte/2020/12676/) appeared in MFCS 2020.)
 ---

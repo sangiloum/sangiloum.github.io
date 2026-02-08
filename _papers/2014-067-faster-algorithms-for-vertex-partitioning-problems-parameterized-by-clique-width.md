@@ -10,6 +10,7 @@ coauthors:
   - saether
   - vatshelle
 sort_key: 201405
+journal: "Theoret. Comput. Sci."
 text: |
-  Theoret. Comput. Sci., **535**, pp. 16-24
+  **535**, pp. 16-24
 ---

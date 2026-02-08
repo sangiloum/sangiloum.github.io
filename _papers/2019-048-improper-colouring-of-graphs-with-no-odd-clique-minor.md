@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1612.05372"
 coauthors:
   - dongyeap
 sort_key: 201909
+journal: "Combin. Probab. Comput."
 text: |
-  Combin. Probab. Comput., **28**, no. 5, pp. 740-754
+  **28**, no. 5, pp. 740-754
 ---

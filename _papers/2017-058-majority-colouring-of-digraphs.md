@@ -12,6 +12,7 @@ coauthors:
   - wood
   - zypen
 sort_key: 201705
+journal: "Electron. J. Combin."
 text: |
-  Electron. J. Combin., 24, \#P2.25
+  24, \#P2.25
 ---

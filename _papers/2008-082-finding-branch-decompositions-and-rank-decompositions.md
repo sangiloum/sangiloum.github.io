@@ -7,6 +7,7 @@ url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2007partition.pdf"
 coauthors:
   - hlineny
 sort_key: 200800
+journal: "SIAM J. Comput."
 text: |
-  SIAM J. Comput., **38**, no. 3, pp. 1012-1032
+  **38**, no. 3, pp. 1012-1032
 ---

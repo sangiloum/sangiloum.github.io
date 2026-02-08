@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1705.10947"
 coauthors:
   - sounggun
 sort_key: 201810
+journal: "Combinatorica"
 text: |
-  Combinatorica, **38**, no 5., pp. 1279-1284
+  **38**, no 5., pp. 1279-1284
 ---

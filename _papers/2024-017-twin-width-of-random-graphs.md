@@ -12,6 +12,7 @@ coauthors:
   - hendrey
   - donggyu
 sort_key: 202412
+journal: "Random Structures Algorithms"
 text: |
-  Random Structures Algorithms, **65**(4):794-831
+  **65**(4):794-831
 ---

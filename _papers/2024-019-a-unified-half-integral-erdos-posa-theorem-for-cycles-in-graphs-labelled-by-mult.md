@@ -12,6 +12,7 @@ coauthors:
   - kenichi
   - ojoung
 sort_key: 202401
+journal: "J. Lon. Math. Soc."
 text: |
-  J. Lon. Math. Soc., **109**(1):e12858
+  **109**(1):e12858
 ---

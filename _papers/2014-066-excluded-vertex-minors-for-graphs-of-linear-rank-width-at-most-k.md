@@ -10,6 +10,7 @@ coauthors:
   - jisu
   - ojoung
 sort_key: 201410
+journal: "European J. Combin."
 text: |
-  European J. Combin., **41**, pp. 242-257
+  **41**, pp. 242-257
 ---

@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/1906.05753"
 coauthors:
   - ojoung
 sort_key: 202103
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **96**, 361-378
+  **96**, 361-378
 ---

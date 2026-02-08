@@ -7,6 +7,7 @@ url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2006co.pdf"
 coauthors:
   - courcelle
 sort_key: 200700
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B **97**, no. 1, pp. 91-126
+  **97**, no. 1, pp. 91-126
 ---

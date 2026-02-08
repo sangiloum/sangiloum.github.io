@@ -12,6 +12,7 @@ coauthors:
   - ojoung
   - youngho
 sort_key: 202510
+journal: "Math. Ann."
 text: |
-  Math. Ann., **393**:2507-2559
+  **393**:2507-2559
 ---

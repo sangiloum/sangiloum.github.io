@@ -10,6 +10,7 @@ coauthors:
   - jungho
   - seonghyuk
 sort_key: 202512
+journal: "Discrete Appl. Math."
 text: |
-  Discrete Appl. Math., **377**:10-17
+  **377**:10-17
 ---

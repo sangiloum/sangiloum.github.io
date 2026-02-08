@@ -9,6 +9,7 @@ url: "https://arxiv.org/abs/2003.12960"
 coauthors:
   - jaehoon
 sort_key: 202104
+journal: "Electron. J. Combin."
 text: |
-  Electron. J. Combin., **28**, \#P2.9
+  **28**, \#P2.9
 ---

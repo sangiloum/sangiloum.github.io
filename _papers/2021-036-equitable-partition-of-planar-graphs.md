@@ -10,6 +10,7 @@ coauthors:
   - ringi
   - zhang
 sort_key: 202106
+journal: "Discrete Math."
 text: |
-  Discrete Math., **344**(6):112351
+  **344**(6):112351
 ---

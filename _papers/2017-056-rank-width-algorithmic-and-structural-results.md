@@ -7,6 +7,7 @@ doi: "10.1016/j.dam.2016.08.006"
 arxiv: "1601.03800"
 url: "https://arxiv.org/abs/1601.03800"
 sort_key: 201711
+journal: "Discrete Applied Math."
 text: |
-  Discrete Applied Math., **231**, pp. 15-24
+  **231**, pp. 15-24
 ---

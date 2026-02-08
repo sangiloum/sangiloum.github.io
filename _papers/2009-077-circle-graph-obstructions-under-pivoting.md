@@ -7,6 +7,7 @@ url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2007circle.pdf"
 coauthors:
   - geelen
 sort_key: 200900
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **61**, no. 1, pp. 1-11
+  **61**, no. 1, pp. 1-11
 ---

@@ -7,6 +7,7 @@ doi: "10.1016/j.ejc.2022.103634"
 arxiv: "2011.03205"
 url: "https://arxiv.org/abs/2011.03205"
 sort_key: 202302
+journal: "European J. Combin."
 text: |
-  European J. Combin., **108**:103634
+  **108**:103634
 ---

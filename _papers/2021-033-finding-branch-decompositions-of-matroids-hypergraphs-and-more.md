@@ -10,8 +10,9 @@ coauthors:
   - jisu
   - eunjung
 sort_key: 202111
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **35**(4):2544-2617
+  **35**(4):2544-2617
 note: |
   (An [extended abstract](https://doi.org/10.4230/LIPIcs.ICALP.2018.80) appeared in ICALP 2018.)
 ---

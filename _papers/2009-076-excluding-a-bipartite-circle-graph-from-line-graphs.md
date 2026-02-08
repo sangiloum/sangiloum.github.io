@@ -5,6 +5,7 @@ year: 2009
 doi: "10.1002/jgt.20353"
 url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2006line.pdf"
 sort_key: 200900
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory, **60**, no. 3, pp. 183-203
+  **60**, no. 3, pp. 183-203
 ---

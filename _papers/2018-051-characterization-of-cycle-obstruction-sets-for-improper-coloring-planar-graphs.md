@@ -9,6 +9,7 @@ coauthors:
   - ilkyoo
   - liu
 sort_key: 201800
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **32(**2018), no. 2, pp. 1209-1228
+  **32(**2018), no. 2, pp. 1209-1228
 ---

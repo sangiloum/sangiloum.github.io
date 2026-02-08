@@ -11,7 +11,8 @@ coauthors:
   - hendrey
   - mayhew
 sort_key: 202105
+journal: "Adv. Comb."
 text: |
-  Adv. Comb., 2021:4, 25pp
+  2021:4, 25pp
 note: "[open access]"
 ---

@@ -10,6 +10,7 @@ coauthors:
   - suyoung
   - masuda
 sort_key: 201704
+journal: "Trans. Amer. Math. Soc."
 text: |
-  Trans. Amer. Math. Soc., **369**, no. 4, pp. 2987-3011
+  **369**, no. 4, pp. 2987-3011
 ---

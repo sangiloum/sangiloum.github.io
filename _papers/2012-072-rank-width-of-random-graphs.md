@@ -10,6 +10,7 @@ coauthors:
   - choongbum
   - joonkyung
 sort_key: 201207
+journal: "J. Graph Theory"
 text: |
-  J. Graph Theory **70**, no. 3, pp. 339-347
+  **70**, no. 3, pp. 339-347
 ---

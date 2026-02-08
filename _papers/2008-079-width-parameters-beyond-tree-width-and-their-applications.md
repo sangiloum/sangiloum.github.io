@@ -9,6 +9,7 @@ coauthors:
   - seese
   - gottlob
 sort_key: 200800
+journal: "The Computer Journal"
 text: |
-  The Computer Journal, **51**, no. 3, pp. 326-362
+  **51**, no. 3, pp. 326-362
 ---

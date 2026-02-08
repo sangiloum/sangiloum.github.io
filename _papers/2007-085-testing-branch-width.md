@@ -7,8 +7,9 @@ url: "https://mathsci.kaist.ac.kr/~sangil/pdf/2005loosetanglerev.pdf"
 coauthors:
   - seymour
 sort_key: 200700
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B **97**, no. 3, pp. 385-393.
+  **97**, no. 3, pp. 385-393.
 note: |
  [**Corrigendum** to our paper “Testing branch-width”](https://mathsci.kaist.ac.kr/~sangil/pdf/2005loosetanglecorr.pdf)
 ---

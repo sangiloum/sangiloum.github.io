@@ -10,6 +10,7 @@ coauthors:
   - huynh
   - verdianrizi
 sort_key: 201710
+journal: "European J. Combin."
 text: |
-  European J. Combin., **65**, pp. 1-14
+  **65**, pp. 1-14
 ---

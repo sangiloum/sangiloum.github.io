@@ -11,6 +11,7 @@ coauthors:
   - jinha
   - minki
 sort_key: 202301
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **158**:341-352
+  **158**:341-352
 ---

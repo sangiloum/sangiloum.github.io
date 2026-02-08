@@ -10,6 +10,7 @@ coauthors:
   - younjin
   - sangjune
 sort_key: 201606
+journal: "Discrete Applied Math."
 text: |
-  Discrete Applied Math., **206**, pp. 81-89
+  **206**, pp. 81-89
 ---

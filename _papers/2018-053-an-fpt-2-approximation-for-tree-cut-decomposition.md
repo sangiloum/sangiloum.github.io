@@ -12,6 +12,7 @@ coauthors:
   - sau
   - thilikos
 sort_key: 201801
+journal: "Algorithmica"
 text: |
-  Algorithmica, **80**, no. 1, pp. 116-135
+  **80**, no. 1, pp. 116-135
 ---

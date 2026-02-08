@@ -9,7 +9,8 @@ url: "https://arxiv.org/abs/1906.02895"
 coauthors:
   - nguyen
 sort_key: 202012
+journal: "European J. Combin."
 text: |
-  European J. Combin., **90**, 103183
+  **90**, 103183
 note: "[open access]"
 ---

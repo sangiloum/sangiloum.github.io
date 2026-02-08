@@ -11,6 +11,7 @@ coauthors:
   - wollan
   - hojin
 sort_key: 201903
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **135**, pp. 319-348
+  **135**, pp. 319-348
 ---

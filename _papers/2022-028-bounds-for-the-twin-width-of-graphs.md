@@ -10,6 +10,7 @@ coauthors:
   - hendrey
   - donggyu
 sort_key: 202200
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **36**(3):2352-2366
+  **36**(3):2352-2366
 ---

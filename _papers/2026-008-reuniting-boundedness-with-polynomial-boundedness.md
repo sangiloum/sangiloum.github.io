@@ -11,6 +11,7 @@ coauthors:
   - cook
   - davies
 sort_key: 202601
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **176**:30-73
+  **176**:30-73
 ---

@@ -15,6 +15,7 @@ coauthors:
   - bergougnoux
   - mnich
 sort_key: 202509
+journal: "ACM Trans. Comput. Theory"
 text: |
-  ACM Trans. Comput. Theory, **17**(3):1-42
+  **17**(3):1-42
 ---

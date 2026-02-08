@@ -9,6 +9,7 @@ coauthors:
   - chudnovsky
   - seymour
 sort_key: 201204
+journal: "Combinatorica"
 text: |
-  Combinatorica **32**, no. 3, pp. 283-287
+  **32**, no. 3, pp. 283-287
 ---

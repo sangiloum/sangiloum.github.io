@@ -11,6 +11,7 @@ coauthors:
   - hojin
   - jisu
 sort_key: 201903
+journal: "Discrete Applied Math."
 text: |
-  Discrete Applied Math., **257**, pp. 60-66
+  **257**, pp. 60-66
 ---

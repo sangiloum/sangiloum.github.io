@@ -11,6 +11,7 @@ coauthors:
   - jaehoon
   - seymour
 sort_key: 201500
+journal: "SIAM J. Discrete Math."
 text: |
-  SIAM J. Discrete Math., **29**, no. 4, pp. 2385–2388
+  **29**, no. 4, pp. 2385–2388
 ---

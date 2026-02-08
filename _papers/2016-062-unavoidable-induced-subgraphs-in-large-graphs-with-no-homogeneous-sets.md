@@ -11,6 +11,7 @@ coauthors:
   - ringi
   - seymour
 sort_key: 201605
+journal: "J. Combin. Theory Ser. B"
 text: |
-  J. Combin. Theory Ser. B, **118**, pp. 1-12
+  **118**, pp. 1-12
 ---
