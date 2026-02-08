@@ -206,6 +206,9 @@ img.markdown-image {
 
 .two-figures > figure {
   margin: 0;
+}
+
+.two-figures > figure .two-figures-media {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 10px;
@@ -213,19 +216,24 @@ img.markdown-image {
   background: #eef3fb;
 }
 
-.two-figures > figure picture {
+.two-figures > figure .two-figures-media picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.two-figures > figure picture > img,
-.two-figures > figure img {
+.two-figures > figure .two-figures-media picture > img,
+.two-figures > figure .two-figures-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.two-figures > figure figcaption {
+  margin-top: 0.45rem;
+  color: var(--muted);
 }
 
 .three-figures {
