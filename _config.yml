@@ -13,6 +13,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-archives
 
+collections:
+  papers:
+    output: false
+    sort_by: sort_key
+
 jekyll-archives:
   enabled:
     - year
