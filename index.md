@@ -72,14 +72,15 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
 
 ## Academic Positions
 
+  - Aug 2024 – : [Discrete Mathematics Group, *Institute for Basic Science (IBS)*](https://dimag.ibs.re.kr/), Daejeon, Korea.
+      - Distinguished Research Fellow<sup>수석연구위원</sup>
+
 {% include home-logo.html
   variant="home-logo-compact"
   src="/assets/legacy/2014/12/kaistmath264.png"
   alt="Department of Mathematical Sciences, KAIST"
 %}
 
-  - Aug 2024 – : [Discrete Mathematics Group, *Institute for Basic Science (IBS)*](https://dimag.ibs.re.kr/), Daejeon, Korea.
-      - Distinguished Research Fellow<sup>수석연구위원</sup>
   - Sep 2025 – : Adjunct Professor (겸직교수), [Department of Mathematical Sciences, *KAIST*](https://mathsci.kaist.ac.kr/).
   - Jan 2008 – July 2024: [Department of Mathematical Sciences, *KAIST*](https://mathsci.kaist.ac.kr/), Daejeon, Korea.
       - Assistant Professor (Jan 2008 – Feb 2011), Associate Professor (Mar 2011 – Aug 2016), Professor (Sep 2016 – July 2024), KAIST Endowed Chair Professor (Mar 2023 – July 2024)
