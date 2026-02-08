@@ -2,7 +2,9 @@
 layout: default
 ---
 <article class="page{% if page.permalink == "/papers/" %} page-papers{% endif %}">
+  {% if page.url != '/' %}
   {% include breadcrumb.html %}
+  {% endif %}
   <header class="page-header">
     <h1>{{ page.title }}</h1>
     {% if page.lead %}
