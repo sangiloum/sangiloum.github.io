@@ -1,0 +1,24 @@
+- id: semin
+  start: "2024.4.1"
+  phd_institution: "University of Rochester"
+  phd_year: 2021
+  advisors:
+    - pakianathan
+- id: colingeniet
+  start: "2024.9.1"
+  phd_institution: "ENS de Lyon"
+  phd_year: 2024
+  advisors:
+    - thomasse
+- id: gorsky
+  start: "2024.11.1"
+  phd_institution: "[Technische Universität Berlin](https://www.tu.berlin/en/)"
+  phd_year: 2024
+  advisors:
+    - kreutzer
+- id: roohani
+  start: "2025.5.1"
+  phd_institution: "the Institute of Mathematical Sciences"
+  phd_year: 2021
+  advisors:
+    - saurabh

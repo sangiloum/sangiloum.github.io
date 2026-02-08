@@ -1,0 +1,15 @@
+{%- assign entries = site.data.students_current | default: empty -%}
+<ul>
+{%- for entry in entries -%}
+  {%- assign person = site.data.people | where: "id", entry.id | first -%}
+  {%- capture name_html -%}
+    {%- if person -%}
+      {{ person.firstname }}{% if person.lastname != "" %} {{ person.lastname }}{% endif %}{% if person.korname %}<sup>{{ person.korname }}</sup>{% endif %}
+    {%- else -%}
+      {{ entry.id }}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign homepage = entry.homepage | default: person.url -%}
+  <li><strong>{% if homepage %}<a href="{{ homepage }}">{{ name_html | strip }}</a>{% else %}{{ name_html | strip }}{% endif %}</strong>. {{ entry.program }}, {{ entry.start }}-{% if entry.end %}{{ entry.end }}{% else %}current{% endif %}{% if entry.note %}. {{ entry.note }}{% else %}.{% endif %}</li>
+{%- endfor -%}
+</ul>

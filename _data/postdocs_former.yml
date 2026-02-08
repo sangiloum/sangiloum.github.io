@@ -1,0 +1,200 @@
+- id: huynh
+  start: "2011.9"
+  end: "2012.8"
+  phd_institution: "University of Waterloo"
+  phd_year: 2009
+  advisors:
+    - geelen
+  current_position: "Senior Research Fellow at the IBS Discrete Mathematics Group"
+  tag: KAIST
+- id: verdianrizi
+  start: "2011.9"
+  end: "2013.8"
+  phd_institution: "Simon Fraser University"
+  phd_year: 2011
+  advisors:
+    - goddyn
+  tag: KAIST
+  current_position: "UC San Diego"
+- id: jaehoon
+  start: "2014.6"
+  end: "2014.8"
+  phd_institution: "UIUC"
+  phd_year: 2014
+  advisors:
+    - kostochka
+  tag: KAIST
+  current_position: "Associate Professor at KAIST"
+- id: younjin
+  start: "2012.9"
+  end: "2015.8"
+  phd_institution: "UIUC"
+  phd_year: 2011
+  advisors:
+    - furedi
+  tag: KAIST
+  current_position: "Collegiate Associate Professor at POSTECH"
+- id: ilkyoo
+  start: "2014.6"
+  end: "2017.6"
+  phd_institution: "UIUC"
+  phd_year: 2014
+  advisors:
+    - kostochka
+  tag: KAIST
+  current_position: "Professor at Hankuk University of Foreign Studies"
+- id: abhishek
+  start: "2019.8.1"
+  end: "2020.1.15"
+  phd_institution: "[Central](https://mathematics.ceu.edu) [European Univ.](https://mathematics.ceu.edu)"
+  phd_year: 2019
+  advisors:
+    - katona
+    - gyori
+  tag: IBS
+  current_position: "Assistant Professor at UIUC"
+- id: ringi
+  start: "2017.10"
+  end: "2020.8"
+  phd_institution: "Princeton University"
+  phd_year: 2016
+  advisors:
+    - seymour
+  tag: KAIST
+  current_position: "Assistant Professor at Inha University"
+- id: casey
+  start: "2019.9.1"
+  end: "2021.11.30"
+  phd_institution: "[Central](https://mathematics.ceu.edu) [European Univ.](https://mathematics.ceu.edu)"
+  phd_year: 2015
+  advisors:
+    - katona
+  tag: IBS
+  current_position: "Rényi Institute"
+- id: minki
+  start: "2020.9.1"
+  end: "2022.1.31"
+  phd_institution: "KAIST"
+  phd_year: 2018
+  advisors:
+    - holmsen
+  tag: IBS
+  current_position: "Associate Professor at GIST"
+- id: dabeen
+  start: "2019.6.16"
+  end: "2022.6.30"
+  phd_institution: "Carnegie Mellon University"
+  phd_year: 2019
+  advisors:
+    - cornuejols
+  tag: IBS
+  current_position: "Assistant Professor at Seoul National University"
+- id: tuan
+  start: "2020.8"
+  end: "2022.6"
+  phd_institution: "Freie Universität Berlin"
+  phd_year: 2015
+  advisors:
+    - szabo
+  tag: IBS
+  current_position: "Associate Professor at USTC"
+- id: jinha
+  start: "2020.9.1"
+  end: "2023.8.25"
+  phd_institution: "Seoul National University"
+  phd_year: 2019
+  advisors:
+    - kook
+  tag: IBS
+  current_position: "Assistant Professor at Chonnam National University"
+- id: chakraborti
+  start: "2020.8.16"
+  end: "2023.8.31"
+  phd_institution: "Carnegie Mellon Univ."
+  phd_year: 2020
+  advisors:
+    - loh
+  tag: IBS
+  current_position: "University College London"
+- id: gollin
+  start: "2019.10.1"
+  end: "2024.7.31"
+  phd_institution: "Universität Hamburg"
+  phd_year: 2019
+  advisors:
+    - diestel
+  tag: IBS
+  current_note: "Young Scientist Fellow from August 2021"
+  current_position: "University of Primorska"
+- id: cook
+  start: "2021.8.1"
+  end: "2024.7.31"
+  phd_institution: "Princeton University"
+  phd_year: 2021
+  advisors:
+    - seymour
+  tag: IBS
+  current_position: "Assistant Professor at University of Utrecht"
+- id: hendrey
+  start: "2019.8.16"
+  end: "2024.8.15"
+  phd_institution: "[Monash Univ](https://www.monash.edu/science/schools/school-of-mathematics)"
+  phd_year: 2019
+  advisors:
+    - wood
+  tag: IBS
+  current_position: "Monash University"
+- id: alexander
+  start: "2022.8.1"
+  end: "2024.8.30"
+  phd_institution: "Emory University"
+  phd_year: 2022
+  advisors:
+    - huang
+  tag: IBS
+  current_position: "Czech Technical University"
+- id: wiederrecht
+  start: "2022.7.16"
+  end: "current"
+  phd_institution: "[Technische Universität Berlin](https://www.tu.berlin/en/)"
+  phd_year: 2021
+  advisors:
+    - kreutzer
+  tag: IBS
+  current_position: "Assistant Professor at KAIST"
+- id: benlund
+  start: "2020.8.1"
+  end: "2025.7.31"
+  phd_institution: "Rutgers Univ."
+  phd_year: 2017
+  advisors:
+    - saraf
+  tag: IBS
+  current_position: "Specially Appointed Professor at Xidian University"
+- id: campbell
+  start: "2020.8.16"
+  end: "2025.8.15"
+  phd_institution: "Univ. of Waterloo"
+  phd_year: 2020
+  advisors:
+    - geelen
+  tag: IBS
+  current_position: "University of Waterloo"
+- id: seunghun
+  start: "2025.7.1"
+  end: "2025.8.22"
+  phd_institution: "KAIST"
+  phd_year: 2020
+  advisors:
+    - holmsen
+  tag: IBS
+  current_position: "Assistant Professor at Keimyung University"
+- id: hatzel
+  start: "2024.8.1"
+  end: "current"
+  phd_institution: "[Technische Universität Berlin](https://www.tu.berlin/en/)"
+  phd_year: 2021
+  advisors:
+    - kreutzer
+  tag: IBS
+  current_position: "Assistant Professor at Technical University of Darmstadt"

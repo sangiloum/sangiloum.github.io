@@ -1,0 +1,104 @@
+- id: ojoung
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2015.8"
+    - degree: ms
+      date: "2012.8"
+  thesis: "On the structural and algorithmic properties of linear rank-width"
+  thesislink: "https://library.kaist.ac.kr/search/detail/view.do?bibCtrlNo=628937&flag=dissertation"
+  current_position: "an Associate Professor at the [Department of Mathematics, Hanyang University](http://math.hanyang.ac.kr/)"
+- id: jisu
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2018.2"
+    - degree: ms
+      date: "2013.8"
+  thesis: "Parameterized algorithms for width parameters"
+  thesislink: "https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=734348&se=t0&ty=B&_csrf=89ae4631-8a53-47d6-83d6-da31b3113a20"
+  current_position: "a Data Scientist at Naver Corporation. Previously at Watcha and SAMSUNG SDS"
+- id: dongyeap
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2020.2"
+    - degree: ms
+      date: "2016.2"
+  thesis: "Graph Decompositions and Related Extremal Problems"
+  thesislink: "https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=907856&se=t0&ty=B&_csrf=89ae4631-8a53-47d6-83d6-da31b3113a20"
+  current_position: "a [Young Scientist Fellow](https://www.ibs.re.kr/ysf/) at the [Extremal Combinatorics and Probability Group, Institute for Basic Science (IBS)](https://www.ibs.re.kr/ecopro/), Korea. Previously, a Research Fellow at the University of Birmingham"
+- id: duksang
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2023.2"
+  thesis: "Structural results on delta-matroids and connectivities of graph vertex-minors"
+  thesislink: "https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=1030466&se=t0&ty=B&_csrf=89ae4631-8a53-47d6-83d6-da31b3113a20"
+  current_position: "working at Woowa Brothers<sup>우아한형제들</sup>. Previously a postdoctoral researcher at KAIST"
+- id: jungho
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2023.8"
+    - degree: ms
+      date: "2020.2"
+  thesis: "Algorithmic and structural aspects of graph parameters"
+  thesislink: "https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=1047417&se=t0&ty=B&_csrf=45673253-f75e-49f9-8b58-2eda10950126"
+  current_position: "an Assistant Professor at Inha University"
+- id: donggyu
+  track: phd
+  degrees:
+    - degree: phd
+      date: "2025.2"
+  thesis: "Delta-matroids with coefficients and linear spaces equipped with a bilinear form"
+  current_position: "a Postdoctoral Researcher at the Georgia Institute of Technology, Atlanta, USA"
+
+- id: ralphbottesch
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2010.8"
+  current_position: "Ph.D. at Nanyang Technological University, Singapore, 2016. Currently at the Department of Computer Science, University of Innsbruck, Austria"
+- id: joohyuncho
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2010.8"
+  current_position: "SNT1"
+- id: joonkyung
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2010.2"
+  current_position: "Ph.D. at University of Oxford, 2017. Advisor: David Conlon. Currently an assistant professor at Yonsei University"
+- id: ringi
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2011.8"
+  current_position: "Ph.D. at Princeton University, 2017. Advisor: Paul Seymour. Currently an assistant professor at Inha University"
+- id: seongmin
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2012.2"
+  current_position: "Ph.D. at Technical University of Denmark, 2015. Advisor: Carsten Thomassen. Currently a Staff Researcher at SAMSUNG Electronics, Korea"
+- id: geewon
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2016.2"
+  current_position: "Research Scientist at [Spidercore](https://www.spidercore.io)"
+- id: hojin
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2016.2"
+  current_position: "Platform Software Engineer at [Moreh](https://moreh.io)"
+- id: yeongjoon
+  track: ms
+  degrees:
+    - degree: ms
+      date: "2019.2"
+  current_position: "[TmaxSoft](https://kr.tmaxsoft.com/)"

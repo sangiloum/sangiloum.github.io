@@ -1,0 +1,32 @@
+{%- assign entries = site.data.postdocs_current | default: empty -%}
+<ul>
+{%- for entry in entries -%}
+  {%- assign person = site.data.people | where: "id", entry.id | first -%}
+  {%- capture name_html -%}
+    {%- if person -%}
+      {{ person.firstname }}{% if person.lastname != "" %} {{ person.lastname }}{% endif %}{% if person.korname %}<sup>{{ person.korname }}</sup>{% endif %}
+    {%- else -%}
+      {{ entry.id }}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign homepage = entry.homepage | default: person.url -%}
+  {%- capture phd_inst_html -%}{{ entry.phd_institution | markdownify }}{%- endcapture -%}
+  {%- assign phd_inst_html = phd_inst_html | strip | remove: '<p>' | remove: '</p>' -%}
+  {%- capture advisor_html -%}
+    {%- assign advisor_list = entry.advisors | default: empty -%}
+    {%- for advisor in advisor_list -%}
+      {%- assign advisor_id = advisor.id | default: advisor -%}
+      {%- assign ap = site.data.people | where: "id", advisor_id | first -%}
+      {%- capture aname -%}
+        {%- if ap -%}
+          {{ ap.firstname }}{% if ap.lastname != "" %} {{ ap.lastname }}{% endif %}{% if ap.korname %}<sup>{{ ap.korname }}</sup>{% endif %}
+        {%- else -%}
+          {{ advisor_id }}
+        {%- endif -%}
+      {%- endcapture -%}
+      {%- if ap and ap.url -%}<a href="{{ ap.url }}">{{ aname | strip }}</a>{%- else -%}{{ aname | strip }}{%- endif -%}{%- unless forloop.last -%}{% if advisor_list.size == 2 and forloop.rindex == 2 %} and {% elsif forloop.rindex == 2 %}, and {% else %}, {% endif %}{%- endunless -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  <li>{% if homepage %}<strong><a href="{{ homepage }}">{{ name_html | strip }}</a></strong>{% else %}<strong>{{ name_html | strip }}</strong>{% endif %}. {{ entry.start }}-{% if entry.end %}{{ entry.end }}{% else %}current{% endif %}. Ph.D. at {{ phd_inst_html }}, {{ entry.phd_year }}.{% if advisor_html | strip != '' %} Advisor: {{ advisor_html | strip }}.{% endif %}{% if entry.current_note %} {{ entry.current_note }}.{% endif %}</li>
+{%- endfor -%}
+</ul>
