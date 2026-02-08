@@ -16,7 +16,7 @@ featured_image_source: og_image
 
 I am a **Distinguished Research Fellow<sup>수석연구위원</sup>** of the Institute for Basic Science (IBS) and have been the **CI** (Chief Investigator) of the [Discrete Mathematics Group<sup>이산수학그룹</sup>](https://dimag.ibs.re.kr/) at the [Institute for Basic Science<sup>기초과학연구원</sup>](https://www.ibs.re.kr/) since December 2018. The group was established in December 2018 and is based in [Daejeon](https://en.wikipedia.org/wiki/Daejeon), South Korea. I am also an Adjunct Professor<sup>겸직교수</sup> of the [Department of Mathematical Sciences, KAIST](https://mathsci.kaist.ac.kr/).
 
-## News (Blog)
+## [News (Blog)]({{ '/blog/' | relative_url }})
 
 <div class="post-cards post-cards-compact home-post-cards">
 {% for post in site.posts limit:3 %}
@@ -39,7 +39,7 @@ I am a **Distinguished Research Fellow<sup>수석연구위원</sup>** of the Ins
 {% endfor %}
 </div>
 
-## Recent Preprints
+## [Recent Preprints]({{ '/papers/' | relative_url }})
 
 {% assign recent_preprints = site.papers | where: "category", "preprint" | sort: "sort_key" | reverse %}
 <ol class="paper-list home-paper-list">
@@ -85,7 +85,7 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
   - Aug 2005 – Dec 2006: [School of Mathematics, *Georgia Institute of Technology*](https://math.gatech.edu), Atlanta, GA, USA.
       - Visiting Assistant Professor
 
-## Editorial Activities
+## [Editorial Activities]({{ '/service/' | relative_url }})
 
   - [SIAM Journal on Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-computing/)
   - [Graphs and Combinatorics](https://link.springer.com/journal/373)
@@ -99,7 +99,7 @@ I am organizing the [Discrete Math Seminar](https://dimag.ibs.re.kr/events/categ
   - A [list of upcoming workshops, conferences, and schools](https://dimag.ibs.re.kr/home/sangil/meetings/).
   - A [list of online seminars](https://dimag.ibs.re.kr/home/sangil/online-seminars/).
 
-## Selected List of Awards
+## [Selected List of Awards]({{ '/awards/' | relative_url }})
 
   - [Choi Seok-Jeong Award of the Year<sup>올해의 최석정상</sup>](https://csj.kms.or.kr/content/about/prize_history.php), Minister of Science and ICT of Korea, 2022.
   - Young Scientist Award<sup>젊은과학자상</sup>, President of Korea. 2012.

@@ -10,5 +10,6 @@ coauthors:
   - nguyen
 sort_key: 202012
 text: |
-  European J. Combin., **90**, 103183. \[open access\]
+  European J. Combin., **90**, 103183
+note: "[open access]"
 ---

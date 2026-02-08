@@ -11,5 +11,6 @@ coauthors:
   - norin
 sort_key: 202205
 text: |
-  Discrete Appl. Math., **312**:15-28, May 2022. \[open access\]
+  Discrete Appl. Math., **312**:15-28
+note: "[open access]"
 ---

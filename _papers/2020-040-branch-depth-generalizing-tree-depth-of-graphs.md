@@ -11,5 +11,6 @@ coauthors:
   - ojoung
 sort_key: 202012
 text: |
-  European J. Combin., **90**, 103186. \[open access\]
+  European J. Combin., **90**, 103186
+note: "[open access]"
 ---

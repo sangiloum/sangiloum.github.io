@@ -12,5 +12,6 @@ coauthors:
   - mayhew
 sort_key: 202105
 text: |
-  Adv. Comb., 2021:4, 25pp, May 2021. \[open access\]
+  Adv. Comb., 2021:4, 25pp
+note: "[open access]"
 ---
