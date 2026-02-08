@@ -1,0 +1,38 @@
+{{ $entries := site.Data.students_former | default (slice) }}
+{{ $phd := where $entries "track" "phd" }}
+{{ $ms := where $entries "track" "ms" }}
+<ul>
+  <li>Ph.D.
+    <ul>
+      {{ range $phd }}
+      {{ $currentPosition := .current_position | default "" }}
+      {{ $currentPositionHTML := $currentPosition | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}
+      <li>{{ partial "person-name.html" (dict "id" .id "link" true) }}.
+        {{- range $i, $d := (.degrees | default (slice)) -}}
+          {{- if gt $i 0 }}, {{ end -}}
+          {{- if eq $d.degree "phd" }}Ph.D.{{ else if eq $d.degree "ms" }}M.S.{{ else }}{{ $d.degree }}{{ end }} {{ $d.date }}
+        {{- end -}}.
+        {{- if ne $currentPosition "" }} {{ if in (lower $currentPosition) "currently" }}({{ $currentPositionHTML }}){{ else }}(Currently, {{ $currentPositionHTML }}){{ end }}{{ end -}}
+        {{- if .thesis }}<br>PhD thesis: {{ if .thesislink }}<a href="{{ .thesislink }}"><em>{{ .thesis }}</em></a>{{ else }}<em>{{ .thesis }}</em>{{ end }}{{ end -}}
+        {{- if .extra }}<br>{{ .extra | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}{{ end -}}
+      </li>
+      {{ end }}
+    </ul>
+  </li>
+  <li>M.S.
+    <ul>
+      {{ range $ms }}
+      {{ $currentPosition := .current_position | default "" }}
+      {{ $currentPositionHTML := $currentPosition | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}
+      <li>{{ partial "person-name.html" (dict "id" .id "link" true) }}.
+        {{- range $i, $d := (.degrees | default (slice)) -}}
+          {{- if gt $i 0 }}, {{ end -}}
+          {{- if eq $d.degree "phd" }}Ph.D.{{ else if eq $d.degree "ms" }}M.S.{{ else }}{{ $d.degree }}{{ end }} {{ $d.date }}
+        {{- end -}}.
+        {{- if ne $currentPosition "" }} {{ if in (lower $currentPosition) "currently" }}({{ $currentPositionHTML }}){{ else }}(Currently, {{ $currentPositionHTML }}){{ end }}{{ end -}}
+        {{- if .extra }}<br>{{ .extra | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}{{ end -}}
+      </li>
+      {{ end }}
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ $year := .Params.archive_year | default .Title }}
+{{ $yearPosts := sort (where (where site.RegularPages "Section" "posts") "Date.Year" (int $year)) "Date" "desc" }}
+<article class="page">
+  {{ partial "breadcrumb.html" . }}
+  <header class="page-header"><h1>{{ .Title }}</h1></header>
+  <div class="blog-layout">
+    {{ partial "blog-categories.html" (dict "active" "") }}
+    <section class="blog-main">
+      <h2>Posts in {{ $year }}</h2>
+      {{ partial "post-cards.html" (dict "posts" $yearPosts "year_filter" $year) }}
+    </section>
+  </div>
+</article>
+{{ end }}

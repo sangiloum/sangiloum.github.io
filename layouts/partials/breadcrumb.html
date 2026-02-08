@@ -1,0 +1,31 @@
+{{ $parts := (split .RelPermalink "/") }}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      {{ if eq .RelPermalink "/" }}
+      <span aria-current="page">Home</span>
+      {{ else }}
+      <a href="/">Home</a>
+      {{ end }}
+    </li>
+    {{ if ne .RelPermalink "/" }}
+      {{ $cur := "" }}
+      {{ $seen := 0 }}
+      {{ $total := 0 }}
+      {{ range $parts }}{{ if and (ne . "") (ne . "index.html") }}{{ $total = add $total 1 }}{{ end }}{{ end }}
+      {{ range $parts }}
+        {{ if and (ne . "") (ne . "index.html") }}
+          {{ $seen = add $seen 1 }}
+          {{ $cur = printf "%s/%s" $cur . }}
+          <li class="breadcrumb-item">
+            {{ if eq $seen $total }}
+              <span aria-current="page">{{ $.Title }}</span>
+            {{ else }}
+              <a href="{{ $cur }}/">{{ replace . "-" " " | title }}</a>
+            {{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ol>
+</nav>

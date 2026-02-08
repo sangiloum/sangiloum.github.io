@@ -1,0 +1,6 @@
+{{ $papers := where (where (where site.Pages "Section" "papers-items") "Kind" "page") "Params.category" "preprint" }}
+<ol class="paper-list home-paper-list">
+{{ range first 3 (sort $papers "Params.sort_key" "desc") }}
+  {{ partial "paper-item.html" (dict "paper" .Params) }}
+{{ end }}
+</ol>

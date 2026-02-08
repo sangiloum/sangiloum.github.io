@@ -1,0 +1,17 @@
+<figure class="youtube-embed{{ with (.Get "class") }} {{ . }}{{ end }}">
+  <div class="youtube-embed-frame">
+    <iframe
+      src="https://www.youtube.com/embed/{{ .Get "video_id" }}"
+      title="{{ .Get "title" | default "YouTube video player" }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {{ with (.Get "caption") }}
+  <figcaption class="youtube-embed-caption">
+    {{ with ($.Get "link") }}<a href="{{ . }}">{{ $.Get "caption" }}</a>{{ else }}{{ $.Get "caption" }}{{ end }}
+  </figcaption>
+  {{ end }}
+</figure>

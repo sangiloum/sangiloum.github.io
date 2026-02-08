@@ -1,0 +1,17 @@
+{{ $ids := slice }}
+{{ range (where (where site.Pages "Section" "papers-items") "Kind" "page") }}
+  {{ range (.Params.coauthors | default (slice)) }}
+    {{ $ids = $ids | append . }}
+  {{ end }}
+{{ end }}
+{{ $uniq := uniq $ids }}
+<p class="coauthors-inline">
+  {{- $first := true -}}
+  {{- range sort site.Data.people "lastname" "asc" -}}
+    {{- if in $uniq .id -}}
+      {{- if not $first }}, {{ end -}}
+      {{- $first = false -}}
+      {{- partial "person-name.html" (dict "id" .id "link" true) -}}
+    {{- end -}}
+  {{- end -}}
+</p>

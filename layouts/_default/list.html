@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ $archiveYear := .Params.archive_year }}
+{{ $archivePosts := slice }}
+{{ if $archiveYear }}
+  {{ $archivePosts = sort (where (where site.RegularPages "Section" "posts") "Date.Year" (int $archiveYear)) "Date" "desc" }}
+{{ end }}
+<article class="page">
+  {{ partial "breadcrumb.html" . }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <section class="page-body">
+    {{ if $archiveYear }}
+    <div class="blog-layout">
+      {{ partial "blog-categories.html" (dict "active" "") }}
+      <section class="blog-main">
+        <h2>Posts in {{ $archiveYear }}</h2>
+        {{ partial "post-cards.html" (dict "posts" $archivePosts "year_filter" $archiveYear) }}
+      </section>
+    </div>
+    {{ else }}
+      {{ .Content }}
+    {{ end }}
+  </section>
+</article>
+{{ end }}

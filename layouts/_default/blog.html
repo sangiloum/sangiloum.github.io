@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ $featured := or .Params.featured_image .Params.featuredImage }}
+{{ $allPosts := where site.RegularPages "Section" "posts" }}
+{{ $categorySlug := .Params.category_slug | default "" }}
+{{ if and (eq $categorySlug "") (strings.HasPrefix .RelPermalink "/blog/category/") }}
+  {{ $categorySlug = .RelPermalink | strings.TrimPrefix "/blog/category/" | strings.TrimSuffix "/" }}
+{{ end }}
+{{ $categoryName := .Params.category_name | default .Title | default $categorySlug }}
+{{ $activeCategory := "" }}
+{{ $posts := sort $allPosts "Date" "desc" }}
+{{ $pageHeading := "Posts" }}
+{{ $paginationLabel := "Blog post pages" }}
+{{ if ne $categorySlug "" }}
+  {{ $filtered := slice }}
+  {{ range $allPosts }}
+    {{ $matched := false }}
+    {{ range (.Params.categories | default (slice)) }}
+      {{ if eq (. | urlize) $categorySlug }}{{ $matched = true }}{{ end }}
+    {{ end }}
+    {{ if $matched }}{{ $filtered = $filtered | append . }}{{ end }}
+  {{ end }}
+  {{ $posts = sort $filtered "Date" "desc" }}
+  {{ $activeCategory = $categoryName }}
+  {{ $pageHeading = printf "Posts in \"%s\"" $categoryName }}
+  {{ $paginationLabel = "Category post pages" }}
+{{ end }}
+{{ $p := .Paginate $posts }}
+<article class="page">
+  <header class="page-header"><h1>{{ .Title }}</h1>{{ with .Params.lead }}<p class="lead">{{ . }}</p>{{ end }}</header>
+  {{ if $featured }}
+  <figure class="post-featured">
+    {{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-featured-image markdown-image" "page" . "sizes" "(min-width: 860px) 860px, 100vw") }}
+  </figure>
+  {{ end }}
+  <div class="blog-layout">
+    {{ partial "blog-categories.html" (dict "active" $activeCategory) }}
+    <section class="blog-main">
+      <h2>{{ $pageHeading }}</h2>
+      {{ partial "post-cards.html" (dict "posts" $p.Pages "category_filter" $activeCategory) }}
+      {{ if gt $p.TotalPages 1 }}
+      <nav class="list-pagination" aria-label="{{ $paginationLabel }}">
+        {{ if $p.HasPrev }}<a class="list-pagination-link" href="{{ $p.Prev.URL }}">← Newer</a>{{ else }}<span class="list-pagination-link is-disabled">← Newer</span>{{ end }}
+        <span class="list-pagination-status">Page {{ $p.PageNumber }} of {{ $p.TotalPages }}</span>
+        {{ if $p.HasNext }}<a class="list-pagination-link" href="{{ $p.Next.URL }}">Older →</a>{{ else }}<span class="list-pagination-link is-disabled">Older →</span>{{ end }}
+      </nav>
+      {{ end }}
+    </section>
+  </div>
+  {{ if eq $categorySlug "" }}
+  <section class="blog-archive">
+    <h2>Archive</h2>
+      <h3>Yearly archives</h3>
+      <ul>
+        {{ $years := dict }}
+        {{ range $allPosts }}{{ $y := .Date.Format "2006" }}{{ $c := index $years $y | default 0 }}{{ $years = merge $years (dict $y (add $c 1)) }}{{ end }}
+        {{ $yearKeys := slice }}
+        {{ range $year, $_ := $years }}{{ $yearKeys = $yearKeys | append $year }}{{ end }}
+        {{ range sort $yearKeys "value" "desc" }}<li><a href="/{{ . }}/">{{ . }}</a> ({{ index $years . }})</li>{{ end }}
+      </ul>
+    </section>
+  {{ end }}
+</article>
+{{ end }}

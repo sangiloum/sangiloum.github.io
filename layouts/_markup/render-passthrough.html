@@ -1,0 +1,5 @@
+{{- if eq .Type "block" -}}
+<div class="math math-display">{{ .Inner | transform.ToMath }}</div>
+{{- else -}}
+<span class="math math-inline">{{ .Inner | transform.ToMath }}</span>
+{{- end -}}

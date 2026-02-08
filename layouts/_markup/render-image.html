@@ -1,0 +1,60 @@
+{{- $dest := .Destination -}}
+{{- $alt := .Text | default "" -}}
+{{- $title := .Title -}}
+{{- $u := urls.Parse $dest -}}
+{{- $isRemote := or $u.IsAbs (strings.HasPrefix $dest "//") -}}
+{{- $img := false -}}
+
+{{- if and (not $isRemote) .Page -}}
+  {{- $img = .Page.Resources.GetMatch $dest -}}
+  {{- if not $img -}}
+    {{- $img = .Page.Resources.GetMatch (strings.TrimPrefix "./" $dest) -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (not $isRemote) (not $img) -}}
+  {{- $assetPath := strings.TrimPrefix "assets/" (strings.TrimPrefix "./" (strings.TrimPrefix "/" $dest)) -}}
+  {{- $img = resources.Get $assetPath -}}
+{{- end -}}
+
+{{- $canResize := false -}}
+{{- if $img -}}
+  {{- if and (ne $img.MediaType.SubType "svg") (ne $img.MediaType.SubType "gif") -}}
+    {{- $canResize = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $canResize -}}
+  {{- $targetWidths := slice 480 768 1024 1366 1600 1920 -}}
+  {{- $widths := slice -}}
+  {{- range $w := $targetWidths -}}
+    {{- if le $w $img.Width -}}
+      {{- $widths = $widths | append $w -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not (in $widths $img.Width) -}}
+    {{- $widths = $widths | append $img.Width -}}
+  {{- end -}}
+
+  {{- $src := "" -}}
+  {{- $srcW := 0 -}}
+  {{- $srcH := 0 -}}
+  {{- $srcset := slice -}}
+
+  {{- range $i, $w := $widths -}}
+    {{- $resized := $img.Resize (printf "%dx" $w) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $resized.Width) -}}
+    {{- if eq $i (sub (len $widths) 1) -}}
+      {{- $src = $resized.RelPermalink -}}
+      {{- $srcW = $resized.Width -}}
+      {{- $srcH = $resized.Height -}}
+    {{- end -}}
+  {{- end -}}
+
+<img class="markdown-image" src="{{ $src | safeURL }}" srcset="{{ delimit $srcset ", " }}" sizes="(min-width: 860px) 860px, 100vw" width="{{ $srcW }}" height="{{ $srcH }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- else -}}
+  {{- $src := $dest -}}
+  {{- if $img -}}
+    {{- $src = $img.RelPermalink -}}
+  {{- end -}}
+<img class="markdown-image" src="{{ $src | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async"{{ with $img }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
+{{- end -}}

@@ -1,0 +1,32 @@
+{{- $active := .active | default "" -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $counts := dict -}}
+{{- range $posts -}}
+  {{- range (.Params.categories | default (slice)) -}}
+    {{- $cur := index $counts . | default 0 -}}
+    {{- $counts = merge $counts (dict . (add $cur 1)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $cats := slice -}}
+{{- range $cat, $_ := $counts -}}
+  {{- $cats = $cats | append $cat -}}
+{{- end -}}
+<aside class="blog-sidebar" aria-label="Blog categories">
+  <h2>Categories</h2>
+  <ul class="category-list">
+    <li>
+      <a href="/blog/"{{ if eq $active "" }} class="is-active"{{ end }}>
+        All
+        <span class="category-count">{{ len $posts }}</span>
+      </a>
+    </li>
+    {{- range $cat := sort $cats -}}
+    <li>
+      <a href="/blog/category/{{ $cat | urlize }}/"{{ if eq $active $cat }} class="is-active"{{ end }}>
+        {{ $cat }}
+        <span class="category-count">{{ index $counts $cat }}</span>
+      </a>
+    </li>
+    {{- end -}}
+  </ul>
+</aside>

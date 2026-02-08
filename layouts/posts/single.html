@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{ $pageYear := .Date.Format "2006" }}
+{{ $allPosts := sort (where site.RegularPages "Section" "posts") "Date" "desc" }}
+{{ $featured := or .Params.featured_image .Params.featuredImage }}
+<article class="page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list post-breadcrumb-list">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li class="breadcrumb-item"><a href="/blog/">Blog</a></li>
+      <li class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li id="breadcrumb-year-item" class="breadcrumb-item"><a href="/{{ $pageYear }}/">{{ $pageYear }}</a></li>
+      <li id="breadcrumb-year-sep" class="breadcrumb-sep" aria-hidden="true">/</li>
+      <li id="breadcrumb-category-label-item" class="breadcrumb-item" style="display: none;"><span>Category</span></li>
+      <li id="breadcrumb-category-label-sep" class="breadcrumb-sep" style="display: none;" aria-hidden="true">/</li>
+      <li id="breadcrumb-category-item" class="breadcrumb-item" style="display: none;"><a id="breadcrumb-category-link" href="#"></a></li>
+      <li id="breadcrumb-category-item-sep" class="breadcrumb-sep" style="display: none;" aria-hidden="true">/</li>
+      <li class="breadcrumb-item"><span aria-current="page">{{ .Title }}</span></li>
+    </ol>
+  </nav>
+
+  <nav class="post-pagination-top" aria-label="Post navigation top">
+    {{ $prev := .PrevInSection }}{{ $next := .NextInSection }}
+    <a class="post-nav-icon-link post-nav-prev-link{{ if not $prev }} is-empty{{ end }}" href="{{ if $prev }}{{ $prev.RelPermalink }}{{ else }}#{{ end }}"{{ if not $prev }} aria-disabled="true" tabindex="-1"{{ end }}><span class="post-nav-icon" aria-hidden="true">←</span></a>
+    <a id="post-nav-up" class="post-nav-icon-link post-nav-up-link" href="/blog/" aria-label="Back to Blog"><span class="post-nav-icon" aria-hidden="true">↑</span></a>
+    <a class="post-nav-icon-link post-nav-next-link{{ if not $next }} is-empty{{ end }}" href="{{ if $next }}{{ $next.RelPermalink }}{{ else }}#{{ end }}"{{ if not $next }} aria-disabled="true" tabindex="-1"{{ end }}><span class="post-nav-icon" aria-hidden="true">→</span></a>
+  </nav>
+
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $pageYear }}/">{{ $pageYear }}</a></p>
+    {{ with .Params.categories }}
+    <p class="post-meta-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}</p>
+    {{ end }}
+  </header>
+
+  {{ if $featured }}<figure class="post-featured post-featured-post">{{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-featured-image markdown-image" "page" . "sizes" "(min-width: 860px) 860px, 100vw") }}</figure>{{ end }}
+  <section class="page-body">{{ .Content }}</section>
+
+  <nav class="post-pagination" aria-label="Post navigation">
+    <a id="post-nav-prev" class="post-nav-link post-nav-prev-link{{ if not $prev }} is-empty{{ end }}" href="{{ if $prev }}{{ $prev.RelPermalink }}{{ else }}#{{ end }}"{{ if not $prev }} aria-disabled="true" tabindex="-1"{{ end }}><span class="post-nav-label">{{ if $prev }}Previous{{ end }}</span><span class="post-nav-title">{{ with $prev }}{{ .Title }}{{ end }}</span></a>
+    <a id="post-nav-back" class="post-nav-back post-nav-back-link" href="/blog/">Back to Blog</a>
+    <a id="post-nav-next" class="post-nav-link post-nav-next-link{{ if not $next }} is-empty{{ end }}" href="{{ if $next }}{{ $next.RelPermalink }}{{ else }}#{{ end }}"{{ if not $next }} aria-disabled="true" tabindex="-1"{{ end }}><span class="post-nav-label">{{ if $next }}Next{{ end }}</span><span class="post-nav-title">{{ with $next }}{{ .Title }}{{ end }}</span></a>
+  </nav>
+</article>
+
+<script>
+{{- $cats := .Params.categories | default (slice) -}}
+{{- $categoryPostsMap := dict -}}
+{{- $categoryPagesMap := dict -}}
+{{- range $categoryName := $cats -}}
+  {{- $key := lower $categoryName -}}
+  {{- $catPosts := where $allPosts "Params.categories" "intersect" (slice $categoryName) -}}
+  {{- $idx := -1 -}}
+  {{- range $i, $post := $catPosts -}}{{ if eq $post.RelPermalink $.RelPermalink }}{{ $idx = $i }}{{ end }}{{ end -}}
+  {{- $start := math.Max 0 (sub $idx 1) -}}
+  {{- $end := math.Min (sub (len $catPosts) 1) (add $idx 1) -}}
+  {{- $items := slice -}}
+  {{- range $i, $post := $catPosts -}}
+    {{- if and (ge $i $start) (le $i $end) -}}
+      {{- $items = $items | append (dict "url" $post.RelPermalink "title" $post.Title) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $categoryPostsMap = merge $categoryPostsMap (dict $key $items) -}}
+  {{- $categoryPagesMap = merge $categoryPagesMap (dict $key (printf "/blog/category/%s/" ($categoryName | urlize))) -}}
+{{- end -}}
+
+{{- $yearPostsAll := where $allPosts "Date.Year" (int $pageYear) -}}
+{{- $yearIdx := -1 -}}
+{{- range $i, $post := $yearPostsAll -}}{{ if eq $post.RelPermalink $.RelPermalink }}{{ $yearIdx = $i }}{{ end }}{{ end -}}
+{{- $yearStart := math.Max 0 (sub $yearIdx 1) -}}
+{{- $yearEnd := math.Min (sub (len $yearPostsAll) 1) (add $yearIdx 1) -}}
+{{- $yearItems := slice -}}
+{{- range $i, $post := $yearPostsAll -}}
+  {{- if and (ge $i $yearStart) (le $i $yearEnd) -}}
+    {{- $yearItems = $yearItems | append (dict "url" $post.RelPermalink "title" $post.Title) -}}
+  {{- end -}}
+{{- end -}}
+{{- $yearPostsMap := dict $pageYear $yearItems -}}
+{{- $yearPagesMap := dict $pageYear (printf "/%s/" $pageYear) -}}
+
+{{- $navData := dict
+  "currentPostPath" .RelPermalink
+  "categoryPosts" $categoryPostsMap
+  "categoryPages" $categoryPagesMap
+  "yearPosts" $yearPostsMap
+  "yearPages" $yearPagesMap
+-}}
+window.__POST_NAV_DATA__ = {{ $navData | jsonify | safeJS }};
+</script>
+<script src="/assets/js/post-navigation.js" defer></script>
+{{ end }}

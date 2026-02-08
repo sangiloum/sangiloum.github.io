@@ -1,0 +1,4 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+<img src="/{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">

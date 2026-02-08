@@ -1,0 +1,7 @@
+<figure class="home-logo {{ .Get "variant" | default "home-logo-compact" }}">
+  {{ with .Get "href" }}<a href="{{ . }}">{{ end }}
+  {{ $src := .Get "src" }}
+  {{ $alt := .Get "alt" | default "" }}
+  <img src="/{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{ with .Get "href" }}</a>{{ end }}
+</figure>

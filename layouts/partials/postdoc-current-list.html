@@ -1,0 +1,8 @@
+<ul>
+{{ range (site.Data.postdocs_current | default (slice)) }}
+  {{ $person := partial "person-name.html" (dict "id" .id "link" true) }}
+  {{ $phdInstitution := .phd_institution | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" }}
+  {{ $advisors := .advisors | default (slice) }}
+  <li><strong>{{ $person | safeHTML }}</strong>. {{ .start }}-{{ if .end }}{{ .end }}{{ else }}current{{ end }}. Ph.D. at {{ $phdInstitution | safeHTML }}, {{ .phd_year }}.{{ if gt (len $advisors) 0 }} {{ if eq (len $advisors) 1 }}Advisor{{ else }}Advisors{{ end }}: {{ range $i, $aid := $advisors }}{{ if gt $i 0 }}{{ if eq $i (sub (len $advisors) 1) }}{{ if gt (len $advisors) 2 }}, and {{ else }} and {{ end }}{{ else }}, {{ end }}{{ end }}{{ partial "person-name.html" (dict "id" $aid "link" true) | safeHTML }}{{ end }}.{{ end }}{{ if .current_note }} {{ .current_note }}.{{ end }}</li>
+{{ end }}
+</ul>

@@ -1,0 +1,59 @@
+{{- $src := .src | default "" -}}
+{{- if ne $src "" -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $decoding := .decoding | default "async" -}}
+{{- $page := .page -}}
+
+{{- $u := urls.Parse $src -}}
+{{- $isRemote := or $u.IsAbs (strings.HasPrefix $src "//") -}}
+{{- $img := false -}}
+
+{{- if not $isRemote -}}
+  {{- if $page -}}
+    {{- $img = $page.Resources.GetMatch $src -}}
+    {{- if not $img -}}{{- $img = $page.Resources.GetMatch (strings.TrimPrefix "./" $src) -}}{{- end -}}
+    {{- if not $img -}}{{- $img = $page.Resources.GetMatch (strings.TrimPrefix "/" $src) -}}{{- end -}}
+  {{- end -}}
+  {{- if not $img -}}
+    {{- $assetPath := strings.TrimPrefix "assets/" (strings.TrimPrefix "./" (strings.TrimPrefix "/" $src)) -}}
+    {{- $img = resources.Get $assetPath -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $canResize := false -}}
+{{- if $img -}}
+  {{- if and (ne $img.MediaType.SubType "svg") (ne $img.MediaType.SubType "gif") -}}
+    {{- $canResize = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $canResize -}}
+  {{- $targetWidths := slice 480 768 1024 1366 1600 1920 -}}
+  {{- $widths := slice -}}
+  {{- range $w := $targetWidths -}}
+    {{- if le $w $img.Width -}}
+      {{- $widths = $widths | append $w -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not (in $widths $img.Width) -}}
+    {{- $widths = $widths | append $img.Width -}}
+  {{- end -}}
+
+  {{- $srcset := slice -}}
+  {{- $best := $img -}}
+  {{- range $w := $widths -}}
+    {{- $resized := $img.Resize (printf "%dx" $w) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $resized.Width) -}}
+    {{- $best = $resized -}}
+  {{- end -}}
+
+<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $best.RelPermalink | safeURL }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $best.Width }}" height="{{ $best.Height }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="{{ $decoding }}">
+{{- else -}}
+  {{- $resolved := $src -}}
+  {{- if $img -}}{{- $resolved = $img.RelPermalink -}}{{- end -}}
+<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $resolved | safeURL }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="{{ $decoding }}"{{ with $img }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
+{{- end -}}
+{{- end -}}

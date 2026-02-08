@@ -1,0 +1,39 @@
+{{- $posts := .posts -}}
+{{- $categoryFilter := .category_filter | default "" -}}
+{{- $yearFilter := .year_filter | default "" -}}
+<div class="post-cards">
+{{- $visibleCount := 0 -}}
+{{- range $posts -}}
+  {{- $show := true -}}
+  {{- if ne $categoryFilter "" -}}
+    {{- $show = in (.Params.categories | default (slice)) $categoryFilter -}}
+  {{- end -}}
+  {{- if $show -}}
+    {{- $visibleCount = add $visibleCount 1 -}}
+    {{- $postLink := .RelPermalink -}}
+    {{- $featured := or .Params.featured_image .Params.featuredImage -}}
+    {{- if ne $categoryFilter "" -}}
+      {{- $postLink = printf "%s?category=%s" .RelPermalink ($categoryFilter | urlquery) -}}
+    {{- else if ne $yearFilter "" -}}
+      {{- $postLink = printf "%s?year=%s" .RelPermalink ($yearFilter | urlquery) -}}
+    {{- end -}}
+    <article class="post-card{{ if not $featured }} post-card--no-image{{ end }}">
+      {{ if $featured }}
+      <a class="post-card-image-link" href="{{ $postLink }}" aria-label="{{ .Title }}">
+        {{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-card-image markdown-image" "page" . "sizes" "(min-width: 1200px) 360px, (min-width: 900px) 33vw, 100vw") }}
+      </a>
+      {{ end }}
+      <div class="post-card-body">
+        <h3 class="post-card-title"><a href="{{ $postLink }}">{{ .Title }}</a></h3>
+        {{ $postYear := .Date.Format "2006" }}
+        <p class="post-card-date">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $postYear }}/">{{ $postYear }}</a></p>
+        {{ with .Params.categories }}
+        <p class="post-card-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}</p>
+        {{ end }}
+        <p class="post-card-excerpt">{{ .Summary | plainify | truncate 180 }}</p>
+      </div>
+    </article>
+  {{- end -}}
+{{- end -}}
+</div>
+{{ if eq $visibleCount 0 }}<div class="blog-empty-message">No posts found for this category.</div>{{ end }}

@@ -1,0 +1,17 @@
+<div class="three-figures">
+  <figure>
+    {{ $src1 := .Get "src1" }}{{ $alt1 := .Get "alt1" | default "" }}{{ $class1 := .Get "class1" | default "" }}
+    <img src="/{{ strings.TrimPrefix "/" $src1 }}" alt="{{ $alt1 }}"{{ with $class1 }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    {{ with .Get "caption1" }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  <figure>
+    {{ $src2 := .Get "src2" }}{{ $alt2 := .Get "alt2" | default "" }}{{ $class2 := .Get "class2" | default "" }}
+    <img src="/{{ strings.TrimPrefix "/" $src2 }}" alt="{{ $alt2 }}"{{ with $class2 }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    {{ with .Get "caption2" }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  <figure>
+    {{ $src3 := .Get "src3" }}{{ $alt3 := .Get "alt3" | default "" }}{{ $class3 := .Get "class3" | default "" }}
+    <img src="/{{ strings.TrimPrefix "/" $src3 }}" alt="{{ $alt3 }}"{{ with $class3 }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
+    {{ with .Get "caption3" }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+</div>

@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $featured := or .Params.featured_image .Params.featuredImage }}
+<article class="page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.lead }}<p class="lead">{{ .Params.lead }}</p>{{ end }}
+  </header>
+  {{ if $featured }}
+  <figure class="post-featured">
+    {{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-featured-image markdown-image" "page" . "sizes" "(min-width: 860px) 860px, 100vw") }}
+  </figure>
+  {{ end }}
+  <section class="page-body">
+    {{ .Content }}
+  </section>
+</article>
+{{ end }}

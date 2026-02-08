@@ -1,0 +1,146 @@
+{{ define "main" }}
+{{ $featured := or .Params.featured_image .Params.featuredImage }}
+{{ $allStudentPaperPages := where site.Pages "Section" "student-papers-items" }}
+{{ $allPapers := sort (where $allStudentPaperPages "Kind" "page") "Params.sort_key" "desc" }}
+{{ $journalPapers := where $allPapers "Params.category" "journal" }}
+{{ $journalSubmitted := where $journalPapers "Params.subcategory" "submitted" }}
+{{ $journalPublished := slice }}
+{{ range $journalPapers }}
+  {{ if ne .Params.subcategory "submitted" }}
+    {{ $journalPublished = $journalPublished | append . }}
+  {{ end }}
+{{ end }}
+{{ $conferencePapers := where $allPapers "Params.category" "conference" }}
+<article class="page">
+  {{ partial "breadcrumb.html" . }}
+  <header class="page-header"><h1>{{ .Title }}</h1></header>
+  {{ if $featured }}
+  <figure class="post-featured">
+    {{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-featured-image markdown-image" "page" . "sizes" "(min-width: 860px) 860px, 100vw") }}
+  </figure>
+  {{ end }}
+  <section class="page-body">
+    <h3>Current Graduate Students</h3>
+    {{ partial "student-current-list.html" . }}
+
+    <h3>Current Postdocs</h3>
+    {{ partial "postdoc-current-list.html" . }}
+
+    <h3>Former Graduate Students</h3>
+    {{ partial "student-former-list.html" . }}
+
+    <h3>Former Postdocs</h3>
+    {{ partial "postdoc-former-list.html" . }}
+
+    <h1>Papers written by my students <em>NOT</em> coauthored with me</h1>
+    <p>I am not a co-author of some of the papers of my students. Below, I try to list such papers.</p>
+
+    <div class="papers-search" role="search">
+      <label for="students-search-input">Search student papers</label>
+      <input id="students-search-input" type="search" placeholder="Title, student, venue, year..." autocomplete="off">
+      <details class="papers-coauthors">
+        <summary>Filter by Students</summary>
+        <div id="students-filter-buttons" class="papers-coauthor-buttons"></div>
+      </details>
+      <p id="students-search-status" class="papers-search-status" aria-live="polite"></p>
+    </div>
+
+    <h2>Journal papers</h2>
+    <h3>Submitted</h3>
+    {{ partial "student-paper-list.html" (dict "papers" $journalSubmitted) }}
+    {{ partial "student-paper-list.html" (dict "papers" $journalPublished "group_by_year" true) }}
+
+    <h2>Refereed Conference Papers</h2>
+    {{ partial "student-paper-list.html" (dict "papers" $conferencePapers "group_by_year" true) }}
+  </section>
+</article>
+
+<script>
+(function () {
+  var input = document.getElementById("students-search-input");
+  var status = document.getElementById("students-search-status");
+  var filterBox = document.getElementById("students-filter-buttons");
+  if (!input || !filterBox) return;
+
+  var studentMap =
+    {{- $studentMap := dict -}}
+    {{- range site.Data.people -}}
+      {{- $name := printf "%s%s%s" .firstname (cond (ne .lastname "") " " "") .lastname -}}
+      {{- $studentMap = merge $studentMap (dict .id $name) -}}
+    {{- end -}}
+    {{- $studentMap | jsonify | safeJS -}};
+
+  var items = Array.prototype.slice.call(document.querySelectorAll(".paper-list .student-paper-item"));
+  var lists = Array.prototype.slice.call(document.querySelectorAll(".paper-list"));
+  var total = items.length;
+  var activeStudent = null;
+
+  function normalize(text) { return (text || "").toLowerCase().trim(); }
+  function getItemStudents(item) {
+    if (!item.dataset.mystudents) return [];
+    return item.dataset.mystudents.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+
+  function updateStatus(shown, query) {
+    if (!status) return;
+    if (!query && !activeStudent) { status.textContent = "Showing all " + total + " student papers."; return; }
+    var parts = [];
+    if (query) parts.push("query \"" + query + "\"");
+    if (activeStudent) parts.push("student \"" + (studentMap[activeStudent] || activeStudent) + "\"");
+    status.textContent = "Found " + shown + " paper" + (shown === 1 ? "" : "s") + " for " + parts.join(" + ") + ".";
+  }
+
+  function applyFilter() {
+    var query = normalize(input.value);
+    var shown = 0;
+    items.forEach(function (item) {
+      var text = normalize(item.textContent);
+      var itemStudents = getItemStudents(item);
+      var visible = (!query || text.indexOf(query) !== -1) && (!activeStudent || itemStudents.indexOf(activeStudent) !== -1);
+      item.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    lists.forEach(function (list) {
+      var hasVisible = !!list.querySelector(".student-paper-item:not([hidden])");
+      list.hidden = !hasVisible;
+      var prev = list.previousElementSibling;
+      if (prev && prev.tagName === "H3") prev.hidden = list.hidden;
+    });
+    updateStatus(shown, query);
+    var resetBtn = filterBox.querySelector("button[data-student-all]");
+    if (resetBtn) resetBtn.classList.toggle("is-active", !activeStudent);
+    Array.prototype.slice.call(filterBox.querySelectorAll("button[data-student]")).forEach(function (button) {
+      button.classList.toggle("is-active", button.getAttribute("data-student") === activeStudent);
+    });
+  }
+
+  function renderFilterButtons() {
+    var counts = {};
+    items.forEach(function (item) {
+      getItemStudents(item).forEach(function (sid) { counts[sid] = (counts[sid] || 0) + 1; });
+    });
+    var rows = Object.keys(counts).map(function (sid) { return { id: sid, name: studentMap[sid] || sid, count: counts[sid] }; })
+      .sort(function (a, b) { if (b.count !== a.count) return b.count - a.count; return a.name.localeCompare(b.name); });
+
+    var frag = document.createDocumentFragment();
+    var reset = document.createElement("button");
+    reset.type = "button"; reset.className = "papers-coauthor-btn is-active"; reset.setAttribute("data-student-all", "1"); reset.textContent = "All (" + total + ")";
+    reset.addEventListener("click", function () { activeStudent = null; applyFilter(); });
+    frag.appendChild(reset);
+
+    rows.forEach(function (row) {
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "papers-coauthor-btn"; btn.setAttribute("data-student", row.id); btn.textContent = row.name + " (" + row.count + ")";
+      btn.addEventListener("click", function () { activeStudent = (activeStudent === row.id) ? null : row.id; applyFilter(); });
+      frag.appendChild(btn);
+    });
+
+    filterBox.appendChild(frag);
+  }
+
+  input.addEventListener("input", applyFilter);
+  renderFilterButtons();
+  applyFilter();
+})();
+</script>
+{{ end }}

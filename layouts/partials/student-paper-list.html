@@ -1,0 +1,30 @@
+{{- $papers := .papers -}}
+{{- $group := .group_by_year | default false -}}
+{{- if gt (len $papers) 0 -}}
+  {{- if $group -}}
+    {{- $byYear := dict -}}
+    {{- range $papers -}}
+      {{- $key := printf "%v" .Params.year -}}
+      {{- $list := index $byYear $key | default (slice) -}}
+      {{- $byYear = merge $byYear (dict $key ($list | append .)) -}}
+    {{- end -}}
+    {{- $years := slice -}}
+    {{- range $year, $_ := $byYear -}}
+      {{- $years = $years | append $year -}}
+    {{- end -}}
+    {{- range sort $years "value" "desc" -}}
+<h3>{{ . }}</h3>
+<ol class="paper-list">
+      {{- range sort (index $byYear .) "Params.sort_key" "desc" -}}
+        {{ partial "student-paper-item.html" (dict "paper" .Params) }}
+      {{- end -}}
+</ol>
+    {{- end -}}
+  {{- else -}}
+<ol class="paper-list">
+    {{- range sort $papers "Params.sort_key" "desc" -}}
+      {{ partial "student-paper-item.html" (dict "paper" .Params) }}
+    {{- end -}}
+</ol>
+  {{- end -}}
+{{- end -}}

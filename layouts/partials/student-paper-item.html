@@ -1,0 +1,29 @@
+{{- $paper := .paper -}}
+{{- $titleHref := "" -}}
+{{- if $paper.link -}}{{ $titleHref = $paper.link }}{{ else if $paper.doi }}{{ $titleHref = printf "https://doi.org/%s" $paper.doi }}{{ else if $paper.arxiv }}{{ $titleHref = printf "https://arxiv.org/abs/%s" $paper.arxiv }}{{ else if and $paper.url (in $paper.url "://") }}{{ $titleHref = $paper.url }}{{ end -}}
+{{- $monthNames := slice "" "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" -}}
+{{- $monthNum := int (default 0 $paper.month) -}}
+{{- $monthName := "" -}}
+{{- if and (ge $monthNum 1) (le $monthNum 12) -}}
+  {{- $monthName = index $monthNames $monthNum -}}
+{{- end -}}
+{{- $authors := $paper.authors | default (slice) -}}
+{{- $mystudents := $paper.mystudents | default (slice) -}}
+<li class="paper-item student-paper-item" data-year="{{ $paper.year }}" data-authors="{{ delimit $authors "," }}" data-mystudents="{{ delimit $mystudents "," }}">
+  <div class="paper-item-main">
+    {{ if gt (len $authors) 0 }}{{ range $i, $aid := $authors }}{{ if gt $i 0 }}{{ if eq $i (sub (len $authors) 1) }}{{ if gt (len $authors) 2 }}, and {{ else }} and {{ end }}{{ else }}, {{ end }}{{ end }}{{ $isStudent := in $mystudents $aid }}{{ partial "person-name.html" (dict "id" $aid "link" true "strong" $isStudent) | safeHTML }}{{ end }}, {{ end }}
+    {{ if ne $titleHref "" }}<a href="{{ $titleHref }}"><em>{{ $paper.title }}</em></a>{{- else -}}<em>{{ $paper.title }}</em>{{- end -}}
+    {{- with $paper.journal -}}, <em>{{ . | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}</em>{{- end -}}
+    {{- with $paper.conference -}}, {{ . | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}{{- end -}}
+    {{- with $paper.booktitle -}}, {{ . | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}{{- end -}}
+    {{- with $paper.text -}}, {{ . | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}{{- end -}},
+    {{- with $monthName }} {{ . }}{{ end }} {{ $paper.year }}.
+    {{- with $paper.note }} {{ . | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | safeHTML }}.{{- end -}}
+  </div>
+  {{- if or $paper.doi $paper.arxiv -}}
+  <div class="paper-item-links">
+    {{- with $paper.doi -}}<a class="paper-meta-link paper-meta-link-doi" data-label="doi" href="https://doi.org/{{ . }}"><span class="paper-meta-value"><span class="paper-copy-hidden">https://doi.org/</span>{{ . }}</span></a>{{- end -}}
+    {{- with $paper.arxiv -}}<a class="paper-meta-link paper-meta-link-arxiv" data-label="arXiv" href="https://arxiv.org/abs/{{ . }}"><span class="paper-meta-value"><span class="paper-copy-hidden">https://arxiv.org/abs/</span>{{ . }}</span></a>{{- end -}}
+  </div>
+  {{- end -}}
+</li>

@@ -1,0 +1,41 @@
+baseURL = "https://sangiloum.github.io/"
+languageCode = "en-us"
+title = "Sang-il Oum (엄상일)"
+timeZone = "Asia/Seoul"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$']]
+          inline = [['\(', '\)']]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[frontmatter]
+  date = ["date", "publishDate", "pubdate", "published", ":filename"]
+  publishDate = ["publishDate", "pubdate", "published", ":filename", "date"]
+  lastmod = [":git", "lastmod", "modified", "date", "publishDate", ":filename"]
+  expiryDate = ["expiryDate", "unpublishdate"]
+
+[permalinks]
+  posts = "/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS", "SITEMAP"]
+  section = ["HTML"]
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed"
+
+[params]
+  description = "A mathematician at the IBS Discrete Mathematics Group."

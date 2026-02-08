@@ -1,0 +1,5 @@
+<ul>
+{{ range (site.Data.students_current | default (slice)) }}
+  <li><strong>{{ partial "person-name.html" (dict "id" .id "link" true) }}</strong>. {{ .program }}, {{ .start }}-{{ if .end }}{{ .end }}{{ else }}current{{ end }}{{ if .note }}. {{ .note }}{{ else }}.{{ end }}</li>
+{{ end }}
+</ul>

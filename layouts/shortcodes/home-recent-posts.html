@@ -1,0 +1,17 @@
+<div class="post-cards post-cards-compact home-post-cards">
+{{ range first 3 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }}
+  {{ $featured := or .Params.featured_image .Params.featuredImage }}
+  <article class="post-card{{ if not $featured }} post-card--no-image{{ end }}">
+    {{ if $featured }}
+    <a class="post-card-image-link" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+      {{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-card-image markdown-image" "page" . "sizes" "(min-width: 1200px) 360px, (min-width: 900px) 33vw, 100vw") }}
+    </a>
+    {{ end }}
+    <div class="post-card-body">
+      <h3 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      {{ $postYear := .Date.Format "2006" }}
+      <p class="post-card-date">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $postYear }}/">{{ $postYear }}</a></p>
+    </div>
+  </article>
+{{ end }}
+</div>
