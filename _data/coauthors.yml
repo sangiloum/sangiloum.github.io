@@ -5,6 +5,7 @@
 - id: bergougnoux
   firstname: "Benjamin"
   lastname: "Bergougnoux"
+  url: "https://benjaminbergougnoux.github.io"
 - id: mohar
   firstname: "Bojan"
   lastname: "Mohar"
@@ -12,6 +13,7 @@
 - id: reed
   firstname: "Bruce"
   lastname: "Reed"
+  url: "https://www.math.sinica.edu.tw/members/ceb857fa-f0f7-438d-942d-f6d8bd0e6029?page_id=16"
 - id: courcelle
   firstname: "Bruno"
   lastname: "Courcelle"
@@ -44,7 +46,7 @@
 - id: chakraborti
   firstname: "Debsoumya"
   lastname: "Chakraborti"
-  url: "https://dimag.ibs.re.kr/home/debsoumya/"
+  url: "https://sites.google.com/view/debsoumya"
 - id: seese
   firstname: "Detlef"
   lastname: "Seese"
@@ -52,7 +54,7 @@
 - id: mayhew
   firstname: "Dillon"
   lastname: "Mayhew"
-  url: "https://homepages.ecs.vuw.ac.nz/~mayhew/"
+  url: "https://dillon128.github.io"
 - id: thilikos
   firstname: "Dimitrios M."
   lastname: "Thilikos"
@@ -69,7 +71,7 @@
   firstname: "Donggyu"
   lastname: "Kim"
   korname: "김동규"
-  url: "https://dimag.ibs.re.kr/home/donggyu/"
+  url: "https://sites.google.com/view/donggyu-kim"
 - id: duksang
   firstname: "Duksang"
   lastname: "Lee"
@@ -221,7 +223,7 @@
 - id: devos
   firstname: "Matt"
   lastname: "DeVos"
-  url: "http://www.sfu.ca/~mdevos/"
+  url: "https://www.sfu.ca/~mdevos/"
 - id: mnich
   firstname: "Matthias"
   lastname: "Mnich"
@@ -241,7 +243,6 @@
 - id: masuda
   firstname: "Mikiya"
   lastname: "Masuda"
-  url: "http://www.sci.osaka-cu.ac.jp/grad/MATHPHYS/mem_list_e.html"
 - id: minki
   firstname: "Minki"
   lastname: "Kim"
@@ -287,7 +288,7 @@
 - id: brignall
   firstname: "Robert"
   lastname: "Brignall"
-  url: "http://users.mct.open.ac.uk/rb8599/"
+  url: "https://www.rbrignall.org.uk"
 - id: ganian
   firstname: "Robert"
   lastname: "Ganian"
@@ -313,7 +314,7 @@
   firstname: "Sang-hyun"
   lastname: "Kim"
   korname: "김상현"
-  url: "http://cayley.kr"
+  url: "https://www.kimsh.kr"
 - id: wiederrecht
   firstname: "Sebastian"
   lastname: "Wiederrecht"
