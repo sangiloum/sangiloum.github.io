@@ -46,7 +46,7 @@
 - id: abhishek
   start: "2019.8.1"
   end: "2020.1.15"
-  phd_institution: "[Central](https://mathematics.ceu.edu) [European Univ.](https://mathematics.ceu.edu)"
+  phd_institution: "[Central European Univ.](https://mathematics.ceu.edu)"
   phd_year: 2019
   advisors:
     - katona
@@ -65,7 +65,7 @@
 - id: casey
   start: "2019.9.1"
   end: "2021.11.30"
-  phd_institution: "[Central](https://mathematics.ceu.edu) [European Univ.](https://mathematics.ceu.edu)"
+  phd_institution: "[Centeral European Univ.](https://mathematics.ceu.edu)"
   phd_year: 2015
   advisors:
     - katona

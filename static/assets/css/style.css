@@ -1123,13 +1123,14 @@ button:focus-visible {
 }
 
 .page.page-papers .page-body,
+.page.page-students .page-body,
 .home-paper-list {
   counter-reset: papers-item;
 }
 
 .paper-item-main {
   position: relative;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .paper-item-main::before {
@@ -1138,9 +1139,13 @@ button:focus-visible {
   left: -2.4rem;
   top: 0;
   width: 2rem;
-  line-height: 1.45;
+  line-height: 1.5;
   text-align: right;
   color: var(--muted);
+}
+
+.paper-list .paper-item-main sup {
+  line-height: 0;
 }
 
 .paper-item,
