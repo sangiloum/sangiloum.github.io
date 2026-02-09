@@ -300,6 +300,8 @@ sup {
 
 .page-header h1 {
   margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .lead {
@@ -554,7 +556,7 @@ sup {
 }
 
 .breadcrumb-item [aria-current="page"] {
-  display: inline;
+  display: block;
   line-height: 1.25;
   max-width: 100%;
   overflow: hidden;
@@ -1365,6 +1367,18 @@ button:focus-visible {
 @media (max-width: 767px) {
   .content {
     padding-top: 1.2rem;
+  }
+
+  .breadcrumb-list {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .breadcrumb-item [aria-current="page"] {
+    white-space: normal;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .brand-subtitle {
