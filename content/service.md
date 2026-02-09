@@ -8,6 +8,7 @@ featured_image: /legacy/2012/11/DSC010321.jpg
 featured_image_source: og_image
 ---
 
+{{% page-section %}}
 ## Service to the research community
 
 ### Editor
@@ -90,7 +91,9 @@ featured_image_source: og_image
   - Committee Chair of Discrete Mathematics, Korean Mathematical Society, 2024.1.1.-2026.12.31.
   - [Committee Member of Discrete Mathematics](https://www.kms.or.kr/board/comm_mlist.html?code=comm_mlist&comm=10&trans=), Korean Mathematical Society, 2009.3.1.-2023.12.31.
   - Chair for Combinatorics, [Korean Society for Industrial and Applied Mathematics](http://ksiam.org/intro/sub_intro03.asp). 2015.1.1.-2023.12.31.
+{{% /page-section %}}
 
+{{% page-section %}}
 ## Service to the society
 
 ### Mathematical Olympiads
@@ -143,3 +146,4 @@ Until the end of November 2018, I had been one of the founding editors of the [H
   - KAIST 홍보위원회, 2011.2.21-2013.2.20.
   - Director of Graduate Studies (대학원주임), Department of Mathematical Sciences, 2017.3.13.-2018.10.31.
   - 아슬라 심포지엄 학술위원회(구. 국제학술심층토론회 운영위원회), KIST, 2016.10.-2019.7.
+{{% /page-section %}}

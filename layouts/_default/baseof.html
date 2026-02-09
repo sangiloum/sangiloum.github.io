@@ -6,14 +6,27 @@
     <title>{{ if .Title }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
     <meta name="description" content="{{ .Params.description | default site.Params.description }}">
     <link rel="canonical" href="{{ .Params.canonical_url | default .Permalink }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     {{ hugo.Generator }}
   </head>
-  <body>
+  <body class="{{ if .IsHome }}is-home{{ end }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="/">Sang-il Oum</a>
-        <nav class="nav">
+        <div class="brand-cluster">
+          <a class="brand" href="/">Sang-il Oum</a>
+          <p class="brand-subtitle">IBS Discrete Mathematics Group</p>
+        </div>
+
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Toggle navigation">
+          <span class="site-nav-toggle-label">Menu</span>
+          <span class="site-nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav nav-desktop" aria-label="Primary">
           <a href="/papers/">Papers</a>
           <a href="/awards/">Awards</a>
           <a href="/talks/">Talks</a>
@@ -23,14 +36,38 @@
           <a href="/blog/">Blog</a>
         </nav>
       </div>
+      <nav id="site-nav-panel" class="site-nav-panel" aria-label="Mobile primary" hidden>
+        <div class="container site-nav-panel-inner">
+          <a href="/papers/">Papers</a>
+          <a href="/awards/">Awards</a>
+          <a href="/talks/">Talks</a>
+          <a href="/teaching/">Teaching</a>
+          <a href="/service/">Service</a>
+          <a href="/students/">Students &amp; Postdocs</a>
+          <a href="/blog/">Blog</a>
+        </div>
+      </nav>
     </header>
-    <main class="container content">
+
+    <main id="main-content" class="container content">
       {{ block "main" . }}{{ end }}
     </main>
+
     <footer class="site-footer">
-      <div class="container">
-        <p>© {{ now.Format "2006" }} Sang-il Oum</p>
+      <div class="container site-footer-grid">
+        <div>
+          <p class="footer-brand">Sang-il Oum</p>
+          <p class="footer-note">IBS Discrete Mathematics Group</p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/papers/">Papers</a>
+          <a href="/blog/">Blog</a>
+        </div>
+        <p class="footer-copyright">© {{ now.Format "2006" }} Sang-il Oum</p>
       </div>
     </footer>
+
+    <script defer src="/assets/js/site-nav.js"></script>
   </body>
 </html>
