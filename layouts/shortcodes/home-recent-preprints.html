@@ -1,6 +1,59 @@
-{{ $papers := where (where (where site.Pages "Section" "papers-items") "Kind" "page") "Params.category" "preprint" }}
-<ol class="paper-list home-paper-list">
-{{ range first 3 (sort $papers "Params.sort_key" "desc") }}
-  {{ partial "paper-item.html" (dict "paper" .Params) }}
-{{ end }}
-</ol>
+{{- $papers := where (where (where site.Pages "Section" "papers-items") "Kind" "page") "Params.category" "preprint" -}}
+{{- $monthNames := slice "" "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" -}}
+<div class="preprint-cards">
+{{- range first 3 (sort $papers "Params.sort_key" "desc") -}}
+  {{- $paper := .Params -}}
+  {{- $titleHref := "" -}}
+  {{- if $paper.link -}}
+    {{- $titleHref = $paper.link -}}
+  {{- else if $paper.doi -}}
+    {{- $titleHref = printf "https://doi.org/%s" $paper.doi -}}
+  {{- else if $paper.arxiv -}}
+    {{- $titleHref = printf "https://arxiv.org/abs/%s" $paper.arxiv -}}
+  {{- else if and $paper.url (in $paper.url "://") -}}
+    {{- $titleHref = $paper.url -}}
+  {{- end -}}
+  {{- $monthNum := int (default 0 $paper.month) -}}
+  {{- $monthName := "" -}}
+  {{- if and (ge $monthNum 1) (le $monthNum 12) -}}
+    {{- $monthName = index $monthNames $monthNum -}}
+  {{- end -}}
+  {{- $coauthors := $paper.coauthors | default (slice) -}}
+  {{- $authorLinks := slice -}}
+  {{- range $cid := $coauthors -}}
+    {{- $authorLinks = $authorLinks | append (partial "person-name.html" (dict "id" $cid "link" true) | safeHTML) -}}
+  {{- end -}}
+  {{- $authorText := "" -}}
+  {{- if eq (len $authorLinks) 1 -}}
+    {{- $authorText = index $authorLinks 0 -}}
+  {{- else if eq (len $authorLinks) 2 -}}
+    {{- $authorText = printf "%s and %s" (index $authorLinks 0) (index $authorLinks 1) -}}
+  {{- else if gt (len $authorLinks) 2 -}}
+    {{- $head := first (sub (len $authorLinks) 1) $authorLinks -}}
+    {{- $last := index (last 1 $authorLinks) 0 -}}
+    {{- $authorText = printf "%s, and %s" (delimit $head ", ") $last -}}
+  {{- end -}}
+  <article class="preprint-card">
+    <h3 class="preprint-card-title">
+      {{- if ne $titleHref "" -}}
+      <a href="{{ $titleHref }}">{{ $paper.title }}</a>
+      {{- else -}}
+      {{ $paper.title }}
+      {{- end -}}
+    </h3>
+    <p class="preprint-card-meta">
+      {{- if gt (len $coauthors) 0 -}}
+      with {{ $authorText | safeHTML }}
+      {{- else -}}
+      Preprint
+      {{- end -}}
+    </p>
+    <div class="preprint-card-footer">
+      <p class="preprint-card-date">{{ with $monthName }}{{ . }} {{ end }}{{ $paper.year }}</p>
+      <div class="preprint-card-links">
+        {{- with $paper.arxiv -}}<a class="paper-meta-link paper-meta-link-arxiv" data-label="arXiv" href="https://arxiv.org/abs/{{ . }}"><span class="paper-meta-value"><span class="paper-copy-hidden">https://arxiv.org/abs/</span>{{ . }}</span></a>{{- else -}}{{- with $paper.doi -}}<a class="paper-meta-link paper-meta-link-doi" data-label="doi" href="https://doi.org/{{ . }}"><span class="paper-meta-value"><span class="paper-copy-hidden">https://doi.org/</span>{{ . }}</span></a>{{- end -}}{{- end -}}
+      </div>
+    </div>
+  </article>
+{{- end -}}
+</div>

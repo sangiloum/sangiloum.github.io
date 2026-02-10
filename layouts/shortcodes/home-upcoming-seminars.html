@@ -11,29 +11,25 @@
     {{- $title := .title | default "TBA" -}}
     {{- with .url -}}
     <a class="seminar-entry" href="{{ . }}">
-      <div class="seminar-when">
+      <p class="seminar-when">
         <time class="seminar-date" datetime="{{ $startISO }}">{{ $dateLabel }}</time>
         <span class="seminar-time">{{ $timeLabel }}</span>
-      </div>
-      <div class="seminar-details">
+      </p>
+      <p class="seminar-details">
         <span class="seminar-speaker">{{ $speaker }}</span>
-        {{- if ne (lower (trim $title " ")) "tba" }}
-        <span class="seminar-title"><em>{{ $title }}</em></span>
-        {{- end }}
-      </div>
+        {{- if ne (lower (trim $title " ")) "tba" }}, <span class="seminar-title"><em>{{ $title }}</em></span>{{- end }}
+      </p>
     </a>
     {{- else -}}
     <div class="seminar-entry">
-      <div class="seminar-when">
+      <p class="seminar-when">
         <time class="seminar-date" datetime="{{ $startISO }}">{{ $dateLabel }}</time>
         <span class="seminar-time">{{ $timeLabel }}</span>
-      </div>
-      <div class="seminar-details">
+      </p>
+      <p class="seminar-details">
         <span class="seminar-speaker">{{ $speaker }}</span>
-        {{- if ne (lower (trim $title " ")) "tba" }}
-        <span class="seminar-title"><em>{{ $title }}</em></span>
-        {{- end }}
-      </div>
+        {{- if ne (lower (trim $title " ")) "tba" }}, <span class="seminar-title"><em>{{ $title }}</em></span>{{- end }}
+      </p>
     </div>
     {{- end }}
   </li>
