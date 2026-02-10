@@ -5,7 +5,7 @@
     {{- with .Params.sitemap }}
       {{- if .disable }}{{ $disabled = true }}{{ end -}}
     {{- end -}}
-    {{- if and (not $disabled) (ne .RelPermalink "/404.html") (ne .Layout "404") (ne .Permalink "") -}}
+    {{- if and (not $disabled) (ne .RelPermalink "/404.html") (ne .Layout "404") (ne .Permalink "") (not (in .Permalink "/blog/category/")) -}}
       <url>
         <loc>{{ .Permalink }}</loc>
       </url>
