@@ -1,0 +1,14 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML -}}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- range site.Pages -}}
+    {{- $disabled := false -}}
+    {{- with .Params.sitemap }}
+      {{- if .disable }}{{ $disabled = true }}{{ end -}}
+    {{- end -}}
+    {{- if and (not $disabled) (ne .RelPermalink "/404.html") (ne .Layout "404") (ne .Permalink "") -}}
+      <url>
+        <loc>{{ .Permalink }}</loc>
+      </url>
+    {{- end -}}
+  {{- end -}}
+</urlset>
