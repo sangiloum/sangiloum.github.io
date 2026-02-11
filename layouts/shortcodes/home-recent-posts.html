@@ -8,7 +8,7 @@
 </a>
 {{- end -}}
 <div class="post-card-body">
-<h3 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+<p class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
 {{- $postYear := .Date.Format "2006" -}}
 <p class="post-card-date">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $postYear }}/">{{ $postYear }}</a></p>
 </div>

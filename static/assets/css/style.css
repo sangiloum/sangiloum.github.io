@@ -22,7 +22,8 @@
   --space-6: 2.2rem;
   --space-7: 3rem;
   --content-width: min(1120px, 92vw);
-  --font-header-sans: "Noto Sans KR", "Manrope", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", sans-serif;
+  --font-serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
 }
 
 * {
@@ -42,7 +43,7 @@ html.nav-open body {
 body {
   margin: 0;
   color: var(--text);
-  font-family: "Manrope", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-ui);
   font-size: clamp(1rem, 0.96rem + 0.14vw, 1.08rem);
   line-height: 1.68;
   background:
@@ -74,17 +75,17 @@ h4 {
   letter-spacing: 0.01em;
   font-weight: 500;
   color: #182236;
-  font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-family: var(--font-serif);
 }
 
 .home-hero h1,
 .page-header h1 {
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
 }
 
 body.is-home h2,
 body.is-home h3 {
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
 }
 
 h1 {
@@ -172,7 +173,7 @@ sup {
 
 .brand {
   color: #14233e;
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
   font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
   font-weight: 500;
   text-decoration: none;
@@ -188,7 +189,7 @@ sup {
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.25;
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
 }
 
 .nav {
@@ -203,7 +204,7 @@ sup {
   justify-content: center;
   color: #233755;
   text-decoration: none;
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
   font-size: 0.93rem;
   font-weight: 600;
   padding: 0.44rem 0.62rem;
@@ -229,7 +230,7 @@ sup {
   border-radius: 999px;
   background: #fff;
   color: #1f3354;
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.4rem 0.7rem;
@@ -928,6 +929,12 @@ img.markdown-image:not(.home-hero-image) {
   font-size: 1.18rem;
 }
 
+.home-post-cards .post-card-title {
+  font-size: clamp(0.98rem, 0.95rem + 0.14vw, 1.05rem);
+  line-height: 1.35;
+  font-weight: 400;
+}
+
 .post-card-date {
   margin: 0.3rem 0 0.45rem;
   color: var(--muted);
@@ -1248,7 +1255,7 @@ img.markdown-image:not(.home-hero-image) {
 }
 
 .student-current-avatar-fallback {
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
   font-size: clamp(1.4rem, 1.1rem + 0.5vw, 1.8rem);
   font-weight: 700;
   color: #2f4b72;
@@ -1261,7 +1268,7 @@ img.markdown-image:not(.home-hero-image) {
 
 .student-current-name {
   margin: 0 0 0.35rem;
-  font-family: var(--font-header-sans);
+  font-family: var(--font-ui);
   font-size: clamp(0.96rem, 0.93rem + 0.1vw, 1.03rem);
   font-weight: 700;
 }
@@ -1478,7 +1485,7 @@ button:focus-visible {
 
 .footer-brand {
   margin: 0;
-  font-family: "Fraunces", "Iowan Old Style", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   color: #1b2d4b;
 }
