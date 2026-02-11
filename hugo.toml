@@ -39,3 +39,15 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "A mathematician at the IBS Discrete Mathematics Group."
+  [params.comments]
+    provider = "giscus"
+    repo = "sangiloum/sangiloum.github.io"
+    repoId = "R_kgDORKh6Qg"
+    category = "Blog Comments"
+    categoryId = "DIC_kwDORKh6Qs4C2MJY"
+    mapping = "pathname"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "top"
+    theme = "light"
+    lang = "en"

@@ -36,6 +36,7 @@
 
   {{ if $featured }}<figure class="post-featured post-featured-post">{{ partial "responsive-image.html" (dict "src" $featured "alt" .Title "class" "post-featured-image markdown-image" "page" . "sizes" "(min-width: 860px) 860px, 100vw") }}</figure>{{ end }}
   <section class="page-body">{{ .Content }}</section>
+  {{ partial "comments.html" . }}
 
   <nav class="post-pagination" aria-label="Post navigation">
     <a id="post-nav-prev" class="post-nav-link post-nav-prev-link{{ if not $prev }} is-empty{{ end }}" href="{{ if $prev }}{{ $prev.RelPermalink }}{{ else }}#{{ end }}"{{ if not $prev }} aria-disabled="true" tabindex="-1"{{ end }}><span class="post-nav-label">{{ if $prev }}Previous{{ end }}</span><span class="post-nav-title">{{ with $prev }}{{ .Title }}{{ end }}</span></a>

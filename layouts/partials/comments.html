@@ -1,0 +1,27 @@
+{{- $comments := site.Params.comments -}}
+{{- if and (eq .Section "posts") (ne .Params.comments false) (eq $comments.provider "giscus") -}}
+<section class="post-comments" aria-label="Comments">
+  <h2 class="post-comments-title">Comments</h2>
+  {{- $hasRequired := and $comments.repo $comments.repoId $comments.category $comments.categoryId -}}
+  {{- if $hasRequired -}}
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ $comments.repo }}"
+    data-repo-id="{{ $comments.repoId }}"
+    data-category="{{ $comments.category }}"
+    data-category-id="{{ $comments.categoryId }}"
+    data-mapping="{{ $comments.mapping | default "pathname" }}"
+    data-strict="0"
+    data-reactions-enabled="{{ $comments.reactionsEnabled | default "1" }}"
+    data-emit-metadata="{{ $comments.emitMetadata | default "0" }}"
+    data-input-position="{{ $comments.inputPosition | default "top" }}"
+    data-theme="{{ $comments.theme | default "light" }}"
+    data-lang="{{ $comments.lang | default "ko" }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+  {{- else -}}
+  <p class="post-comments-note">Comments are not configured yet. Set giscus IDs in <code>hugo.toml</code>.</p>
+  {{- end -}}
+</section>
+{{- end -}}
