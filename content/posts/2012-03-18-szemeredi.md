@@ -1,7 +1,6 @@
 ---
 title: "올해 아벨상은 헝가리 수학자 세머레디(Szemerédi)교수"
-url: /2012/szemeredi/
-canonical_url: https://sangiloum.github.io/2012/szemeredi/
+slug: szemeredi
 featured_image: /legacy/2012/03/Szemeredi1.jpg
 featured_image_source: featured_media
 categories:

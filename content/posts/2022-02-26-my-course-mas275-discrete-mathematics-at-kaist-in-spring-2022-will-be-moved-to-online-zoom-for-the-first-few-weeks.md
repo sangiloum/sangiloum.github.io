@@ -1,7 +1,6 @@
 ---
 title: "My course MAS275 Discrete Mathematics at KAIST in Spring 2022 will be moved to online (Zoom) for the first few weeks"
-url: /2022/my-course-mas275-discrete-mathematics-at-kaist-in-spring-2022-will-be-moved-to-online-zoom-for-the-first-few-weeks/
-canonical_url: https://sangiloum.github.io/2022/my-course-mas275-discrete-mathematics-at-kaist-in-spring-2022-will-be-moved-to-online-zoom-for-the-first-few-weeks/
+slug: my-course-mas275-discrete-mathematics-at-kaist-in-spring-2022-will-be-moved-to-online-zoom-for-the-first-few-weeks
 categories:
   - kaist
 ---

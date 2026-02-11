@@ -1,7 +1,6 @@
 ---
 title: "Virtual ICM 2022 Invited talks in Combinatorics"
-url: /2022/virtual-icm-2022-invited-talks-in-combinatorics/
-canonical_url: https://sangiloum.github.io/2022/virtual-icm-2022-invited-talks-in-combinatorics/
+slug: virtual-icm-2022-invited-talks-in-combinatorics
 featured_image: /legacy/2022/05/icm2022.png
 featured_image_source: featured_media
 categories:

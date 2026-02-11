@@ -1,7 +1,6 @@
 ---
 title: "Hong Liu is moving to IBS as a Chief Investigator to start the IBS Extremal Combinatorics and Probability Group (ECOPRO) on April 2022 and is hiring up to 5 postdocs (Application Deadline: January 14, 2022)"
-url: /2021/ecopro-hiring/
-canonical_url: https://sangiloum.github.io/2021/ecopro-hiring/
+slug: ecopro-hiring
 featured_image: /legacy/2021/12/ibs-ecopro-logo.png
 featured_image_source: featured_media
 categories:

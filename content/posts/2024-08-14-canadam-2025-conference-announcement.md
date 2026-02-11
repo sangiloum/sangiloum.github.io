@@ -1,7 +1,6 @@
 ---
 title: "CanaDAM 2025 Conference Announcement"
-url: /2024/canadam-2025-conference-announcement/
-canonical_url: https://sangiloum.github.io/2024/canadam-2025-conference-announcement/
+slug: canadam-2025-conference-announcement
 categories:
   - events
 ---

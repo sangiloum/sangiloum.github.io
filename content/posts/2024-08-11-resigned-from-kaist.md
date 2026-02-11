@@ -1,7 +1,6 @@
 ---
 title: "Resigned from the professor position of KAIST"
-url: /2024/resigned-from-kaist/
-canonical_url: https://sangiloum.github.io/2024/resigned-from-kaist/
+slug: resigned-from-kaist
 featured_image: /legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media
 categories:

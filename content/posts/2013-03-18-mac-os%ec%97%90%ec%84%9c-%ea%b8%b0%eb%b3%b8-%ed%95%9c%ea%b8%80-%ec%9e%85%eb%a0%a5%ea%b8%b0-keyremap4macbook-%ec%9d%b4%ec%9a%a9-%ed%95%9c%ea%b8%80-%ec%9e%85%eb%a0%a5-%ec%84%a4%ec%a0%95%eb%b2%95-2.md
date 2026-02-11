@@ -1,7 +1,8 @@
 ---
 title: "Mac OS에서 기본 한글 입력기 + KeyRemap4MacBook 이용 한글 입력 설정법"
-url: /2013/mac-os에서-기본-한글-입력기-keyremap4macbook-이용-한글-입력-설정법-2/
-canonical_url: https://sangiloum.github.io/2013/mac-os%ec%97%90%ec%84%9c-%ea%b8%b0%eb%b3%b8-%ed%95%9c%ea%b8%80-%ec%9e%85%eb%a0%a5%ea%b8%b0-keyremap4macbook-%ec%9d%b4%ec%9a%a9-%ed%95%9c%ea%b8%80-%ec%9e%85%eb%a0%a5-%ec%84%a4%ec%a0%95%eb%b2%95-2/
+slug: mac-os에서-기본-한글-입력기-keyremap4macbook-이용-한글-입력-설정법-2
+aliases:
+  - /2013/mac-os%ec%97%90%ec%84%9c-%ea%b8%b0%eb%b3%b8-%ed%95%9c%ea%b8%80-%ec%9e%85%eb%a0%a5%ea%b8%b0-keyremap4macbook-%ec%9d%b4%ec%9a%a9-%ed%95%9c%ea%b8%80-%ec%9e%85%eb%a0%a5-%ec%84%a4%ec%a0%95%eb%b2%95-2/
 categories:
   - it
 ---

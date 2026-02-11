@@ -9,7 +9,7 @@
       <li class="breadcrumb-sep" aria-hidden="true">/</li>
       <li class="breadcrumb-item"><a href="/blog/">Blog</a></li>
       <li class="breadcrumb-sep" aria-hidden="true">/</li>
-      <li id="breadcrumb-year-item" class="breadcrumb-item"><a href="/{{ $pageYear }}/">{{ $pageYear }}</a></li>
+      <li id="breadcrumb-year-item" class="breadcrumb-item"><span>{{ $pageYear }}</span></li>
       <li id="breadcrumb-year-sep" class="breadcrumb-sep" aria-hidden="true">/</li>
       <li id="breadcrumb-category-label-item" class="breadcrumb-item" style="display: none;"><span>Category</span></li>
       <li id="breadcrumb-category-label-sep" class="breadcrumb-sep" style="display: none;" aria-hidden="true">/</li>
@@ -28,7 +28,7 @@
 
   <header class="page-header">
     <h1>{{ .Title }}</h1>
-    <p class="lead">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $pageYear }}/">{{ $pageYear }}</a></p>
+    <p class="lead">{{ .Date.Format "2006-01-02" }}</p>
     {{ with .Params.categories }}
     <p class="post-meta-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}</p>
     {{ end }}
@@ -77,7 +77,7 @@
   {{- end -}}
 {{- end -}}
 {{- $yearPostsMap := dict $pageYear $yearItems -}}
-{{- $yearPagesMap := dict $pageYear (printf "/%s/" $pageYear) -}}
+{{- $yearPagesMap := dict $pageYear "/blog/" -}}
 
 {{- $navData := dict
   "currentPostPath" .RelPermalink

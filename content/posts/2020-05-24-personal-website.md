@@ -1,7 +1,6 @@
 ---
 title: "소소한 생각: 개인 홈페이지는 필수"
-url: /2020/personal-website/
-canonical_url: https://sangiloum.github.io/2020/personal-website/
+slug: personal-website
 categories:
   - academia
   - it

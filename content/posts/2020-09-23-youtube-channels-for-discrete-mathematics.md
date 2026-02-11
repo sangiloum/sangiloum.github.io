@@ -1,7 +1,6 @@
 ---
 title: "List of YouTube Channels for research talks on discrete mathematics"
-url: /2020/youtube-channels-for-discrete-mathematics/
-canonical_url: https://sangiloum.github.io/2020/youtube-channels-for-discrete-mathematics/
+slug: youtube-channels-for-discrete-mathematics
 categories:
   - math
 ---

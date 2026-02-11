@@ -1,7 +1,6 @@
 ---
 title: "소소한 정보: BibTeX으로 참고 문헌 모으기"
-url: /2020/tip-latex-bib/
-canonical_url: https://sangiloum.github.io/2020/tip-latex-bib/
+slug: tip-latex-bib
 featured_image: /legacy/2020/06/bibdesk.png
 featured_image_source: og_image
 categories:

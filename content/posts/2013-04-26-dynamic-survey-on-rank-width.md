@@ -1,7 +1,6 @@
 ---
 title: "Dynamic survey on rank-width"
-url: /2013/dynamic-survey-on-rank-width/
-canonical_url: https://sangiloum.github.io/2013/dynamic-survey-on-rank-width/
+slug: dynamic-survey-on-rank-width
 categories:
   - math
 ---

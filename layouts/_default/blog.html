@@ -46,18 +46,5 @@
       {{ end }}
     </section>
   </div>
-  {{ if eq $categorySlug "" }}
-  <section class="blog-archive">
-    <h2>Archive</h2>
-      <h3>Yearly archives</h3>
-      <ul>
-        {{ $years := dict }}
-        {{ range $allPosts }}{{ $y := .Date.Format "2006" }}{{ $c := index $years $y | default 0 }}{{ $years = merge $years (dict $y (add $c 1)) }}{{ end }}
-        {{ $yearKeys := slice }}
-        {{ range $year, $_ := $years }}{{ $yearKeys = $yearKeys | append $year }}{{ end }}
-        {{ range sort $yearKeys "value" "desc" }}<li><a href="/{{ . }}/">{{ . }}</a> ({{ index $years . }})</li>{{ end }}
-      </ul>
-    </section>
-  {{ end }}
 </article>
 {{ end }}

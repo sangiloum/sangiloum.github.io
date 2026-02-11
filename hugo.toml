@@ -27,7 +27,7 @@ disableKinds = ["taxonomy", "term"]
   expiryDate = ["expiryDate", "unpublishdate"]
 
 [permalinks]
-  posts = "/:slug/"
+  posts = "/:year/:slug/"
 
 [outputs]
   home = ["HTML", "RSS", "SITEMAP"]

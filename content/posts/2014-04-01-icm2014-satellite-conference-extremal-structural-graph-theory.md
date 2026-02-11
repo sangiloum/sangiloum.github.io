@@ -1,7 +1,6 @@
 ---
 title: "ICM2014 Satellite Conference on Extremal and Structural Graph Theory"
-url: /2014/icm2014-satellite-conference-extremal-structural-graph-theory/
-canonical_url: https://sangiloum.github.io/2014/icm2014-satellite-conference-extremal-structural-graph-theory/
+slug: icm2014-satellite-conference-extremal-structural-graph-theory
 featured_image: /legacy/2012/11/P1012099.jpg
 featured_image_source: featured_media
 categories:

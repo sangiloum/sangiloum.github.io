@@ -9,8 +9,12 @@
 {{- end -}}
 <div class="post-card-body">
 <p class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-{{- $postYear := .Date.Format "2006" -}}
-<p class="post-card-date">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $postYear }}/">{{ $postYear }}</a></p>
+<div class="post-card-meta-row">
+<p class="post-card-date">{{ .Date.Format "2006-01-02" }}</p>
+{{- with .Params.categories -}}
+<p class="post-card-categories">{{- range . -}}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a>{{- end -}}</p>
+{{- end -}}
+</div>
 </div>
 </article>
 {{- end -}}

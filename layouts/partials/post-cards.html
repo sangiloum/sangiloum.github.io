@@ -25,11 +25,12 @@
       {{ end }}
       <div class="post-card-body">
         <h3 class="post-card-title"><a href="{{ $postLink }}">{{ .Title }}</a></h3>
-        {{ $postYear := .Date.Format "2006" }}
-        <p class="post-card-date">{{ .Date.Format "2006-01-02" }} · <a href="/{{ $postYear }}/">{{ $postYear }}</a></p>
-        {{ with .Params.categories }}
-        <p class="post-card-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a> {{ end }}</p>
-        {{ end }}
+        <div class="post-card-meta-row">
+          <p class="post-card-date">{{ .Date.Format "2006-01-02" }}</p>
+          {{ with .Params.categories }}
+          <p class="post-card-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a>{{ end }}</p>
+          {{ end }}
+        </div>
         <p class="post-card-excerpt">{{ .Summary | plainify | truncate 180 }}</p>
       </div>
     </article>

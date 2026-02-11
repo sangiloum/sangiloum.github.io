@@ -1,7 +1,6 @@
 ---
 title: "(Due: May 31, 2019) 2019 IBS Young Scientist Fellowship"
-url: /2019/2019-ibs-young-scientist-fellowship/
-canonical_url: https://sangiloum.github.io/2019/2019-ibs-young-scientist-fellowship/
+slug: 2019-ibs-young-scientist-fellowship
 featured_image: /legacy/2019/03/ibs-logo-small-2.png
 featured_image_source: featured_media
 categories:

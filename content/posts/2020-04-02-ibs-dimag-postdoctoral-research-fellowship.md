@@ -1,7 +1,6 @@
 ---
 title: "Hiring: THE IBS Discrete Mathematics Group (DIMAG) Postdoctoral Research Fellowship (Due: April 26, 2020)"
-url: /2020/ibs-dimag-postdoctoral-research-fellowship/
-canonical_url: https://sangiloum.github.io/2020/ibs-dimag-postdoctoral-research-fellowship/
+slug: ibs-dimag-postdoctoral-research-fellowship
 featured_image: /legacy/2020/04/poster-banner.png
 featured_image_source: featured_media
 categories:

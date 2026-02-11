@@ -1,7 +1,8 @@
 ---
 title: "2012년 국제수학올림피아드(IMO) 참가 보고"
-url: /2012/2012년-국제수학올림피아드imo-참가-보고/
-canonical_url: https://sangiloum.github.io/2012/2012%eb%85%84-%ea%b5%ad%ec%a0%9c%ec%88%98%ed%95%99%ec%98%ac%eb%a6%bc%ed%94%bc%ec%95%84%eb%93%9cimo-%ec%b0%b8%ea%b0%80-%eb%b3%b4%ea%b3%a0/
+slug: 2012년-국제수학올림피아드imo-참가-보고
+aliases:
+  - /2012/2012%eb%85%84-%ea%b5%ad%ec%a0%9c%ec%88%98%ed%95%99%ec%98%ac%eb%a6%bc%ed%94%bc%ec%95%84%eb%93%9cimo-%ec%b0%b8%ea%b0%80-%eb%b3%b4%ea%b3%a0/
 featured_image: /legacy/2015/05/2012imo.jpg
 featured_image_source: featured_media
 categories:

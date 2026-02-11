@@ -6,7 +6,8 @@
     <title>{{ if .Title }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
     <meta name="description" content="{{ .Params.description | default site.Params.description }}">
     <link rel="canonical" href="{{ .Params.canonical_url | default .Permalink }}">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    {{- $style := resources.Get "css/style.css" | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
     {{ hugo.Generator }}
   </head>
   <body class="{{ if .IsHome }}is-home{{ end }}">

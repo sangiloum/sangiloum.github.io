@@ -1,7 +1,6 @@
 ---
 title: "KAIST에서 2017년 봄에 열리는 이산수학/그래프이론 관련 교과목"
-url: /2017/2017-spring-courses/
-canonical_url: https://sangiloum.github.io/2017/2017-spring-courses/
+slug: 2017-spring-courses
 categories:
   - kaist
 ---

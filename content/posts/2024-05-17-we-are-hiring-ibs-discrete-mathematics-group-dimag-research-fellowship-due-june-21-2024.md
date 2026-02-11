@@ -1,7 +1,6 @@
 ---
 title: "We are hiring! IBS Discrete Mathematics Group (DIMAG) Research Fellowship (Due: June 21, 2024)"
-url: /2024/we-are-hiring-ibs-discrete-mathematics-group-dimag-research-fellowship-due-june-21-2024/
-canonical_url: https://sangiloum.github.io/2024/we-are-hiring-ibs-discrete-mathematics-group-dimag-research-fellowship-due-june-21-2024/
+slug: we-are-hiring-ibs-discrete-mathematics-group-dimag-research-fellowship-due-june-21-2024
 featured_image: /legacy/2023/09/poster2023.png
 featured_image_source: featured_media
 categories:
