@@ -6,7 +6,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 6
   path = "page"
 
 [markup]
