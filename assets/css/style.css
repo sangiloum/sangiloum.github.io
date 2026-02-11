@@ -486,6 +486,13 @@ sup {
   border-radius: 12px;
   background: #f8fbff;
   padding: 0.5rem 0.7rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.seminar-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .seminar-entry {
@@ -985,6 +992,12 @@ img.markdown-image:not(.home-hero-image) {
   background: #fff;
   padding: 0.85rem 0.9rem;
   box-shadow: var(--shadow-soft);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.preprint-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .preprint-card-title {
@@ -1623,6 +1636,18 @@ button:focus-visible {
   }
 
   .home-hero:hover {
+    transform: none;
+  }
+
+  .post-card,
+  .preprint-card,
+  .seminar-item {
+    transition: none;
+  }
+
+  .post-card:hover,
+  .preprint-card:hover,
+  .seminar-item:hover {
     transform: none;
   }
 }
