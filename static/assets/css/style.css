@@ -1193,6 +1193,108 @@ img.markdown-image:not(.home-hero-image) {
   white-space: nowrap;
 }
 
+.student-current-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(236px, 236px));
+  gap: 0.7rem;
+  margin: 0 0 1.2rem;
+  justify-content: start;
+  justify-items: stretch;
+}
+
+.student-current-card {
+  width: 100%;
+  max-width: 236px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #c6d4e9;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.75rem;
+  gap: 0.5rem;
+}
+
+.student-current-avatar {
+  width: clamp(64px, 42%, 84px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #c8d7ec;
+  background: #eaf1fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-current-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.student-current-avatar-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.student-current-avatar-fallback {
+  font-family: var(--font-header-sans);
+  font-size: clamp(1.4rem, 1.1rem + 0.5vw, 1.8rem);
+  font-weight: 700;
+  color: #2f4b72;
+}
+
+.student-current-meta {
+  min-width: 0;
+  width: 100%;
+}
+
+.student-current-name {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-header-sans);
+  font-size: clamp(0.96rem, 0.93rem + 0.1vw, 1.03rem);
+  font-weight: 700;
+}
+
+.student-current-name a {
+  color: #1e3861;
+  text-decoration: none;
+}
+
+.student-current-name a:hover {
+  color: #12315d;
+}
+
+.student-current-program,
+.student-current-period,
+.student-current-note {
+  margin: 0.1rem 0 0;
+  color: #354c6d;
+  line-height: 1.35;
+}
+
+.student-current-program {
+  font-weight: 700;
+}
+
+.student-current-period {
+  font-size: 0.86rem;
+}
+
+.student-current-note {
+  font-size: 0.84rem;
+}
+
 .papers-search {
   margin: 0 0 1.25rem;
   padding: 0.85rem 1rem 0.75rem;
@@ -1488,6 +1590,15 @@ button:focus-visible {
 }
 
 @media (max-width: 860px) {
+  .student-current-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .student-current-card {
+    max-width: none;
+  }
+
   .paper-item-links {
     white-space: normal;
   }
@@ -1518,6 +1629,17 @@ button:focus-visible {
 
   .home-logo-compact {
     max-width: min(150px, 50vw);
+  }
+}
+
+@media (max-width: 460px) {
+  .student-current-card {
+    padding: 0.65rem 0.55rem;
+    gap: 0.4rem;
+  }
+
+  .student-current-avatar {
+    width: clamp(58px, 52%, 76px);
   }
 }
 

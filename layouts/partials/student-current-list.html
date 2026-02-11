@@ -1,5 +1,48 @@
-<ul>
-{{ range (site.Data.students_current | default (slice)) }}
-  <li><strong>{{ partial "person-name.html" (dict "id" .id "link" true) }}</strong>. {{ .program }}, {{ .start }}-{{ if .end }}{{ .end }}{{ else }}current{{ end }}{{ if .note }}. {{ .note }}{{ else }}.{{ end }}</li>
-{{ end }}
-</ul>
+{{ $students := site.Data.students_current | default (slice) }}
+<div class="student-current-grid">
+  {{ range $students }}
+    {{ $person := index (where site.Data.people "id" .id) 0 }}
+    {{ $first := "" }}
+    {{ $last := "" }}
+    {{ $kor := "" }}
+    {{ $photo := "" }}
+    {{ $url := "" }}
+    {{ if $person }}
+      {{ $first = $person.firstname | default "" }}
+      {{ $last = $person.lastname | default "" }}
+      {{ $kor = $person.korname | default "" }}
+      {{ $photo = $person.photo | default "" }}
+      {{ $url = $person.url | default "" }}
+    {{ end }}
+    {{ $fullName := printf "%s%s%s" $first (cond (and (ne $first "") (ne $last "")) " " "") $last }}
+    {{ if and (eq $fullName "") (ne $kor "") }}
+      {{ $fullName = $kor }}
+    {{ end }}
+    {{ if eq $fullName "" }}
+      {{ $fullName = .id }}
+    {{ end }}
+    <article class="student-current-card">
+      <div class="student-current-avatar">
+        {{ if $url }}
+          <a class="student-current-avatar-link" href="{{ $url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $fullName }} homepage">
+        {{ end }}
+        {{ if $photo }}
+          <img src="{{ $photo | safeURL }}" alt="{{ $fullName }}" loading="lazy" decoding="async">
+        {{ else }}
+          <span class="student-current-avatar-fallback">{{ substr $fullName 0 1 }}</span>
+        {{ end }}
+        {{ if $url }}
+          </a>
+        {{ end }}
+      </div>
+      <div class="student-current-meta">
+        <h4 class="student-current-name">{{ partial "person-name.html" (dict "id" .id "link" true) }}</h4>
+        <p class="student-current-program">{{ .program }}</p>
+        <p class="student-current-period">{{ .start }}-{{ if .end }}{{ .end }}{{ else }}current{{ end }}</p>
+        {{ if .note }}
+          <p class="student-current-note">{{ .note }}</p>
+        {{ end }}
+      </div>
+    </article>
+  {{ end }}
+</div>

@@ -432,6 +432,7 @@
 - id: gorsky
   firstname: "Maximilian"
   lastname: "Gorsky"
+  photo: "/images/gorsky.jpg"
   url: "https://www.mgorsky.com"
 - id: hilaire
   firstname: "Claire"
@@ -500,6 +501,7 @@
   firstname: "Mujin"
   lastname: "Choi"
   korname: "최무진"
+  photo: "/images/mujin.jpg"
   url: "https://dimag.ibs.re.kr/home/mujin/"
 - id: honguyen
   firstname: "Nam"
@@ -533,6 +535,7 @@
   firstname: "Seokbeom"
   lastname: "Kim"
   korname: "김석범"
+  photo: "/images/seokbeom.jpg"
   url: "https://dimag.ibs.re.kr/home/seokbeom/"
 - id: seongmin
   firstname: "Seongmin"
@@ -555,14 +558,17 @@
   firstname: "Semin"
   lastname: "Yoo"
   korname: "유세민"
+  photo: "/images/semin.jpg"
   url: "https://sites.google.com/site/seminmathematics/"
 - id: colingeniet
   firstname: "Colin"
   lastname: "Geniet"
+  photo: "/images/geniet.jpg"
   url: "https://colingeniet.com"
 - id: roohani
   firstname: "Roohani"
   lastname: "Sharma"
+  photo: "/images/sharma.jpg"
   url: "https://sites.google.com/view/roohanisharma/home"
 - id: ralphbottesch
   firstname: "Ralph"
