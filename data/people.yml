@@ -411,6 +411,7 @@
   firstname: "Younjin"
   lastname: "Kim"
   korname: "김연진"
+  photo: "/images/younjin.jpg"
   url: "https://sites.google.com/site/younjinkimsite/"
 - id: adler
   firstname: "Isolde"
