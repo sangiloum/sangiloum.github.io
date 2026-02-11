@@ -36,7 +36,7 @@
     {{ partial "blog-categories.html" (dict "active" $activeCategory) }}
     <section class="blog-main">
       <h2>{{ $pageHeading }}</h2>
-      {{ partial "post-cards.html" (dict "posts" $p.Pages "category_filter" $activeCategory) }}
+      {{ partial "post-cards.html" (dict "posts" $p.Pages "category_filter" $activeCategory "class" "post-cards-masonry") }}
       {{ if gt $p.TotalPages 1 }}
       <nav class="list-pagination" aria-label="{{ $paginationLabel }}">
         {{ if $p.HasPrev }}<a class="list-pagination-link" href="{{ $p.Prev.URL }}">← Newer</a>{{ else }}<span class="list-pagination-link is-disabled">← Newer</span>{{ end }}

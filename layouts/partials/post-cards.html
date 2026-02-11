@@ -1,7 +1,9 @@
 {{- $posts := .posts -}}
 {{- $categoryFilter := .category_filter | default "" -}}
 {{- $yearFilter := .year_filter | default "" -}}
-<div class="post-cards">
+{{- $extraClass := .class | default "" -}}
+{{- $useFullExcerpt := in $extraClass "post-cards-masonry" -}}
+<div class="post-cards{{ with $extraClass }} {{ . }}{{ end }}">
 {{- $visibleCount := 0 -}}
 {{- range $posts -}}
   {{- $show := true -}}
@@ -12,6 +14,9 @@
     {{- $visibleCount = add $visibleCount 1 -}}
     {{- $postLink := .RelPermalink -}}
     {{- $featured := or .Params.featured_image .Params.featuredImage -}}
+    {{- if and (not $featured) $useFullExcerpt -}}
+      {{- $featured = "/images/note.jpg" -}}
+    {{- end -}}
     {{- if ne $categoryFilter "" -}}
       {{- $postLink = printf "%s?category=%s" .RelPermalink ($categoryFilter | urlquery) -}}
     {{- else if ne $yearFilter "" -}}
@@ -31,7 +36,7 @@
           <p class="post-card-categories">{{ range . }}<a class="category-chip" href="/blog/category/{{ . | urlize }}/">{{ . }}</a>{{ end }}</p>
           {{ end }}
         </div>
-        <p class="post-card-excerpt">{{ .Summary | plainify | truncate 180 }}</p>
+        <p class="post-card-excerpt">{{ if $useFullExcerpt }}{{ .Summary | plainify }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}</p>
       </div>
     </article>
   {{- end -}}
