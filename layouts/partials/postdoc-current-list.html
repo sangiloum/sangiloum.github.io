@@ -1,4 +1,5 @@
 {{ $postdocs := site.Data.postdocs_current | default (slice) }}
+{{ $page := . }}
 <div class="student-current-grid">
   {{ range $postdocs }}
     {{ $personData := index (where site.Data.people "id" .id) 0 }}
@@ -29,7 +30,13 @@
           <a class="student-current-avatar-link" href="{{ $url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $fullName }} homepage">
         {{ end }}
         {{ if $photo }}
-          <img src="{{ $photo | safeURL }}" alt="{{ $fullName }}" loading="lazy" decoding="async">
+          {{ partial "responsive-image.html" (dict
+            "src" $photo
+            "alt" $fullName
+            "class" "student-current-avatar-image markdown-image"
+            "page" $page
+            "sizes" "120px"
+          ) }}
         {{ else }}
           <span class="student-current-avatar-fallback">{{ substr $fullName 0 1 }}</span>
         {{ end }}
