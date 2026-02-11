@@ -1,7 +1,6 @@
 ---
 title: "Mac OS에서 기본 한글 입력기 + Karabiner-Elements 이용 한글 입력 설정법"
 url: /2018/mac-os-korean-input/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2018/mac-os-korean-input/
 categories:
   - it

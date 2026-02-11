@@ -1,7 +1,6 @@
 ---
 title: "Department of Mathematical Sciences at KAIST invites applications for a tenured and tenure-track faculty position beginning from Spring 2022 to Spring 2023."
 url: /2021/professorship-kaist/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/professorship-kaist/
 featured_image: /legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media

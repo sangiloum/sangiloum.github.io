@@ -1,7 +1,6 @@
 ---
 title: "KAIST에서 2025년 봄에 열리는 이산수학/그래프이론 관련 교과목"
 url: /2025/interesting-courses-2025-spring-kaist/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2025/interesting-courses-2025-spring-kaist/
 featured_image: /legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media

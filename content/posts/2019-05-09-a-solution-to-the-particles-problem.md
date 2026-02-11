@@ -1,7 +1,6 @@
 ---
 title: "A solution to the Particles Problem"
 url: /2019/a-solution-to-the-particles-problem/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/a-solution-to-the-particles-problem/
 featured_image: /legacy/2019/05/points2.png
 featured_image_source: featured_media

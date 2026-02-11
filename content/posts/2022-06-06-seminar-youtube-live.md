@@ -1,7 +1,6 @@
 ---
 title: "칠판 강연을 위한 연사 추적 카메라 설치 및 유튜브 생중계 경험담"
 url: /2022/seminar-youtube-live/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2022/seminar-youtube-live/
 featured_image: /legacy/2022/06/classroom.jpg
 featured_image_source: featured_media

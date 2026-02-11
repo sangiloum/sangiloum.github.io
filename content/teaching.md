@@ -2,7 +2,6 @@
 title: "Teaching"
 url: /teaching/
 layout: page
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/teaching/
 featured_image: /legacy/2025/02/1500x500.jpeg
 featured_image_source: og_image

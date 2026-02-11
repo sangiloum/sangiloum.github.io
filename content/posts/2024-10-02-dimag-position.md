@@ -1,7 +1,6 @@
 ---
 title: "We are hiring! IBS Discrete Mathematics Group (DIMAG) Research Fellowship (Due: December 1, 2024)"
 url: /2024/dimag-position/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2024/dimag-position/
 featured_image: /legacy/2023/09/poster2023.png
 featured_image_source: featured_media

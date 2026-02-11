@@ -1,7 +1,6 @@
 ---
 title: "수학동아 연재 (2016년)"
 url: /2016/mathdonga/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2016/mathdonga/
 featured_image: /legacy/2016/02/M201601N009_1.jpg
 featured_image_source: og_image

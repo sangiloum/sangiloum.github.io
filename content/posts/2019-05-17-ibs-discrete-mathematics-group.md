@@ -1,7 +1,6 @@
 ---
 title: "기초과학연구원(IBS) 이산수학그룹 소개"
 url: /2019/ibs-discrete-mathematics-group/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/ibs-discrete-mathematics-group/
 featured_image: /legacy/2019/05/ibs-night-2000.jpg
 featured_image_source: featured_media

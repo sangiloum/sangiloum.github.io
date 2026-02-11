@@ -1,7 +1,6 @@
 ---
 title: "PhD position in Extremal and Probabilistic Combinatorics at Umeå University, Sweden"
 url: /2022/phd-position-in-extremal-and-probabilistic-combinatorics-at-umea-university/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2022/phd-position-in-extremal-and-probabilistic-combinatorics-at-umea-university/
 categories:
   - hiring

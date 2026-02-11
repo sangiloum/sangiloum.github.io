@@ -1,7 +1,6 @@
 ---
 title: "Donggyu Kim (김동규) received the 15th S-OIL Excellent Dissertation Award (제15회 에쓰-오일 우수학위논문상) in Mathematics"
 url: /2025/donggyu-kim-soil/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2025/donggyu-kim-soil/
 featured_image: /legacy/2025/12/soil2025.jpg
 featured_image_source: featured_media

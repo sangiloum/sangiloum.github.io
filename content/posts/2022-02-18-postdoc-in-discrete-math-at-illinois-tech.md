@@ -1,7 +1,6 @@
 ---
 title: "Postdoc in Discrete Math at Illinois Tech"
 url: /2022/postdoc-in-discrete-math-at-illinois-tech/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2022/postdoc-in-discrete-math-at-illinois-tech/
 categories:
   - hiring

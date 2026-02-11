@@ -2,7 +2,6 @@
 title: "Awards"
 url: /awards/
 layout: page
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/awards/
 ---
 

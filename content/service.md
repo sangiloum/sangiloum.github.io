@@ -2,7 +2,6 @@
 title: "Service"
 url: /service/
 layout: page
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/service/
 featured_image: /legacy/2012/11/DSC010321.jpg
 featured_image_source: og_image

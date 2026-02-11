@@ -1,7 +1,6 @@
 ---
 title: "Non-Tenure Track Assistant Professorship at KAIST (Due: May 17) (KAIST 수리과학과 초빙교수 채용 공고)"
 url: /2019/non-tenure-track-assistant-professorship-at-kaist/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2019/non-tenure-track-assistant-professorship-at-kaist/
 featured_image: /legacy/2019/03/KAIST_logo_white.gif
 featured_image_source: featured_media

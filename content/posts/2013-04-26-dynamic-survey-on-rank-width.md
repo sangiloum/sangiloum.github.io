@@ -1,7 +1,6 @@
 ---
 title: "Dynamic survey on rank-width"
 url: /2013/dynamic-survey-on-rank-width/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2013/dynamic-survey-on-rank-width/
 categories:
   - math

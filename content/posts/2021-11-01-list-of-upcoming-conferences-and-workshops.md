@@ -1,7 +1,6 @@
 ---
 title: "List of upcoming conferences and workshops"
 url: /2021/list-of-upcoming-conferences-and-workshops/
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/2021/list-of-upcoming-conferences-and-workshops/
 categories:
   - events

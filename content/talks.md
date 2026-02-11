@@ -2,7 +2,6 @@
 title: "Talks"
 url: /talks/
 layout: page
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/talks/
 featured_image: /legacy/2022/09/i-PPqmJwt.jpg
 featured_image_source: og_image

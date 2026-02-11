@@ -2,7 +2,6 @@
 title: "Sang-il Oum (엄상일)"
 url: /
 layout: page
-description: Migrated from legacy IBS WordPress.
 canonical_url: https://sangiloum.github.io/
 featured_image: /legacy/2021/05/sangil-2021-crop.jpg
 featured_image_source: og_image
