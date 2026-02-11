@@ -210,18 +210,20 @@
         card.classList.add("is-hidden");
       }
 
-      if (Math.abs(rel) > 2) {
+      if (Math.abs(rel) > 3) {
         card.style.transform = "translateX(-50%) translate3d(" + (rel * 56) + "px, 0, -360px) rotateY(" + (rel * -24) + "deg) scale(0.72)";
         card.style.opacity = "0";
         card.style.zIndex = "1";
         card.style.pointerEvents = "none";
       } else {
-        var x = rel * 126;
-        var z = Math.abs(rel) * -120;
-        var rotate = rel * -20;
-        var scale = rel === 0 ? 1 : 0.9;
+        var distance = Math.abs(rel);
+        var x = rel * 98;
+        var z = distance * -88;
+        var rotate = rel * -16;
+        var scale = 1 - (distance * 0.08);
+        var opacity = 1 - (distance * 0.09);
         card.style.transform = "translateX(-50%) translate3d(" + x + "px, 0, " + z + "px) rotateY(" + rotate + "deg) scale(" + scale + ")";
-        card.style.opacity = rel === 0 ? "1" : "0.92";
+        card.style.opacity = String(Math.max(opacity, 0.62));
         card.style.zIndex = String(100 - Math.abs(rel));
       }
 
