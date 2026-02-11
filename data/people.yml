@@ -1,7 +1,7 @@
 - id: king
   firstname: "Andrew D."
   lastname: "King"
-  url: "http://andrewdouglasking.com"
+  url: "https://www.linkedin.com/in/andrew-king-849b341b/"
 - id: bergougnoux
   firstname: "Benjamin"
   lastname: "Bergougnoux"
@@ -216,7 +216,7 @@
 - id: vatshelle
   firstname: "Martin"
   lastname: "Vatshelle"
-  url: "https://www.linkedin.com/in/martin-vatshelle-8b450b43/"
+  url: "https://www4.uib.no/en/find-employees/Martin.Vatshelle"
 - id: verdianrizi
   firstname: "Maryam"
   lastname: "Verdian-Rizi"
@@ -337,7 +337,7 @@
 - id: saether
   firstname: "Sigve Hortemo"
   lastname: "Sæther"
-  url: "https://www.linkedin.com/in/sigve-hortemo-s%25C3%25A6ther-92b48928"
+  url: "https://www.linkedin.com/in/sigve-hortemo-sæther-92b48928/"
 - id: sounggun
   firstname: "Sounggun"
   lastname: "Wee"
@@ -345,7 +345,7 @@
 - id: kreutzer
   firstname: "Stephan"
   lastname: "Kreutzer"
-  url: "https://logic.las.tu-berlin.de/Members/Kreutzer/"
+  url: "https://www.tu.berlin/en/las/team/research-group-leader"
 - id: suyoung
   firstname: "Suyoung"
   lastname: "Choi"
