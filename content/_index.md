@@ -71,9 +71,12 @@ Graph Theory, Matroid Theory, Combinatorics, Graph Algorithms, Structural Graph 
 {{% /home-section %}}
 
 {{% home-section %}}
-## Discrete Math Seminar
+## Upcoming Discrete Math Seminars
 
 I am organizing the [Discrete Math Seminar](https://dimag.ibs.re.kr/events/category/seminar/). I strongly encourage everyone, including students interested in discrete mathematics, to attend this seminar and **[subscribe to the mailing list](https://mailing.ibs.re.kr/mailman/listinfo/discretemath)**.
+
+{{% home-upcoming-seminars %}}
+
 
 {{% /home-section %}}
 

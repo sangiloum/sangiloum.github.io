@@ -1,0 +1,40 @@
+{{- $events := site.Data.upcoming_dms.events | default (slice) -}}
+{{- if gt (len $events) 0 -}}
+<ul class="upcoming-seminars" aria-label="Upcoming Discrete Math Seminars">
+  {{- range first 3 $events -}}
+  {{- $start := time.AsTime .start -}}
+  {{- $startISO := .start -}}
+  {{- $dateLabel := $start.Format "Jan 2" -}}
+  {{- $timeLabel := $start.Format "3:04PM" -}}
+  <li class="seminar-item">
+    {{- $speaker := .speaker | default "TBA" -}}
+    {{- $title := .title | default "TBA" -}}
+    {{- with .url -}}
+    <a class="seminar-entry" href="{{ . }}">
+      <p class="seminar-when">
+        <time class="seminar-date" datetime="{{ $startISO }}">{{ $dateLabel }}</time>
+        <span class="seminar-time">{{ $timeLabel }}</span>
+      </p>
+      <p class="seminar-details">
+        <span class="seminar-speaker">{{ $speaker }}</span>
+        {{- if ne (lower (trim $title " ")) "tba" }}, <span class="seminar-title"><em>{{ $title }}</em></span>{{- end }}
+      </p>
+    </a>
+    {{- else -}}
+    <div class="seminar-entry">
+      <p class="seminar-when">
+        <time class="seminar-date" datetime="{{ $startISO }}">{{ $dateLabel }}</time>
+        <span class="seminar-time">{{ $timeLabel }}</span>
+      </p>
+      <p class="seminar-details">
+        <span class="seminar-speaker">{{ $speaker }}</span>
+        {{- if ne (lower (trim $title " ")) "tba" }}, <span class="seminar-title"><em>{{ $title }}</em></span>{{- end }}
+      </p>
+    </div>
+    {{- end }}
+  </li>
+  {{- end -}}
+</ul>
+{{- else -}}
+<p class="seminar-empty">No upcoming seminars available.</p>
+{{- end -}}

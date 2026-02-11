@@ -1,0 +1,31 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML -}}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- $regularPages := slice -}}
+  {{- $blogPosts := slice -}}
+  {{- range site.Pages -}}
+    {{- $disabled := false -}}
+    {{- with .Params.sitemap }}
+      {{- if .disable }}{{ $disabled = true }}{{ end -}}
+    {{- end -}}
+    {{- $include := and (not $disabled) (ne .RelPermalink "/404.html") (ne .Layout "404") (ne .Permalink "") (not (in .Permalink "/blog/category/")) -}}
+    {{- if $include -}}
+      {{- if eq .Section "posts" -}}
+        {{- $blogPosts = $blogPosts | append . -}}
+      {{- else -}}
+        {{- $regularPages = $regularPages | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- range sort $regularPages "Permalink" "asc" -}}
+    <url>
+      <loc>{{ .Permalink }}</loc>
+    </url>
+  {{- end -}}
+
+  {{- range sort $blogPosts "Permalink" "asc" -}}
+    <url>
+      <loc>{{ .Permalink }}</loc>
+    </url>
+  {{- end -}}
+</urlset>
