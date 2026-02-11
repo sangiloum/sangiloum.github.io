@@ -151,8 +151,7 @@ sup {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: static;
   z-index: 50;
   background: rgba(246, 249, 255, 0.9);
   border-bottom: 1px solid rgba(186, 203, 228, 0.65);
@@ -1414,6 +1413,129 @@ img.markdown-image:not(.home-hero-image) {
   font-size: 0.84rem;
 }
 
+.former-postdocs-carousel {
+  margin: 0 0 1.3rem;
+  padding: 0.95rem 0.95rem 0.8rem;
+  border: 1px solid #c8d6eb;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+}
+
+.former-postdocs-stage {
+  position: relative;
+  height: 264px;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.former-postdocs-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.former-postdoc-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: auto;
+  width: min(236px, calc(100% - 1rem));
+  max-width: 236px;
+  transform: none;
+  margin: 0;
+  transition: transform 0.55s ease, opacity 0.4s ease, box-shadow 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.former-postdoc-card.is-active {
+  box-shadow: 0 18px 34px rgba(15, 28, 52, 0.18);
+}
+
+.former-postdoc-card.is-hidden {
+  opacity: 0;
+}
+
+.former-postdoc-tag-inline {
+  margin-left: 0.38rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b9cae4;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #355277;
+  background: #edf4ff;
+}
+
+.former-postdocs-controls {
+  margin-top: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.former-postdocs-control-btn {
+  border: 1px solid #b3c7e6;
+  border-radius: 999px;
+  padding: 0.34rem 0.82rem;
+  background: #eef4ff;
+  color: #1e3d6b;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.former-postdocs-control-btn:hover {
+  background: #e1ecff;
+}
+
+.former-postdocs-position-banner {
+  margin: 0.12rem auto 0;
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  text-align: center;
+  border: 1px solid #c9d9ef;
+  border-radius: 12px;
+  background: #f8fbff;
+  padding: 0.52rem 0.72rem;
+  color: #2b456a;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.former-postdocs-position-label {
+  font-weight: 700;
+  margin-right: 0;
+}
+
+.former-postdocs-position-value {
+  display: inline-block;
+}
+
+.former-postdocs-position-value.is-animating {
+  animation: former-position-fade-slide 320ms ease;
+}
+
+@keyframes former-position-fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .papers-search {
   margin: 0 0 1.25rem;
   padding: 0.85rem 1rem 0.75rem;
@@ -1708,6 +1830,14 @@ button:focus-visible {
   .seminar-item:hover {
     transform: none;
   }
+
+  .former-postdoc-card {
+    transition: none;
+  }
+
+  .former-postdocs-position-value.is-animating {
+    animation: none;
+  }
 }
 
 @media (max-width: 959px) {
@@ -1768,6 +1898,92 @@ button:focus-visible {
   }
 }
 
+@media (max-width: 900px) {
+  .former-postdocs-stage {
+    height: auto;
+    perspective: none;
+    overflow: visible;
+  }
+
+  .former-postdocs-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    height: auto;
+  }
+
+  .former-postdoc-card {
+    position: relative;
+    left: auto;
+    right: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100%;
+    max-width: none;
+    pointer-events: auto !important;
+  }
+
+  .former-postdocs-position-banner,
+  .former-postdocs-controls {
+    display: none;
+  }
+
+  .former-postdoc-card::after {
+    content: attr(data-current-position);
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0.28rem);
+    transform: translate(-50%, 0.3rem);
+    width: min(96%, 320px);
+    padding: 0.42rem 0.58rem;
+    border: 1px solid #c4d6ef;
+    border-radius: 10px;
+    background: rgba(248, 251, 255, 0.98);
+    color: #2a4469;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(16, 34, 60, 0.16);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 25;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .former-postdoc-card::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0.02rem);
+    width: 0.62rem;
+    height: 0.62rem;
+    border-left: 1px solid #c4d6ef;
+    border-top: 1px solid #c4d6ef;
+    background: rgba(248, 251, 255, 0.98);
+    transform: translate(-50%, 0.3rem) rotate(45deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 24;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .former-postdoc-card:hover,
+  .former-postdoc-card:focus-within,
+  .former-postdoc-card:active {
+    z-index: 30;
+  }
+
+  .former-postdoc-card:hover::after,
+  .former-postdoc-card:hover::before,
+  .former-postdoc-card:focus-within::after,
+  .former-postdoc-card:focus-within::before,
+  .former-postdoc-card:active::after,
+  .former-postdoc-card:active::before {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 @media (max-width: 460px) {
   .student-current-card {
     padding: 0.65rem 0.55rem;
@@ -1776,6 +1992,10 @@ button:focus-visible {
 
   .student-current-avatar {
     width: clamp(58px, 52%, 76px);
+  }
+
+  .former-postdocs-track {
+    grid-template-columns: 1fr;
   }
 }
 

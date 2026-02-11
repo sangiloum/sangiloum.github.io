@@ -30,7 +30,7 @@
     {{ partial "student-former-list.html" . }}
 
     <h3>Former Postdocs</h3>
-    {{ partial "postdoc-former-list.html" . }}
+    {{ partial "postdoc-former-carousel.html" . }}
 
     <h1>Papers written by my students <em>NOT</em> coauthored with me</h1>
     <p>I am not a co-author of some of the papers of my students. Below, I try to list such papers.</p>
@@ -141,6 +141,197 @@
   input.addEventListener("input", applyFilter);
   renderFilterButtons();
   applyFilter();
+})();
+
+(function () {
+  var carousel = document.querySelector("[data-former-postdocs-carousel]");
+  if (!carousel) return;
+
+  var cards = Array.prototype.slice.call(carousel.querySelectorAll(".former-postdoc-card"));
+  var prevBtn = carousel.querySelector("[data-former-postdocs-prev]");
+  var nextBtn = carousel.querySelector("[data-former-postdocs-next]");
+  var positionText = carousel.querySelector("[data-former-postdocs-position]");
+  if (!cards.length || !prevBtn || !nextBtn || !positionText) return;
+
+  var reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var mobileQuery = window.matchMedia("(max-width: 900px)");
+  var autoRotateTimer = null;
+  var autoRotateInterval = 4500;
+  var activeIndex = 0;
+
+  function mod(index, length) {
+    return ((index % length) + length) % length;
+  }
+
+  function getRelativeIndex(index) {
+    var diff = index - activeIndex;
+    if (diff > cards.length / 2) diff -= cards.length;
+    if (diff < -cards.length / 2) diff += cards.length;
+    return diff;
+  }
+
+  function updatePositionBanner() {
+    var activeCard = cards[activeIndex];
+    if (!activeCard) return;
+    var nextText = activeCard.getAttribute("data-current-position") || "Current position not available.";
+    positionText.textContent = nextText;
+    positionText.classList.remove("is-animating");
+    void positionText.offsetWidth;
+    positionText.classList.add("is-animating");
+  }
+
+  function renderStatic() {
+    cards.forEach(function (card, index) {
+      card.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
+      card.style.transform = "";
+      card.style.opacity = "";
+      card.style.zIndex = "";
+      card.style.pointerEvents = "";
+      card.setAttribute("aria-hidden", "false");
+      card.tabIndex = (index === activeIndex) ? 0 : -1;
+    });
+    updatePositionBanner();
+  }
+
+  function render3d() {
+    cards.forEach(function (card, index) {
+      var rel = getRelativeIndex(index);
+      card.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
+      card.style.pointerEvents = "";
+      card.style.opacity = "";
+
+      if (rel === 0) {
+        card.classList.add("is-active");
+      } else if (rel === -1) {
+        card.classList.add("is-prev");
+      } else if (rel === 1) {
+        card.classList.add("is-next");
+      } else {
+        card.classList.add("is-hidden");
+      }
+
+      if (Math.abs(rel) > 2) {
+        card.style.transform = "translateX(-50%) translate3d(" + (rel * 56) + "px, 0, -360px) rotateY(" + (rel * -24) + "deg) scale(0.72)";
+        card.style.opacity = "0";
+        card.style.zIndex = "1";
+        card.style.pointerEvents = "none";
+      } else {
+        var x = rel * 126;
+        var z = Math.abs(rel) * -120;
+        var rotate = rel * -20;
+        var scale = rel === 0 ? 1 : 0.9;
+        card.style.transform = "translateX(-50%) translate3d(" + x + "px, 0, " + z + "px) rotateY(" + rotate + "deg) scale(" + scale + ")";
+        card.style.opacity = rel === 0 ? "1" : "0.92";
+        card.style.zIndex = String(100 - Math.abs(rel));
+      }
+
+      card.setAttribute("aria-hidden", rel === 0 ? "false" : "true");
+      card.tabIndex = rel === 0 ? 0 : -1;
+    });
+    updatePositionBanner();
+  }
+
+  function render() {
+    if (mobileQuery.matches) {
+      renderStatic();
+      return;
+    }
+    render3d();
+  }
+
+  function move(step) {
+    activeIndex = mod(activeIndex + step, cards.length);
+    render();
+  }
+
+  function activateCard(index) {
+    activeIndex = mod(index, cards.length);
+    render();
+  }
+
+  function stopAutoRotate() {
+    if (autoRotateTimer) {
+      clearInterval(autoRotateTimer);
+      autoRotateTimer = null;
+    }
+  }
+
+  function startAutoRotate() {
+    stopAutoRotate();
+    if (cards.length < 2 || reducedMotionQuery.matches || mobileQuery.matches) return;
+    autoRotateTimer = setInterval(function () {
+      move(1);
+    }, autoRotateInterval);
+  }
+
+  function syncAutoRotate() {
+    if (reducedMotionQuery.matches || mobileQuery.matches) {
+      stopAutoRotate();
+      return;
+    }
+    startAutoRotate();
+  }
+
+  function onMediaChange() {
+    render();
+    syncAutoRotate();
+  }
+
+  function bindMediaChange(query, handler) {
+    if (query.addEventListener) {
+      query.addEventListener("change", handler);
+    } else if (query.addListener) {
+      query.addListener(handler);
+    }
+  }
+
+  prevBtn.addEventListener("click", function () {
+    move(-1);
+    startAutoRotate();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    move(1);
+    startAutoRotate();
+  });
+
+  cards.forEach(function (card, index) {
+    card.addEventListener("click", function (event) {
+      if (mobileQuery.matches) return;
+      if (index === activeIndex) return;
+      event.preventDefault();
+      event.stopPropagation();
+      activateCard(index);
+      startAutoRotate();
+    });
+  });
+
+  carousel.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      move(-1);
+      startAutoRotate();
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      move(1);
+      startAutoRotate();
+    }
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoRotate);
+  carousel.addEventListener("mouseleave", syncAutoRotate);
+  carousel.addEventListener("focusin", stopAutoRotate);
+  carousel.addEventListener("focusout", function (event) {
+    if (!carousel.contains(event.relatedTarget)) {
+      syncAutoRotate();
+    }
+  });
+
+  bindMediaChange(reducedMotionQuery, onMediaChange);
+  bindMediaChange(mobileQuery, onMediaChange);
+
+  render();
+  syncAutoRotate();
 })();
 </script>
 {{ end }}

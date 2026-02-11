@@ -1,0 +1,94 @@
+{{ $postdocs := site.Data.postdocs_former | default (slice) }}
+{{ $page := . }}
+{{ $fallbackPosition := "Current position not available." }}
+{{ $defaultPosition := $fallbackPosition }}
+{{ if gt (len $postdocs) 0 }}
+  {{ $defaultPosition = ((index $postdocs 0).current_position | default $fallbackPosition | markdownify | plainify) }}
+{{ end }}
+
+{{ if eq (len $postdocs) 0 }}
+  <p>No former postdocs listed yet.</p>
+{{ else }}
+  <section class="former-postdocs-carousel" data-former-postdocs-carousel tabindex="0" aria-label="Former postdocs carousel">
+    <div class="former-postdocs-stage">
+      <div class="former-postdocs-track">
+        {{ range $idx, $entry := $postdocs }}
+          {{ $personData := index (where site.Data.people "id" $entry.id) 0 }}
+          {{ $advisors := $entry.advisors | default (slice) }}
+          {{ $first := "" }}
+          {{ $last := "" }}
+          {{ $kor := "" }}
+          {{ $photo := "" }}
+          {{ $url := "" }}
+          {{ if $personData }}
+            {{ $first = $personData.firstname | default "" }}
+            {{ $last = $personData.lastname | default "" }}
+            {{ $kor = $personData.korname | default "" }}
+            {{ $photo = $personData.photo | default "" }}
+            {{ $url = $personData.url | default "" }}
+          {{ end }}
+          {{ $fullName := printf "%s%s%s" $first (cond (and (ne $first "") (ne $last "")) " " "") $last }}
+          {{ if and (eq $fullName "") (ne $kor "") }}
+            {{ $fullName = $kor }}
+          {{ end }}
+          {{ if eq $fullName "" }}
+            {{ $fullName = $entry.id }}
+          {{ end }}
+          {{ $phdInstitution := $entry.phd_institution | markdownify | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" }}
+          {{ $positionText := $entry.current_position | default $fallbackPosition | markdownify | plainify }}
+          <article class="student-current-card former-postdoc-card" data-index="{{ $idx }}" data-current-position="{{ $positionText | htmlEscape }}">
+            <div class="student-current-avatar">
+              {{ if $url }}
+                <a class="student-current-avatar-link" href="{{ $url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $fullName }} homepage">
+              {{ end }}
+              {{ if $photo }}
+                {{ partial "responsive-image.html" (dict
+                  "src" $photo
+                  "alt" $fullName
+                  "class" "student-current-avatar-image markdown-image"
+                  "page" $page
+                  "sizes" "120px"
+                ) }}
+              {{ else }}
+                <span class="student-current-avatar-fallback">{{ substr $fullName 0 1 }}</span>
+              {{ end }}
+              {{ if $url }}
+                </a>
+              {{ end }}
+            </div>
+            <div class="student-current-meta">
+              <h4 class="student-current-name">{{ partial "person-name.html" (dict "id" $entry.id "link" true) }}</h4>
+              <p class="student-current-period">{{ $entry.start }}-{{ $entry.end }}{{ if $entry.tag }} <span class="former-postdoc-tag-inline">{{ $entry.tag }}</span>{{ end }}</p>
+              <p class="student-current-note">Ph.D. {{ $entry.phd_year }}, {{ $phdInstitution | safeHTML }}</p>
+              {{ if gt (len $advisors) 0 }}
+                <p class="student-current-note">
+                  {{ if eq (len $advisors) 1 }}Advisor{{ else }}Advisors{{ end }}:
+                  {{ range $i, $aid := $advisors }}
+                    {{ if gt $i 0 }}
+                      {{ if eq $i (sub (len $advisors) 1) }}
+                        {{ if gt (len $advisors) 2 }}, and {{ else }} and {{ end }}
+                      {{ else }}
+                        , 
+                      {{ end }}
+                    {{ end }}
+                    {{ partial "person-name.html" (dict "id" $aid "link" true) | safeHTML }}
+                  {{ end }}
+                </p>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+
+    <p class="former-postdocs-position-banner" aria-live="polite">
+      <span class="former-postdocs-position-label">Current position:</span>
+      <span class="former-postdocs-position-value is-animating" data-former-postdocs-position>{{ $defaultPosition }}</span>
+    </p>
+
+    <div class="former-postdocs-controls" aria-label="Former postdocs carousel controls">
+      <button type="button" class="former-postdocs-control-btn" data-former-postdocs-prev aria-label="Show previous former postdoc">Previous</button>
+      <button type="button" class="former-postdocs-control-btn" data-former-postdocs-next aria-label="Show next former postdoc">Next</button>
+    </div>
+  </section>
+{{ end }}

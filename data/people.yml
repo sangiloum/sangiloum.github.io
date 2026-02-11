@@ -46,6 +46,7 @@
 - id: chakraborti
   firstname: "Debsoumya"
   lastname: "Chakraborti"
+  photo: "/images/chakraborti.jpg"
   url: "https://sites.google.com/view/debsoumya"
 - id: seese
   firstname: "Detlef"
@@ -138,6 +139,7 @@
   firstname: "Ilkyoo"
   lastname: "Choi"
   korname: "최일규"
+  photo: "/images/ilkyoo.jpg"
   url: "https://sites.google.com/view/ilkyoochoi"
 - id: hicks
   firstname: "Illya V."
@@ -146,6 +148,7 @@
 - id: gollin
   firstname: "J. Pascal"
   lastname: "Gollin"
+  photo: "/images/gollin.jpg"
   url: "https://pascal-gollin.github.io"
 - id: jaehoon
   firstname: "Jaehoon"
@@ -168,6 +171,7 @@
   firstname: "Jinha"
   lastname: "Kim"
   korname: "김진하"
+  photo: "/images/jinha.jpg"
   url: "https://sites.google.com/view/minkikim/home"
 - id: jisu
   firstname: "Jisu"
@@ -196,6 +200,7 @@
 - id: hendrey
   firstname: "Kevin"
   lastname: "Hendrey"
+  photo: "/images/hendrey.jpg"
   url: "https://sites.google.com/view/kevinhendrey"
 - id: dabrowski
   firstname: "Konrad K."
@@ -204,6 +209,7 @@
 - id: cook
   firstname: "Linda"
   lastname: "Cook"
+  photo: "/images/cook.jpg"
   url: "https://dimag.ibs.re.kr/home/cook/"
 - id: kante
   firstname: "Mamadou Moustapha"
@@ -231,6 +237,7 @@
 - id: hatzel
   firstname: "Meike"
   lastname: "Hatzel"
+  photo: "/images/hatzel.jpg"
   url: "https://meikehatzel.com/"
 - id: pilipczuk
   firstname: "Michał"
@@ -248,6 +255,7 @@
   firstname: "Minki"
   lastname: "Kim"
   korname: "김민기"
+  photo: "/images/minki.jpg"
   url: "https://dimag.ibs.re.kr/home/minkikim/"
 - id: yang
   firstname: "Ningyuan"
@@ -285,6 +293,7 @@
   firstname: "Ringi"
   lastname: "Kim"
   korname: "김린기"
+  photo: "/images/ringi.jpg"
   url: "https://sites.google.com/view/ringikim/home"
 - id: brignall
   firstname: "Robert"
@@ -305,6 +314,7 @@
 - id: campbell
   firstname: "Rutger"
   lastname: "Campbell"
+  photo: "/images/campbell.jpg"
   url: "https://dimag.ibs.re.kr/home/campbell/"
 - id: sangjune
   firstname: "Sang June"
@@ -319,6 +329,7 @@
 - id: wiederrecht
   firstname: "Sebastian"
   lastname: "Wiederrecht"
+  photo: "/images/wiederrecht.jpg"
   url: "https://www.wiederrecht.com/"
 - id: seogjin
   firstname: "Seog-Jin"
@@ -362,6 +373,7 @@
 - id: huynh
   firstname: "Tony"
   lastname: "Huynh"
+  photo: "/images/huynh.jpg"
   url: "https://sites.google.com/site/matroidintersection/"
 - id: korhonen
   firstname: "Tuukka"
@@ -471,6 +483,7 @@
   firstname: "Dabeen"
   lastname: "Lee"
   korname: "이다빈"
+  photo: "/images/dabeen.jpg"
   url: "https://dabeenl.github.io/"
 - id: euiwoong
   firstname: "Euiwoong"
@@ -585,28 +598,34 @@
 - id: abhishek
   firstname: "Abhishek"
   lastname: "Methuku"
+  photo: "/images/methuku.jpg"
   url: "https://sites.google.com/view/abhishekmethuku"
 - id: casey
   firstname: "Casey"
   lastname: "Tompkins"
+  photo: "/images/tompkins.jpg"
   url: "https://caseytompkins.com"
 - id: tuan
   firstname: "Tuan"
   lastname: "Tran"
   korname: "Trần Mạnh Tuấn"
+  photo: "/images/tran.jpg"
   url: "https://tuaentran.wixsite.com/homepage"
 - id: alexander
   firstname: "Alexander"
   lastname: "Clifton"
+  photo: "/images/clifton.jpg"
   url: "https://sites.google.com/view/alexander-clifton/home"
 - id: benlund
   firstname: "Ben"
   lastname: "Lund"
+  photo: "/images/lund.jpg"
   url: "http://www.ben-lund.com/"
 - id: seunghun
   firstname: "Seunghun"
   lastname: "Lee"
   korname: "이승훈"
+  photo: "/images/seunghun.jpg"
   url: "https://sites.google.com/view/sh-lee/"
 - id: pakianathan
   firstname: "Jonathan"
